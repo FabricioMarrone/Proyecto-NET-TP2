@@ -17,10 +17,7 @@ namespace Data.DataBase
         }
 
 
-        //public List<Plan> GetAll()
-        //{
-        //    return new List<Plan>(Planes);
-        //}
+       
 
         public Business.Entities.plane GetOne(int id)
         {
