@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Data.DataBase.PlanAdapter">
+    <Position X="2.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAoIAAAAgAAA=</HashCode>
+      <FileName>PlanAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.ModuloAdapter">
+    <Position X="4.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAgIAAAAgAAA=</HashCode>
+      <FileName>ModuloAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.EspecialidadAdapter">
+    <Position X="7.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAAAAAAAAAAAAAAAAEAAAAAggAAAAAgAAA=</HashCode>
+      <FileName>EspecialidadAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.ComisionAdapter">
+    <Position X="8" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAEAgAAA=</HashCode>
+      <FileName>ComisionAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.PersonaAdapter">
+    <Position X="9.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAIAAAAAAAAAAAAEAAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>PersonaAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.MateriaAdapter">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAACAAAAAAAAAEAAAAAIgAAAAAgAAA=</HashCode>
+      <FileName>MateriaAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.AlumnoInscripAdapter">
+    <Position X="2.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAgAAgAAA=</HashCode>
+      <FileName>AlumnoInscripAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.CursoAdapter">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAQAAAAAAAAAAAAAAAAEAAAAQAgAAAAAgAAA=</HashCode>
+      <FileName>CursoAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.DocenteCursoAdapter">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAAAAAAAAEAAAAAEAAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>DocenteCursoAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.DataBase.ModuloUsuarioAdapter">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModuloUsuarioAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
