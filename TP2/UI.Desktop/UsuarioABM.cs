@@ -11,22 +11,22 @@ using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class UsuarioDesktop : ApplicationForm
+    public partial class UsuarioABM : ApplicationForm
     {
         public Business.Entities.usuario UsuarioActual;
 
-        public UsuarioDesktop()
+        public UsuarioABM()
         {
             InitializeComponent();
         }
 
-        public UsuarioDesktop(ModoForm modo): this()
+        public UsuarioABM(ModoForm modo): this()
         {
             this.Modo = modo;
             this.UsuarioActual = new Business.Entities.usuario();
         }
 
-        public UsuarioDesktop(int id, ModoForm modo) : this()
+        public UsuarioABM(int id, ModoForm modo) : this()
         {
             this.Modo = modo;
             Business.Logic.UsuarioLogic oUsuarioLog = new UsuarioLogic();

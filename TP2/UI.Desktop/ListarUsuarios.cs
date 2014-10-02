@@ -47,7 +47,7 @@ namespace UI.Desktop
 
         public override void Nuevo_Click(object sender, EventArgs e)
         {
-            UI.Desktop.UsuarioDesktop formUsuDesk = new UsuarioDesktop(UsuarioDesktop.ModoForm.Alta);
+            UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(UsuarioABM.ModoForm.Alta);
             formUsuDesk.ShowDialog();
             this.Listar();
         }
@@ -58,7 +58,7 @@ namespace UI.Desktop
             {
                 int id = ((Business.Entities.usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
 
-                UI.Desktop.UsuarioDesktop formUsuDesk = new UsuarioDesktop(id, UsuarioDesktop.ModoForm.Modificacion);
+                UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(id, UsuarioABM.ModoForm.Modificacion);
                 formUsuDesk.ShowDialog();
                 this.Listar();
             }
@@ -75,7 +75,7 @@ namespace UI.Desktop
             {
                 int id = ((Business.Entities.usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
 
-                UI.Desktop.UsuarioDesktop formUsuDesk = new UsuarioDesktop(id, UsuarioDesktop.ModoForm.Baja);
+                UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(id, UsuarioABM.ModoForm.Baja);
                 formUsuDesk.ShowDialog();
                 this.Listar();
             }
