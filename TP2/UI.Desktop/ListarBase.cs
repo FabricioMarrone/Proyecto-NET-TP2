@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace UI.Desktop
 {
-    public partial class ListarBase : Form
+    public abstract partial class ListarBase : Form
     {
         public enum typeColumn {TEXTBOX,CHECKBOX,COMBOBOX};
 
@@ -17,14 +17,11 @@ namespace UI.Desktop
         {
             InitializeComponent();
             this.dgvListar.AutoGenerateColumns = false;
+
+            this.GenerarColumnas();
         }
 
-        protected virtual void GenerarColumnas()
-        {
-            // Se implemente en la subclase heredada.
-        }
-
-        protected DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
+        public DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
         {
             return CrearNuevaColumna(typeColumn.TEXTBOX, name, header, propName);
         }
@@ -37,7 +34,7 @@ namespace UI.Desktop
         /// <param name="header">TituloDeLaColumna</param>
         /// <param name="propName">propiedadDeUnEntityAsociadaALaColumna</param>
         /// <returns></returns>
-        protected DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
+        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
         {
             DataGridViewColumn dgvc;
             switch (type)
@@ -64,25 +61,45 @@ namespace UI.Desktop
             return dgvc;
         }
 
-        public virtual void Listar()
-        {
-            // Se implementa en la subclase heredada.
-        }
-
-        private void ListarBase_Load(object sender, EventArgs e)
+        public void ListarBase_Load(object sender, EventArgs e)
         {
             this.Listar();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        public void btnActualizar_Click(object sender, EventArgs e)
         {
             this.Listar();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        public void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-    }
+        public abstract void GenerarColumnas();
+
+        public abstract void Listar();
+
+        public void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            this.Nuevo_Click(sender, e);
+        }
+
+        public void tsbEditar_Click(object sender, EventArgs e) 
+        {
+            this.Editar_Click(sender, e);
+        }
+
+        public void tsbEliminar_Click(object sender, EventArgs e) 
+        {
+            this.Eliminar_Click(sender, e);
+        }
+
+        public abstract void Nuevo_Click(object sender, EventArgs e);
+
+        public abstract void Editar_Click(object sender, EventArgs e);
+
+        public abstract void Eliminar_Click(object sender, EventArgs e);
+
+    }//end class
 }

@@ -18,10 +18,10 @@ namespace UI.Desktop
             //Cambia el Modifiers de los controles.
             this.GenerarColumnas();
 
-            this.listar();
+            //this.listar();
         }
 
-        protected override void GenerarColumnas()
+        public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColum;
             dgvColum = this.CrearNuevaColumna("especialidad", "Especialidad", "desc_especialidad");
@@ -31,9 +31,26 @@ namespace UI.Desktop
             this.dgvListar.Columns.Add(dgvColum);
         }
 
-        public void listar() { 
-            EspecialidadLogic logic= new EspecialidadLogic();
+        public override void Listar()
+        {
+            EspecialidadLogic logic = new EspecialidadLogic();
             this.dgvListar.DataSource = logic.GetAll();
+        }
+
+        public override void Nuevo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public override void Editar_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        public override void Eliminar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
