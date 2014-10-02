@@ -77,9 +77,6 @@
     <Compile Include="ListarEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarEspecialidades.Designer.cs">
-      <DependentUpon>ListarEspecialidades.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>

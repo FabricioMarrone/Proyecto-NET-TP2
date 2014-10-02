@@ -17,8 +17,8 @@ namespace UI.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new formMain());
             //Application.Run(new UsuarioDesktop());
-            Application.Run(new ListarUsuarios());
-            //Application.Run(new ListarEspecialidades());
+            //Application.Run(new ListarUsuarios());
+            Application.Run(new ListarEspecialidades());
            
         }
     }
