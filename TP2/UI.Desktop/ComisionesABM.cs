@@ -18,6 +18,7 @@ namespace UI.Desktop
         public ComisionesABM()
         {
             InitializeComponent();
+            this.CargarComboBox();
         }
 
         public ComisionesABM(ModoForm modo): this()
@@ -39,7 +40,8 @@ namespace UI.Desktop
             this.txtID.Text = this.comisionActual.id_comision.ToString();
             this.txtDesc.Text = this.comisionActual.desc_comision;
             this.txtAñoEsp.Text = this.comisionActual.anio_especialidad.ToString();
-            this.txtIDplan.Text = this.comisionActual.id_plan.ToString();
+            this.cbPlan.SelectedValue = this.comisionActual.id_plan;
+
 
             switch (this.Modo)
             {
@@ -51,13 +53,21 @@ namespace UI.Desktop
                     this.txtID.Enabled = false;
                     this.txtDesc.Enabled = false;
                     this.txtAñoEsp.Enabled = false;
-                    this.txtIDplan.Enabled = false;
+                    this.cbPlan.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
                     this.txtID.Enabled = false;
                     break;
             }
+        }
+
+        private void CargarComboBox()
+        {
+            PlanLogic planLogic = new PlanLogic();
+            this.cbPlan.DataSource = planLogic.GetAll();
+            this.cbPlan.ValueMember = "id_plan";
+            this.cbPlan.DisplayMember = "desc_plan";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -71,8 +81,8 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-            if (this.txtID.Text == "" || this.txtDesc.Text == "" || this.txtAñoEsp.Text == "" || 
-                this.txtIDplan.Text == "")
+            if (/*this.txtID.Text == "" || */ this.txtDesc.Text == "" || this.txtAñoEsp.Text == "" /*|| 
+                this.txtIDplan.Text == ""*/)
             {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -91,13 +101,18 @@ namespace UI.Desktop
 
         public override void MapearADatos()
         {
-            this.comisionActual.id_comision = Int32.Parse(this.txtID.Text);
+            //this.comisionActual.id_comision = Int32.Parse(this.txtID.Text);
             this.comisionActual.desc_comision = this.txtDesc.Text;
             this.comisionActual.anio_especialidad = Int32.Parse(this.txtAñoEsp.Text);
-            this.comisionActual.id_plan = Int32.Parse(this.txtIDplan.Text);
+            this.comisionActual.id_plan = (int)this.cbPlan.SelectedValue;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
