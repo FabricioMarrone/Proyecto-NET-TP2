@@ -8,28 +8,34 @@ namespace Data.DataBase
 {
     public class PlanAdapter : Data.DataBase.Adapter
     {
-        private static List<Business.Entities.plane> _Planes;
-
-        public static List<Business.Entities.plane> Planes
-        {
-            get { return PlanAdapter._Planes; }
-            set { PlanAdapter._Planes = value; }
-        }
-
-
-       
-
         public Business.Entities.plane GetOne(int id)
         {
-            return new Business.Entities.plane();
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryPlan = (from pl in academiaContext.planes
+                                 where pl.id_plan == id
+                                 select pl).First();
+                return queryPlan;
+            }
+        }
+
+        public List<Business.Entities.plane> GetAll()
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryPlanes = (from pl in academiaContext.planes
+                                   select pl).ToList();
+                return queryPlanes;
+            }
         }
 
         public void Delete(int id)
         {
             this.Delete(this.GetOne(id));
         }
+
         public void Delete(Business.Entities.plane pl) {
-            Planes.Remove(pl);
+            //Planes.Remove(pl);
         }
 
         //public void Save(Plan plan)

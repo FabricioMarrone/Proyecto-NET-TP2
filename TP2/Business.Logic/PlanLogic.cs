@@ -27,10 +27,10 @@ namespace Business.Logic
             return this._planData.GetOne(id);
         }
 
-        //public List<Business.Entities.plane> GetAll()
-        //{
-        //    //return this._planData.GetAll();
-        //}
+        public List<Business.Entities.plane> GetAll()
+        {
+            return this.PlanData.GetAll();
+        }
 
         public void Save(Business.Entities.plane pl)
         {
