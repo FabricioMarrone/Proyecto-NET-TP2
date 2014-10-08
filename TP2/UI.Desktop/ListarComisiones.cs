@@ -1,24 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Business.Logic;
+using Business.Entities;
 
 namespace UI.Desktop
 {
-    public partial class ListarComisiones : UI.Desktop.ListarBase
+    class ListarComisiones : ListarBase
     {
-        public ListarComisiones()
-        {
-            InitializeComponent();
-            this.GenerarColumnas();
-            this.Listar();
-        }
 
-        public override void GenerarColumnas(){
+        public override void GenerarColumnas()
+        {
             DataGridViewColumn dgvColumn;
 
             dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");
@@ -40,5 +34,41 @@ namespace UI.Desktop
             this.dgvListar.DataSource = comisionesLogic.GetAll();
         }
 
-    }
+        public override void Nuevo_Click(object sender, EventArgs e)
+        {
+            ComisionesABM form = new ComisionesABM(ApplicationForm.ModoForm.Alta);
+            form.ShowDialog();
+            this.Listar();
+        }
+
+        public override void Editar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = ((comisione)this.dgvListar.SelectedRows[0].DataBoundItem).id_comision;
+                ComisionesABM form = new ComisionesABM(id, ApplicationForm.ModoForm.Modificacion);
+                form.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error en el metodo tsbEditar_Click  de Clase listarcomisiones");
+            }
+        }
+
+        public override void Eliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = ((comisione)this.dgvListar.SelectedRows[0].DataBoundItem).id_comision;
+                ComisionesABM form = new ComisionesABM(id, ApplicationForm.ModoForm.Baja);
+                form.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error en el metodo tsbEliminar_Click  de Clase listacomisione");
+            }
+        }
+    }//end class
 }

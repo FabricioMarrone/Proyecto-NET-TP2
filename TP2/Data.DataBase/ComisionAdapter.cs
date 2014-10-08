@@ -8,59 +8,78 @@ namespace Data.DataBase
 {
     public class ComisionAdapter : Adapter
     {
-        private static List<comisione> _Comisiones;
-
-        public static List<comisione> Comisiones
-        {
-            get { return ComisionAdapter._Comisiones; }
-            set { ComisionAdapter._Comisiones = value; }
-        }
 
         public comisione GetOne(int id)
         {
-            return new comisione();
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from com in academiaContext.comisiones
+                                where com.id_comision == id
+                                select com).Single();
+
+                return querySQL;
+            }
         }
 
         public List<comisione> GetAll()
         {
-            return new List<comisione>(Comisiones);
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from com in academiaContext.comisiones
+                                select com).ToList();
+
+                return querySQL;
+            }
         }
 
-        //public void Save(Business.Entities.comisione comision)
-        //{
-        //    switch (comision.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            int nuevoId = 0;
-        //            // esta busqueda podria reemplazarse por un OrderBy que orden por ID.
-        //            foreach (Comision com in Comisiones)
-        //            {
-        //                if (com.Id > nuevoId)
-        //                {
-        //                    nuevoId = com.Id;
-        //                }
-        //            }
-        //            comision.Id = nuevoId + 1;
-        //            Comisiones.Add(comision);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            Comisiones[Comisiones.FindIndex(delegate(Comision c) { return c.Id == comision.Id; })] = comision;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(comision);
-        //            break;
-        //    }
-        //    comision.State = BusinessEntity.States.Unmodified;
-        //}
+        public void Insert(comisione com)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.comisiones.Add(com);
+                academiaContext.SaveChanges();
+            }
+        }
+
+        public void Update(comisione com)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryGetOne = (from co in academiaContext.comisiones
+                                   where co.id_comision == com.id_comision
+                                   select co).First();
+                comisione c = queryGetOne;
+
+                c.id_plan = com.id_plan;
+                c.desc_comision = com.desc_comision;
+                c.anio_especialidad = com.anio_especialidad;
+                
+                academiaContext.SaveChanges();
+            }
+
+        }
 
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var query = (from com in academiaContext.comisiones
+                             where com.id_comision == id
+                             select com).First();
+                academiaContext.comisiones.Remove(query);
+                academiaContext.SaveChanges();
+            }
         }
 
         public void Delete(comisione comision)
         {
-            Comisiones.Remove(comision);
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.comisiones.Remove(comision);
+                academiaContext.SaveChanges();
+            }
         }
 
     }

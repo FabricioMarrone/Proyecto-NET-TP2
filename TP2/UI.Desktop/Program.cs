@@ -18,8 +18,8 @@ namespace UI.Desktop
             //Application.Run(new formMain());
             //Application.Run(new UsuarioDesktop());
             //Application.Run(new ListarUsuarios());
-            Application.Run(new ListarEspecialidades());
-           
+            //Application.Run(new ListarEspecialidades());
+            Application.Run(new ListarComisiones());
         }
     }
 }

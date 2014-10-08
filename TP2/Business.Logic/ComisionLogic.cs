@@ -9,33 +9,45 @@ namespace Business.Logic
 {
     public class ComisionLogic : BusinessLogic
     {
-        private Data.DataBase.ComisionAdapter _comisionData;
+        private ComisionAdapter _comisionData;
 
         public ComisionLogic()
         {
             this._comisionData = new ComisionAdapter();
         }
 
-        public Data.DataBase.ComisionAdapter ComisionData
+        public ComisionAdapter ComisionData
         {
             get { return _comisionData; }
             set { _comisionData = value; }
         }
 
-        public Business.Entities.comisione GetOne(int id)
+        public comisione GetOne(int id)
         {
             return this._comisionData.GetOne(id); 
         }
 
-        public List<Business.Entities.comisione> GetAll()
+        public List<comisione> GetAll()
         {
             return this._comisionData.GetAll();
         }
 
-        //public void Save(Business.Entities.comisione comision)
-        //{
-        //    this._comisionData.Save(comision);
-        //}
+        public void Save(comisione comision, string modo)
+        {
+            switch (modo)
+            {
+                case "Alta":
+                    this.ComisionData.Insert(comision);
+                    break;
+                case "Baja":
+                    this.ComisionData.Delete(comision.id_comision);
+                    break;
+                case "Modificacion":
+                    //revisar No se necesita pasar el USR.
+                    this.ComisionData.Update(comision);
+                    break;
+            }
+        }
 
         public void Delete(int id)
         {

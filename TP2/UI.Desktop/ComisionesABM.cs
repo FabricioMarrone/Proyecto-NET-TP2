@@ -6,38 +6,40 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Business.Logic;
 using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class EspecialidadesABM : ApplicationForm
+    public partial class ComisionesABM : ApplicationForm
     {
-        public especialidade especialidadActual;
+        public comisione comisionActual;
 
-        public EspecialidadesABM()
+        public ComisionesABM()
         {
             InitializeComponent();
         }
 
-        public EspecialidadesABM(ModoForm modo) : this() 
+        public ComisionesABM(ModoForm modo): this()
         {
             this.Modo = modo;
-            this.especialidadActual = new especialidade();
+            this.comisionActual = new comisione();
         }
 
-        public EspecialidadesABM(int id, ModoForm modo) : this() 
+        public ComisionesABM(int id, ModoForm modo): this()
         {
             this.Modo = modo;
-            EspecialidadLogic logic = new EspecialidadLogic();
-            this.especialidadActual = logic.GetOne(id);
+            ComisionLogic logic = new ComisionLogic();
+            this.comisionActual = logic.GetOne(id);
             this.MapearDeDatos();
         }
 
         public override void MapearDeDatos() 
         {
-            this.txtID.Text = this.especialidadActual.id_especialidad.ToString();
-            this.txtDesc.Text = this.especialidadActual.desc_especialidad;
+            this.txtID.Text = this.comisionActual.id_comision.ToString();
+            this.txtDesc.Text = this.comisionActual.desc_comision;
+            this.txtAñoEsp.Text = this.comisionActual.anio_especialidad.ToString();
+            this.txtIDplan.Text = this.comisionActual.id_plan.ToString();
 
             switch (this.Modo)
             {
@@ -46,8 +48,10 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
-                     this.txtID.Enabled = false;
-                     this.txtDesc.Enabled = false;
+                    this.txtID.Enabled = false;
+                    this.txtDesc.Enabled = false;
+                    this.txtAñoEsp.Enabled = false;
+                    this.txtIDplan.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
@@ -67,7 +71,9 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-            if (this.txtID.Text == "" || this.txtDesc.Text == "") {
+            if (this.txtID.Text == "" || this.txtDesc.Text == "" || this.txtAñoEsp.Text == "" || 
+                this.txtIDplan.Text == "")
+            {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -76,23 +82,24 @@ namespace UI.Desktop
             return true;
         }
 
-        public override void GuardarCambios() 
+        public override void GuardarCambios()
         {
             this.MapearADatos();
-            EspecialidadLogic logic = new EspecialidadLogic();
-            logic.Save(this.especialidadActual, this.Modo.ToString());
+            ComisionLogic logic = new ComisionLogic();
+            logic.Save(this.comisionActual, this.Modo.ToString());
         }
 
-        public override void MapearADatos() 
+        public override void MapearADatos()
         {
-            this.especialidadActual.id_especialidad = Int32.Parse(this.txtID.Text);
-            this.especialidadActual.desc_especialidad = this.txtDesc.Text;
+            this.comisionActual.id_comision = Int32.Parse(this.txtID.Text);
+            this.comisionActual.desc_comision = this.txtDesc.Text;
+            this.comisionActual.anio_especialidad = Int32.Parse(this.txtAñoEsp.Text);
+            this.comisionActual.id_plan = Int32.Parse(this.txtIDplan.Text);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
     }//end class
 }

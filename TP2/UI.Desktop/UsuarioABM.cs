@@ -52,9 +52,18 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
+                    this.txtID.Enabled = false;
+                    this.chkHabilitado.Enabled = false;
+                    this.txtNombre.Enabled = false;
+                    this.txtApellido.Enabled = false;
+                    this.txtEmail.Enabled = false;
+                    this.txtUsuario.Enabled = false;
+                    this.txtClave.Enabled = false;
+                    this.txtConfirmarClave.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
+                    this.txtID.Enabled = false;
                     break;
             }
         }

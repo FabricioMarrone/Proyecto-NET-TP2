@@ -56,6 +56,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComisionesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComisionesABM.Designer.cs">
+      <DependentUpon>ComisionesABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadesABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="ListarBase.Designer.cs">
       <DependentUpon>ListarBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListarEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComisionesABM.resx">
+      <DependentUpon>ComisionesABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadesABM.resx">
       <DependentUpon>EspecialidadesABM.cs</DependentUpon>
