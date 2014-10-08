@@ -13,7 +13,7 @@ namespace UI.Desktop
 {
     public partial class UsuarioABM : ApplicationForm
     {
-        public Business.Entities.usuario UsuarioActual;
+        public usuario UsuarioActual;
 
         public UsuarioABM()
         {
@@ -23,13 +23,13 @@ namespace UI.Desktop
         public UsuarioABM(ModoForm modo): this()
         {
             this.Modo = modo;
-            this.UsuarioActual = new Business.Entities.usuario();
+            this.UsuarioActual = new usuario();
         }
 
         public UsuarioABM(int id, ModoForm modo) : this()
         {
             this.Modo = modo;
-            Business.Logic.UsuarioLogic oUsuarioLog = new UsuarioLogic();
+            UsuarioLogic oUsuarioLog = new UsuarioLogic();
             this.UsuarioActual = oUsuarioLog.GetOne(id);
             this.MapearDeDatos();
         }
@@ -71,22 +71,27 @@ namespace UI.Desktop
         public override bool Validar()
         {
             //llamar a funciones de la capa Util, valir cadenas.
-            if (this.txtNombre.Text.Trim() == "" || this.txtApellido.Text.Trim() == "" || this.txtEmail.Text.Trim() == "" || this.txtUsuario.Text.Trim() == "" || this.txtClave.Text.Trim() == "" || this.txtConfirmarClave.Text.Trim() == "")
+            if (this.txtNombre.Text.Trim() == "" || this.txtApellido.Text.Trim() == "" 
+                || this.txtEmail.Text.Trim() == "" || this.txtUsuario.Text.Trim() == "" 
+                || this.txtClave.Text.Trim() == "" || this.txtConfirmarClave.Text.Trim() == "")
             {
-                this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
             if (!(this.txtClave.Text.Equals(this.txtConfirmarClave.Text)))
             {
-                this.Notificar("Clave Incorrecta", "La Claves y Conformacion Clave deben ser iguales.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Notificar("Clave Incorrecta", "La Claves y Conformacion Clave deben ser iguales.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
             else
             {
                 if (this.txtClave.Text.Length < 8)
                 {
-                    this.Notificar("Clave Incorrecta", "La Claves debe tener al menos 8 caracteres.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Notificar("Clave Incorrecta", "La Claves debe tener al menos 8 caracteres.", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false;
                 }
             }
@@ -96,7 +101,7 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             this.MapearADatos();
-            Business.Logic.UsuarioLogic oUsuarioLog = new UsuarioLogic();
+            UsuarioLogic oUsuarioLog = new UsuarioLogic();
             oUsuarioLog.Save(this.UsuarioActual, this.Modo.ToString());    
         }
 

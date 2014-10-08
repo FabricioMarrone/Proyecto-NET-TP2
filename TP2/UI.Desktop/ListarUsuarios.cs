@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
 
 namespace UI.Desktop
 {
@@ -34,7 +36,7 @@ namespace UI.Desktop
 
         public override void Listar()
         {
-            Business.Logic.UsuarioLogic oUsuarios = new Business.Logic.UsuarioLogic();
+            UsuarioLogic oUsuarios = new UsuarioLogic();
             try
             {
                 this.dgvListar.DataSource = oUsuarios.GetAll();
@@ -47,7 +49,7 @@ namespace UI.Desktop
 
         public override void Nuevo_Click(object sender, EventArgs e)
         {
-            UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(UsuarioABM.ModoForm.Alta);
+            UsuarioABM formUsuDesk = new UsuarioABM(ApplicationForm.ModoForm.Alta);
             formUsuDesk.ShowDialog();
             this.Listar();
         }
@@ -56,9 +58,9 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((Business.Entities.usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
+                int id = ((usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
 
-                UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(id, UsuarioABM.ModoForm.Modificacion);
+                UsuarioABM formUsuDesk = new UsuarioABM(id, ApplicationForm.ModoForm.Modificacion);
                 formUsuDesk.ShowDialog();
                 this.Listar();
             }
@@ -73,9 +75,9 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((Business.Entities.usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
+                int id = ((usuario)this.dgvListar.SelectedRows[0].DataBoundItem).id_usuario;
 
-                UI.Desktop.UsuarioABM formUsuDesk = new UsuarioABM(id, UsuarioABM.ModoForm.Baja);
+                UsuarioABM formUsuDesk = new UsuarioABM(id, ApplicationForm.ModoForm.Baja);
                 formUsuDesk.ShowDialog();
                 this.Listar();
             }

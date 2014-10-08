@@ -9,20 +9,14 @@ namespace Business.Logic
 {
     public class EspecialidadLogic : BusinessLogic
     {
-        private Data.DataBase.EspecialidadAdapter _EspecialidadData;
-
-        public Data.DataBase.EspecialidadAdapter EspecialidadData
-        {
-            get { return _EspecialidadData; }
-            set { _EspecialidadData = value; }
-        }
+        private EspecialidadAdapter _EspecialidadData;
 
         public EspecialidadLogic()
         {
             this._EspecialidadData = new EspecialidadAdapter();
         }
 
-        public Business.Entities.especialidade GetOne(int id)
+        public especialidade GetOne(int id)
         {
             return this._EspecialidadData.GetOne(id);
         }
@@ -30,13 +24,25 @@ namespace Business.Logic
         public List<especialidade> GetAll()
         {
             return this._EspecialidadData.GetAll();
-            //return EspecialidadAdapter.Especialidades;
         }
 
-        //public void Save(Business.Entities.especialidade especialidad)
-        //{
-        //    this._EspecialidadData.Save(especialidad);
-        //}
+        public void Save(especialidade especialidad, string modo)
+        {
+            switch (modo)
+            {
+                case "Alta":
+                    this._EspecialidadData.Insert(especialidad);
+                    break;
+                case "Baja":
+                    this._EspecialidadData.Delete(especialidad.id_especialidad);
+                    break;
+                case "Modificacion":
+                    //revisar No se necesita pasar el USR.
+                    this._EspecialidadData.Update(especialidad);
+                    break;
+            }
+           
+        }
 
         public void Delete(int id)
         {

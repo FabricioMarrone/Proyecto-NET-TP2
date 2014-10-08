@@ -98,7 +98,7 @@ namespace Data.DataBase
 
         }
 
-        public void Delete(Business.Entities.usuario usr) {
+        public void Delete(usuario usr) {
             try
             {
                 using (AcademiaEntities academiaContext = new AcademiaEntities())

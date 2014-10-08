@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Business.Logic;
+using Business.Entities;
 
 namespace UI.Desktop
 {
@@ -28,17 +29,38 @@ namespace UI.Desktop
 
         public override void Nuevo_Click(object sender, EventArgs e)
         {
-
+            EspecialidadesABM form = new EspecialidadesABM(ApplicationForm.ModoForm.Alta);
+            form.ShowDialog();
+            this.Listar();
         }
 
         public override void Editar_Click(object sender, EventArgs e)
         {
-
+            try 
+            { 
+                int id = ((especialidade)this.dgvListar.SelectedRows[0].DataBoundItem).id_especialidad;
+                EspecialidadesABM form = new EspecialidadesABM(id, ApplicationForm.ModoForm.Modificacion);
+                form.ShowDialog();
+                this.Listar();
+            }catch(Exception)
+            {
+                Console.WriteLine("Error en el metodo tsbEditar_Click  de Clase ListarEspecialidades");
+            }
         }
 
         public override void Eliminar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int id = ((especialidade)this.dgvListar.SelectedRows[0].DataBoundItem).id_especialidad;
+                EspecialidadesABM form = new EspecialidadesABM(id, ApplicationForm.ModoForm.Baja);
+                form.ShowDialog();
+                this.Listar();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error en el metodo tsbEliminar_Click  de Clase ListarEspecialidades");
+            }
         }
     }//end class
 }

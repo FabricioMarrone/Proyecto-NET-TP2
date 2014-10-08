@@ -52,6 +52,10 @@ namespace Business.Logic
             }
         }
 
+        public void Delete(int id) {
+            this.UsuarioData.Delete(id);
+        }
+
         public void Save(usuario usr, string modo)
         {
             try
