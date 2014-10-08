@@ -18,7 +18,7 @@ namespace UI.Desktop
             this.Listar();
         }
 
-        protected override void GenerarColumnas(){
+        public override void GenerarColumnas(){
             DataGridViewColumn dgvColumn;
 
             dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");

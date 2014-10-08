@@ -8,17 +8,18 @@ namespace Data.DataBase
 {
     public class EspecialidadAdapter : Adapter
     {
-        private static List<especialidade> _Especialidades;
 
-        public static List<especialidade> Especialidades
+        public especialidade GetOne(int id)
         {
-            get { return EspecialidadAdapter._Especialidades; }
-            set { EspecialidadAdapter._Especialidades = value; }
-        }
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from esp in academiaContext.especialidades
+                                where esp.id_especialidad == id
+                                select esp).Single();
 
-        public Business.Entities.especialidade GetOne(int id)
-        {
-            return new Business.Entities.especialidade();
+                return querySQL;
+            }
         }
 
         public List<especialidade> GetAll()
@@ -31,31 +32,50 @@ namespace Data.DataBase
             }
         }
 
-        //public void Save(especialidade especialidad)
-        //{
-        //    switch (especialidad.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            Especialidades.Add(especialidad);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            Especialidades[Especialidades.FindIndex(delegate(Especialidad e) { return e.Id == especialidad.Id; })] = especialidad;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(especialidad);
-        //            break;
-        //    }
-        //    especialidad.State = BusinessEntity.States.Unmodified;
-        //}
+        public void Insert(especialidade esp)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.especialidades.Add(esp);
+                academiaContext.SaveChanges();
+            }
+        }
+
+        public void Update(especialidade esp)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryGetOne = (from es in academiaContext.especialidades
+                                   where es.id_especialidad == esp.id_especialidad
+                                   select es).First();
+                especialidade e = queryGetOne;
+
+                e.desc_especialidad = esp.desc_especialidad;
+
+                academiaContext.SaveChanges();
+            }
+
+        }
 
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var query = (from esp in academiaContext.especialidades
+                             where esp.id_especialidad == id
+                             select esp).First();
+                academiaContext.especialidades.Remove(query);
+                academiaContext.SaveChanges();
+            }
         }
 
         public void Delete(especialidade especialidad)
         {
-            Especialidades.Remove(especialidad);
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.especialidades.Remove(especialidad);
+                academiaContext.SaveChanges();
+            }
         }
     }
 }

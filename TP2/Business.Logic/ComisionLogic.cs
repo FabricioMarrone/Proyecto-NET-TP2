@@ -27,10 +27,10 @@ namespace Business.Logic
             return this._comisionData.GetOne(id); 
         }
 
-        //public List<Business.Entities.comisione> GetAll()
-        //{
-        //    return this._comisionData.GetAll();
-        //}
+        public List<Business.Entities.comisione> GetAll()
+        {
+            return this._comisionData.GetAll();
+        }
 
         //public void Save(Business.Entities.comisione comision)
         //{

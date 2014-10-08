@@ -6,22 +6,22 @@ using Business.Entities;
 
 namespace Data.DataBase
 {
-    public class ComisionAdapter : Data.DataBase.Adapter
+    public class ComisionAdapter : Adapter
     {
-        private static List<Business.Entities.comisione> _Comisiones;
+        private static List<comisione> _Comisiones;
 
-        public static List<Business.Entities.comisione> Comisiones
+        public static List<comisione> Comisiones
         {
             get { return ComisionAdapter._Comisiones; }
             set { ComisionAdapter._Comisiones = value; }
         }
 
-        public Business.Entities.comisione GetOne(int id)
+        public comisione GetOne(int id)
         {
-            return new Business.Entities.comisione();
+            return new comisione();
         }
 
-        public List<Business.Entities.comisione> GetAll()
+        public List<comisione> GetAll()
         {
             return new List<comisione>(Comisiones);
         }
@@ -58,7 +58,7 @@ namespace Data.DataBase
             this.Delete(this.GetOne(id));
         }
 
-        public void Delete(Business.Entities.comisione comision)
+        public void Delete(comisione comision)
         {
             Comisiones.Remove(comision);
         }

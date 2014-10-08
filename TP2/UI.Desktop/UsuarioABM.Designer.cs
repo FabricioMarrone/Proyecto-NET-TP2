@@ -235,15 +235,15 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // UsuarioDesktop
+            // UsuarioABM
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 135);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UsuarioDesktop";
-            this.Text = "UsuarioDesktop";
+            this.Name = "UsuarioABM";
+            this.Text = "UsuarioABM";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
