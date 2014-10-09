@@ -23,5 +23,6 @@ namespace Business.Entities
         public string desc_especialidad { get; set; }
     
         public virtual ICollection<plane> planes { get; set; }
+
     }
 }

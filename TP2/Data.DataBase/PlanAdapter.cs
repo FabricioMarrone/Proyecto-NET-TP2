@@ -6,9 +6,9 @@ using Business.Entities;
 
 namespace Data.DataBase
 {
-    public class PlanAdapter : Data.DataBase.Adapter
+    public class PlanAdapter : Adapter
     {
-        public Business.Entities.plane GetOne(int id)
+        public plane GetOne(int id)
         {
             using (AcademiaEntities academiaContext = new AcademiaEntities())
             {
@@ -19,7 +19,7 @@ namespace Data.DataBase
             }
         }
 
-        public List<Business.Entities.plane> GetAll()
+        public List<plane> GetAll()
         {
             using (AcademiaEntities academiaContext = new AcademiaEntities())
             {
@@ -29,42 +29,52 @@ namespace Data.DataBase
             }
         }
 
+        public void Insert(plane pl)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.planes.Add(pl);
+                academiaContext.SaveChanges();
+            }
+        }
+
+        public void Update(plane plan)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryGetOne = (from pl in academiaContext.planes
+                                   where pl.id_plan == plan.id_plan
+                                   select pl).First();
+                plane p = queryGetOne;
+
+                p.id_plan = plan.id_plan;
+                p.desc_plan = plan.desc_plan;
+                p.id_especialidad = plan.id_especialidad;
+
+                academiaContext.SaveChanges();
+            }
+
+        }
+
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var query = (from pl in academiaContext.planes
+                             where pl.id_plan == id
+                             select pl).First();
+                academiaContext.planes.Remove(query);
+                academiaContext.SaveChanges();
+            }
         }
 
-        public void Delete(Business.Entities.plane pl) {
-            //Planes.Remove(pl);
+        public void Delete(plane pl) {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.planes.Remove(pl);
+                academiaContext.SaveChanges();
+            }
         }
-
-        //public void Save(Plan plan)
-        //{
-        //    switch (plan.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            int nuevoId = 0;
-        //            // esta busqueda podria reemplazarse por un OrderBy que orden por ID.
-        //            foreach (Plan pl in Planes)
-        //            {
-        //                if(pl.Id > nuevoId){
-        //                    nuevoId = pl.Id;
-        //                }
-        //            }
-        //            plan.Id = nuevoId + 1;
-        //            Planes.Add(plan);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            Planes[Planes.FindIndex(delegate(Plan p) { return p.Id == plan.Id; })] = plan;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(plan);
-        //            break;
-        //    }
-        //    plan.State = BusinessEntity.States.Unmodified;
-
-        //}
-
 
     }
 }

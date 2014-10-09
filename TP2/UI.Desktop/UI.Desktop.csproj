@@ -92,8 +92,17 @@
     <Compile Include="ListarEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ListarPlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListarUsuarios.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesABM.Designer.cs">
+      <DependentUpon>PlanesABM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListarBase.resx">
       <DependentUpon>ListarBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanesABM.resx">
+      <DependentUpon>PlanesABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
