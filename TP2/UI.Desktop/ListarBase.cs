@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -23,36 +22,50 @@ namespace UI.Desktop
 
         public DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
         {
-            return CrearNuevaColumna(typeColumn.TEXTBOX, name, header, propName);
+            return CrearNuevaColumna(typeColumn.TEXTBOX, name, header, propName, null, null);
+        }
+
+        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
+        {
+            return CrearNuevaColumna(type, name, header, propName, null, null);
         }
 
         /// <summary>
         /// Devuelve un tipo de DataGridViewColum listo para ser agregado al DataGridView.
         /// </summary>
-        /// <param name="type">TipoDeColumnaRequerida</param>
-        /// <param name="name">NombreDeReferenciaDeLaColumna</param>
-        /// <param name="header">TituloDeLaColumna</param>
-        /// <param name="propName">propiedadDeUnEntityAsociadaALaColumna</param>
-        /// <returns></returns>
-        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
+        /// <param name="type">Tipo Columna Requerida</param>
+        /// <param name="name">Nombre Referencia de la Columna</param>
+        /// <param name="header">Titulo de la Columna</param>
+        /// <param name="propName">Propiedad de Entidad Asociada a la Columna</param>
+        /// <param name="descEntity">Valor a mostrar en ComboBox</param>
+        /// <param name="source">Origen de Datos para CombosBox</param>
+        /// <returns>DataGridVieColum</returns>
+        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName, string descEntity, System.Collections.IList source)
         {
+
             DataGridViewColumn dgvc;
             switch (type)
             {
                 case typeColumn.TEXTBOX:
                     dgvc = new DataGridViewTextBoxColumn();
                     break;
+
                 case typeColumn.CHECKBOX:
                     dgvc = new DataGridViewCheckBoxColumn();
                     break;
+
                 case typeColumn.COMBOBOX:
-                    dgvc = new DataGridViewComboBoxColumn();
+                    DataGridViewComboBoxColumn dgvcbxc = new DataGridViewComboBoxColumn();
+                    dgvcbxc.DataSource = source;
+                    dgvcbxc.ValueMember = propName;
+                    dgvcbxc.DisplayMember = descEntity;
+                    dgvc = (DataGridViewColumn)dgvcbxc;
                     break;
+
                 default:
                     dgvc = new DataGridViewColumn();
                     break;
             }
-
             dgvc.Name = name;
             dgvc.HeaderText = header;
             dgvc.DataPropertyName = propName;

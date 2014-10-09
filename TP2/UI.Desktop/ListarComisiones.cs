@@ -15,8 +15,13 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColumn;
 
-            dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");
+            //dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");
+            //this.dgvListar.Columns.Add(dgvColumn);
+            PlanLogic planLogic = new PlanLogic();
+            dgvColumn = this.CrearNuevaColumna(typeColumn.COMBOBOX,"plan","Plan","id_plan","desc_plan",planLogic.GetAll());
+            
             this.dgvListar.Columns.Add(dgvColumn);
+
 
             dgvColumn = this.CrearNuevaColumna("anio", "Año", "anio_especialidad");
             this.dgvListar.Columns.Add(dgvColumn);
