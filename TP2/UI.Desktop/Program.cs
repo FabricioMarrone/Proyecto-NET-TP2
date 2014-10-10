@@ -20,7 +20,9 @@ namespace UI.Desktop
             //Application.Run(new ListarUsuarios());
             //Application.Run(new ListarEspecialidades());
             //Application.Run(new ListarComisiones());
-            Application.Run(new ListarPlanes());
+            //Application.Run(new ListarPlanes());
+            //Application.Run(new ListarMaterias());
+            Application.Run(new ListarCursos());
         }
     }
 }

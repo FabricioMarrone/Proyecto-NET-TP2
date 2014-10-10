@@ -20,7 +20,6 @@ namespace UI.Desktop
             PlanLogic planLogic = new PlanLogic();
             dgvColumn = this.CrearNuevaColumna
                 (typeColumn.COMBOBOX,"plan","Plan","id_plan","desc_plan",planLogic.GetAll());
-            
             this.dgvListar.Columns.Add(dgvColumn);
 
 

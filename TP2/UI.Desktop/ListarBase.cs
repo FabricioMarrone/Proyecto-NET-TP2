@@ -16,6 +16,7 @@ namespace UI.Desktop
         {
             InitializeComponent();
             this.dgvListar.AutoGenerateColumns = false;
+            this.dgvListar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             this.GenerarColumnas();
         }
