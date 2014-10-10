@@ -70,7 +70,7 @@ namespace UI.Desktop
             dgvc.HeaderText = header;
             dgvc.DataPropertyName = propName;
             dgvc.DisplayIndex = 0;
-
+            
             return dgvc;
         }
 

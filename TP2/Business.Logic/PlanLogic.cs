@@ -9,9 +9,9 @@ namespace Business.Logic
 {
     public class PlanLogic : BusinessLogic
     {
-        private Data.DataBase.PlanAdapter _planData;
+        private PlanAdapter _planData;
 
-        public Data.DataBase.PlanAdapter PlanData
+        public PlanAdapter PlanData
         {
             get { return _planData; }
             set { _planData = value; }
@@ -22,19 +22,31 @@ namespace Business.Logic
             this.PlanData = new PlanAdapter();
         }
 
-        public Business.Entities.plane GetOne(int id)
+        public plane GetOne(int id)
         {
             return this._planData.GetOne(id);
         }
 
-        public List<Business.Entities.plane> GetAll()
+        public List<plane> GetAll()
         {
             return this.PlanData.GetAll();
         }
 
-        public void Save(Business.Entities.plane pl)
+        public void Save(plane pl, string modo)
         {
-            //this.PlanData.Save(pl);
+            switch (modo)
+            {
+                case "Alta":
+                    this.PlanData.Insert(pl);
+                    break;
+                case "Baja":
+                    this.PlanData.Delete(pl.id_plan);
+                    break;
+                case "Modificacion":
+                    //revisar No se necesita pasar el USR.
+                    this.PlanData.Update(pl);
+                    break;
+            }
         }
 
         public void Delete(int id)

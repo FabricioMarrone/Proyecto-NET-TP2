@@ -29,5 +29,6 @@ namespace Business.Entities
         public virtual especialidade especialidade { get; set; }
         public virtual ICollection<materia> materias { get; set; }
         public virtual ICollection<persona> personas { get; set; }
-    }
+
+    }//end class
 }
