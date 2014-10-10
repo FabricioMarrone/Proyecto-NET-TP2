@@ -24,22 +24,28 @@ namespace Business.Logic
 
         public Business.Entities.materia GetOne(int id)
         {
-            return this._materiaData.GetOne(id);
+            return this.MateriaData.GetOne(id);
         }
 
-        //public List<Business.Entities.materia> GetAll()
-        //{
-        //    return this._materiaData.GetAll();
-        //}
-
-        //public void Save(Business.Entities.materia materia)
-        //{
-        //    this._materiaData.Save(materia);
-        //}
-
-        public void Delete(int id)
+        public List<Business.Entities.materia> GetAll()
         {
-            this._materiaData.Delete(id);
+            return this.MateriaData.GetAll();
+        }
+
+        public void Save(Business.Entities.materia oMateria,string modo)
+        {
+            switch (modo)
+            {
+                case "Alta":
+                    this.MateriaData.Insert(oMateria);
+                    break;
+                case "Baja":
+                    this.MateriaData.Delete(oMateria.id_materia);
+                    break;
+                case "Modificacion":
+                    this.MateriaData.Update(oMateria);
+                    break;
+            }
         }
 
     }

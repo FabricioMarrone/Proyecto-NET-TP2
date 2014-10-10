@@ -8,60 +8,61 @@ namespace Data.DataBase
 {
     public class MateriaAdapter : Data.DataBase.Adapter
     {
-        private static List<Business.Entities.materia> _Materias;
-
-        public static List<Business.Entities.materia> Materias
-        {
-            get { return MateriaAdapter._Materias; }
-            set { MateriaAdapter._Materias = value; }
-        }
-
-
         public Business.Entities.materia GetOne(int id)
         {
-            return new Business.Entities.materia();
+            using(AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryMateria = (from mat in academiaContext.materias
+                                    where mat.id_materia == id
+                                    select mat).First();
+                return queryMateria;
+            }
         }
 
-        //public List<Materia> GetAll()
-        //{
-        //    return new List<Materia>(Materias);
-        //}
-
-        //public void Save(Business.Entities.materia materia)
-        //{
-        //    switch (materia.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            int nuevoId = 0;
-        //            // esta busqueda podria reemplazarse por un OrderBy que orden por ID.
-        //            foreach (Materia per in Materias)
-        //            {
-        //                if (per.Id > nuevoId)
-        //                {
-        //                    nuevoId = per.Id;
-        //                }
-        //            }
-        //            materia.Id = nuevoId + 1;
-        //            Materias.Add(materia);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            Materias[Materias.FindIndex(delegate(Materia m) { return m.Id == materia.Id; })] = materia;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(materia);
-        //            break;
-        //    }
-        //    materia.State = BusinessEntity.States.Unmodified;
-        //}
-
-        public void Delete(Business.Entities.materia materia)
+        public List<materia> GetAll()
         {
-            _Materias.Remove(materia);
+            using(AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryMaterias = (from mat in academiaContext.materias
+                                     select mat).ToList();
+                return queryMaterias;
+            }
+        }
+
+        public void Insert(materia oMateria) { 
+            using(AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.materias.Add(oMateria);
+                academiaContext.SaveChanges();
+            }
+        }
+
+        public void Update(materia oMateria) { 
+            using(AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                materia queryMateria = (from mat in academiaContext.materias
+                                        where mat.id_materia == oMateria.id_materia
+                                        select mat).First();
+                queryMateria.desc_materia = oMateria.desc_materia;
+                queryMateria.hs_semanales = oMateria.hs_semanales;
+                queryMateria.hs_totales = oMateria.hs_totales;
+                queryMateria.id_plan = oMateria.id_plan;
+
+                academiaContext.SaveChanges();
+            }
         }
 
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using(AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryMateria = (from mat in academiaContext.materias
+                                    where mat.id_materia == id
+                                   select mat).First();
+
+                academiaContext.materias.Remove(queryMateria);
+                academiaContext.SaveChanges();
+            }            
         }
     }
 }

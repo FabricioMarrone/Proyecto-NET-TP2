@@ -98,6 +98,12 @@
     <Compile Include="ListarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MateriaABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriaABM.Designer.cs">
+      <DependentUpon>MateriaABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioABM.cs">
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListarBase.resx">
       <DependentUpon>ListarBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriaABM.resx">
+      <DependentUpon>MateriaABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,6 +164,10 @@
     <ProjectReference Include="..\Business.Logic\Business.Logic.csproj">
       <Project>{87059555-6F71-4311-BD77-657E52A78068}</Project>
       <Name>Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9fad9328-b004-43e1-9e29-403976c02cc7}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
