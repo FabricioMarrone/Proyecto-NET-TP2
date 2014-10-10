@@ -25,7 +25,6 @@ namespace Data.DataBase
         public List<especialidade> GetAll()
         {
             using(AcademiaEntities context= new AcademiaEntities()){
-                //return context.especialidades.ToList<especialidade>();
                 var querySQL = (from esp in context.especialidades
                                 select esp).ToList();
                 return querySQL;
@@ -54,7 +53,6 @@ namespace Data.DataBase
 
                 academiaContext.SaveChanges();
             }
-
         }
 
         public void Delete(int id)

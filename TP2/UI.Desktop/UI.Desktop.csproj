@@ -104,6 +104,12 @@
     <Compile Include="ListarMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ListarModulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListarPlanes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,18 @@
     </Compile>
     <Compile Include="MateriaABM.Designer.cs">
       <DependentUpon>MateriaABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloABM.Designer.cs">
+      <DependentUpon>ModuloABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonaABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonaABM.Designer.cs">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanesABM.cs">
       <SubType>Form</SubType>
@@ -153,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MateriaABM.resx">
       <DependentUpon>MateriaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloABM.resx">
+      <DependentUpon>ModuloABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaABM.resx">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanesABM.resx">
       <DependentUpon>PlanesABM.cs</DependentUpon>

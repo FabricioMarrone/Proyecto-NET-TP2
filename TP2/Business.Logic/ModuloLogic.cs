@@ -7,11 +7,11 @@ using Business.Entities;
 
 namespace Business.Logic
 {
-    public class ModuloLogic : Business.Logic.BusinessLogic
+    public class ModuloLogic : BusinessLogic
     {
-        private Data.DataBase.ModuloAdapter _moduloData;
+        private ModuloAdapter _moduloData;
 
-        public Data.DataBase.ModuloAdapter ModuloData
+        public ModuloAdapter ModuloData
         {
             get { return _moduloData; }
             set { _moduloData = value; }
@@ -22,24 +22,36 @@ namespace Business.Logic
             this._moduloData = new ModuloAdapter();
         }
 
-        public void Delete(int id)
-        {
-            this._moduloData.Delete(id);
-        }
-
-        public Business.Entities.modulo GetOne(int id)
+        public modulo GetOne(int id)
         {
             return this._moduloData.GetOne(id);
         }
 
-        //public List<Business.Entities.modulo> GetAll()
-        //{
-        //    return this._moduloData.GetAll();
-        //}
-
-        public void Save(Business.Entities.modulo modulo)
+        public List<modulo> GetAll()
         {
-            //this._moduloData.Save(modulo);
+            return this._moduloData.GetAll();
         }
-    }
+
+        public void Save(modulo modulo, string modo)
+        {
+            switch (modo)
+            {
+                case "Alta":
+                    this._moduloData.Insert(modulo);
+                    break;
+                case "Baja":
+                    this._moduloData.Delete(modulo.id_modulo);
+                    break;
+                case "Modificacion":
+                    //revisar No se necesita pasar el USR.
+                    this._moduloData.Update(modulo);
+                    break;
+            }
+        }
+
+        public void Delete(int id)
+        {
+            this._moduloData.Delete(id);
+        }
+    }//end class
 }

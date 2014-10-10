@@ -41,7 +41,6 @@ namespace Business.Logic
                     this._EspecialidadData.Update(especialidad);
                     break;
             }
-           
         }
 
         public void Delete(int id)

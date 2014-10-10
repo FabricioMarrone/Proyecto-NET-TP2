@@ -14,6 +14,13 @@ namespace Business.Entities
     
     public partial class persona
     {
+        public enum tipo 
+        {
+            Alumno,     //0
+            Admin,      //1
+            Profesor    //2
+        }
+
         public persona()
         {
             this.alumnos_inscripciones = new HashSet<alumnos_inscripciones>();

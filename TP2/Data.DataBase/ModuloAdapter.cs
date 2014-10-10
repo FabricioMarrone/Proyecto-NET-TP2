@@ -6,50 +6,76 @@ using Business.Entities;
 
 namespace Data.DataBase
 {
-    public class ModuloAdapter : Data.DataBase.Adapter
+    public class ModuloAdapter : Adapter
     {
-        private static List<modulo> _Modulos;
 
-        public static List<modulo> Modulos
+        public modulo GetOne(int id)
         {
-            get { return ModuloAdapter._Modulos; }
-            set { ModuloAdapter._Modulos = value; }
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from mod in academiaContext.modulos
+                                where mod.id_modulo == id
+                                select mod).Single();
+
+                return querySQL;
+            }
         }
 
-        public Business.Entities.modulo GetOne(int id)
+        public List<modulo> GetAll()
         {
-            return new Business.Entities.modulo();
+            using (AcademiaEntities context = new AcademiaEntities())
+            {
+                //return context.especialidades.ToList<especialidade>();
+                var querySQL = (from mod in context.modulos
+                                select mod).ToList();
+                return querySQL;
+            }
         }
 
-        //public List<Business.Entities.modulo> GetAll()
-        //{
-        //    return new List<Modulo>(Modulos);
-        //}
+        public void Insert(modulo mod)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.modulos.Add(mod);
+                academiaContext.SaveChanges();
+            }
+        }
 
-        //public void Save(Business.Entities.modulo modulo)
-        //{
-        //    switch (modulo.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            Modulos.Add(modulo);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            //Aca no se que mierda hacer, no tiene ID.
-        //            Modulos[Modulos.FindIndex(delegate(Modulo m) { return m.Id == modulo.Id; })] = modulo;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(modulo);
-        //            break;
-        //    }
-        //    modulo.State = BusinessEntity.States.Unmodified;
-        //}
+        public void Update(modulo mod)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryGetOne = (from mo in academiaContext.modulos
+                                   where mo.id_modulo == mod.id_modulo
+                                   select mo).First();
+                modulo m = queryGetOne;
+
+                m.desc_modulo = mod.desc_modulo;
+                m.ejecuta = mod.ejecuta;
+
+                academiaContext.SaveChanges();
+            }
+        }
 
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var query = (from mod in academiaContext.modulos
+                             where mod.id_modulo == id
+                             select mod).First();
+                academiaContext.modulos.Remove(query);
+                academiaContext.SaveChanges();
+            }
         }
-        public void Delete(Business.Entities.modulo mod) {
-            Modulos.Remove(mod);
+
+        public void Delete(modulo mod) {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.modulos.Remove(mod);
+                academiaContext.SaveChanges();
+            }
         }
-    }
+    }//end class
 }

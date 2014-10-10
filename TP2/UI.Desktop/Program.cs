@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Business.Entities;
 
 namespace UI.Desktop
 {
@@ -15,6 +16,12 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Console.WriteLine((int)persona.tipo.Alumno);
+            //Console.WriteLine((int)persona.tipo.Admin);
+            //Console.WriteLine((int)persona.tipo.Profesor);
+            //Console.WriteLine(DateTime.Today.ToShortDateString());
+
             //Application.Run(new formMain());
             //Application.Run(new UsuarioDesktop());
             //Application.Run(new ListarUsuarios());
@@ -22,7 +29,8 @@ namespace UI.Desktop
             //Application.Run(new ListarComisiones());
             //Application.Run(new ListarPlanes());
             //Application.Run(new ListarMaterias());
-            Application.Run(new ListarCursos());
+            //Application.Run(new ListarCursos());
+            Application.Run(new ListarPersonas());
         }
     }
 }

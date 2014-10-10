@@ -7,29 +7,40 @@ using Data.DataBase;
 
 namespace Business.Logic
 {
-    public class PersonaLogic : Business.Logic.BusinessLogic
+    public class PersonaLogic : BusinessLogic
     {
-        private Data.DataBase.PersonaAdapter _personaData;
+        private PersonaAdapter _personaData;
 
-        public Data.DataBase.PersonaAdapter PersonaData
+        public PersonaLogic() 
         {
-            get { return _personaData; }
-            set { _personaData = value; }
+            this._personaData = new PersonaAdapter();
         }
 
-        public Business.Entities.persona GetOne(int id)
+        public persona GetOne(int id)
         {
             return this._personaData.GetOne(id);
         }
 
-        //public List<Business.Entities.persona> GetAll()
-        //{
-        //    //return this._personaData.GetAll();
-        //}
-
-        public void Save(Business.Entities.persona persona)
+        public List<persona> GetAll()
         {
-            //this._personaData.Save(persona);
+            return this._personaData.GetAll();
+        }
+
+        public void Save(persona persona, string modo)
+        {
+            switch (modo)
+            {
+                case "Alta":
+                    this._personaData.Insert(persona);
+                    break;
+                case "Baja":
+                    this._personaData.Delete(persona.id_persona);
+                    break;
+                case "Modificacion":
+                    //revisar No se necesita pasar el USR.
+                    this._personaData.Update(persona);
+                    break;
+            }
         }
 
         public void Delete(int id)
