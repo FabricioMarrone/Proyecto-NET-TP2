@@ -23,14 +23,15 @@ namespace UI.Desktop
             //Console.WriteLine(DateTime.Today.ToShortDateString());
 
             //Application.Run(new formMain());
-            //Application.Run(new UsuarioDesktop());
             //Application.Run(new ListarUsuarios());
             //Application.Run(new ListarEspecialidades());
             //Application.Run(new ListarComisiones());
             //Application.Run(new ListarPlanes());
             //Application.Run(new ListarMaterias());
             //Application.Run(new ListarCursos());
-            Application.Run(new ListarPersonas());
+            //Application.Run(new ListarPersonas());
+            //Application.Run(new ProfesorCursoABM(ApplicationForm.ModoForm.Alta));
+            Application.Run(new ListarDocentesCursos());
         }
     }
 }

@@ -30,5 +30,6 @@ namespace Business.Entities
         public virtual comisione comisione { get; set; }
         public virtual materia materia { get; set; }
         public virtual ICollection<docentes_cursos> docentes_cursos { get; set; }
-    }
+
+    }//end class
 }

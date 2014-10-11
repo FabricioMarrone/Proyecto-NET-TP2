@@ -86,6 +86,21 @@
     <Compile Include="formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="InscripcionAlumnoCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InscripcionAlumnoCurso.Designer.cs">
+      <DependentUpon>InscripcionAlumnoCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarDocentesCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCursoABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCursoABM.Designer.cs">
+      <DependentUpon>DocenteCursoABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCursoABM.resx">
+      <DependentUpon>DocenteCursoABM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarBase.resx">
       <DependentUpon>ListarBase.cs</DependentUpon>

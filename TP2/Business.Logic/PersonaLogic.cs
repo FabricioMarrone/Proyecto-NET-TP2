@@ -26,6 +26,11 @@ namespace Business.Logic
             return this._personaData.GetAll();
         }
 
+        public List<persona> GetAll(persona.tipo tipo)
+        {
+            return this._personaData.GetAll(tipo);
+        }
+
         public void Save(persona persona, string modo)
         {
             switch (modo)

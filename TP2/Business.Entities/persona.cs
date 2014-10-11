@@ -21,6 +21,12 @@ namespace Business.Entities
             Profesor    //2
         }
 
+        public enum cargo 
+        {
+            ProfPractica,   //0
+            ProfTeoria      //1
+        }
+
         public persona()
         {
             this.alumnos_inscripciones = new HashSet<alumnos_inscripciones>();

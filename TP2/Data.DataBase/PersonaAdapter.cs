@@ -32,6 +32,17 @@ namespace Data.DataBase
             }
         }
 
+        public List<persona> GetAll(persona.tipo tipo)
+        {
+            using (AcademiaEntities context = new AcademiaEntities())
+            {
+                var querySQL = (from per in context.personas
+                                where per.tipo_persona == (int)tipo
+                                select per).ToList();
+                return querySQL;
+            }
+        }
+
         public void Insert(persona per)
         {
             using (AcademiaEntities academiaContext = new AcademiaEntities())

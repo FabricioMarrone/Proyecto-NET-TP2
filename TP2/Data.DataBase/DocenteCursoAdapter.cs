@@ -6,61 +6,80 @@ using Business.Entities;
 
 namespace Data.DataBase
 {
-    public class DocenteCursoAdapter : Data.DataBase.Adapter
+    public class DocenteCursoAdapter : Adapter
     {
-        private static List<Business.Entities.docentes_cursos> _DocenteCursos;
 
-        public static List<Business.Entities.docentes_cursos> DocenteCursos
+        public docentes_cursos GetOne(int id)
         {
-            get { return DocenteCursoAdapter._DocenteCursos; }
-            set { DocenteCursoAdapter._DocenteCursos = value; }
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from dc in academiaContext.docentes_cursos
+                                where dc.id_dictado == id
+                                select dc).Single();
+
+                return querySQL;
+            }
         }
 
-        public Business.Entities.docentes_cursos GetOne(int id)
+        public List<docentes_cursos> GetAll()
         {
-            return new Business.Entities.docentes_cursos();
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                // Linq tipo consulta SQL
+                var querySQL = (from dc in academiaContext.docentes_cursos
+                                select dc).ToList();
+
+                return querySQL;
+            }
         }
 
-        //public List<Business.Entities.docentes_cursos> GetAll()
-        //{
-        //    return new List<DocenteCurso>(DocenteCursos);
-        //}
+        public void Insert(docentes_cursos dc)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.docentes_cursos.Add(dc);
+                academiaContext.SaveChanges();
+            }
+        }
 
-        //public void Save(Business.Entities.docentes_cursos docenteCurso)
-        //{
-        //    switch (docenteCurso.State)
-        //    {
-        //        case BusinessEntity.States.New:
-        //            int nuevoId = 0;
-        //            // esta busqueda podria reemplazarse por un OrderBy que orden por ID.
-        //            foreach (DocenteCurso dc in DocenteCursos)
-        //            {
-        //                if (dc.Id > nuevoId)
-        //                {
-        //                    nuevoId = dc.Id;
-        //                }
-        //            }
-        //            docenteCurso.Id = nuevoId + 1;
-        //            DocenteCursos.Add(docenteCurso);
-        //            break;
-        //        case BusinessEntity.States.Modified:
-        //            DocenteCursos[DocenteCursos.FindIndex(delegate(DocenteCurso dc) { return dc.Id == docenteCurso.Id; })] = docenteCurso;
-        //            break;
-        //        case BusinessEntity.States.Deleted:
-        //            this.Delete(docenteCurso);
-        //            break;
-        //    }
-        //    docenteCurso.State = BusinessEntity.States.Unmodified;            
-        //}
+        public void Update(docentes_cursos doc_cur)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryGetOne = (from dc in academiaContext.docentes_cursos
+                                   where dc.id_dictado == doc_cur.id_dictado
+                                   select dc).First();
+                docentes_cursos docu = queryGetOne;
+
+                docu.id_curso = doc_cur.id_curso;
+                docu.id_docente = doc_cur.id_docente;
+                docu.cargo = doc_cur.cargo;
+
+                academiaContext.SaveChanges();
+            }
+
+        }
 
         public void Delete(int id)
         {
-            this.Delete(this.GetOne(id));
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var query = (from dc in academiaContext.docentes_cursos
+                             where dc.id_dictado == id
+                             select dc).First();
+                academiaContext.docentes_cursos.Remove(query);
+                academiaContext.SaveChanges();
+            }
         }
 
-        public void Delete(Business.Entities.docentes_cursos docenteCurso)
+        public void Delete(docentes_cursos docenteCurso)
         {
-            DocenteCursos.Remove(docenteCurso);
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                academiaContext.docentes_cursos.Remove(docenteCurso);
+                academiaContext.SaveChanges();
+            }
         }
 
     }
