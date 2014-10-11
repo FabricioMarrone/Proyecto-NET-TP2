@@ -98,7 +98,6 @@ namespace UI.Desktop
             this.MapearADatos();
             DocenteCursoLogic logic = new DocenteCursoLogic();
             logic.save(this.docenteCursoActual, this.Modo.ToString());
-
         }
 
         public override void MapearADatos()

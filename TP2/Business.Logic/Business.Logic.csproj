@@ -49,6 +49,7 @@
     <Compile Include="CursoLogic.cs" />
     <Compile Include="DocenteCursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
+    <Compile Include="InscripcionAlumnoLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
     <Compile Include="ModuloLogic.cs" />
     <Compile Include="PersonaLogic.cs" />

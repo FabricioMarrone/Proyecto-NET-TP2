@@ -65,7 +65,7 @@
       <DependentUpon>AcademiaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Adapter.cs" />
-    <Compile Include="AlumnoInscripAdapter.cs" />
+    <Compile Include="InscripcionAlumnoAdapter.cs" />
     <Compile Include="ComisionAdapter.cs" />
     <Compile Include="CursoAdapter.cs" />
     <Compile Include="DocenteCursoAdapter.cs" />

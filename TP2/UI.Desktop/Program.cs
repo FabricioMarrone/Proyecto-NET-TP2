@@ -31,7 +31,10 @@ namespace UI.Desktop
             //Application.Run(new ListarCursos());
             //Application.Run(new ListarPersonas());
             //Application.Run(new ProfesorCursoABM(ApplicationForm.ModoForm.Alta));
-            Application.Run(new ListarDocentesCursos());
+            //Application.Run(new ListarDocentesCursos());
+            Application.Run(new ListarInscripcionesAlumnos());
+
+
         }
     }
 }
