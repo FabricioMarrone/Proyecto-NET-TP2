@@ -106,6 +106,7 @@
             this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
+            this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(476, 205);
             this.dgvListar.TabIndex = 1;
             // 
@@ -128,7 +129,7 @@
             this.tsbEliminar});
             this.tsListar.Location = new System.Drawing.Point(3, 0);
             this.tsListar.Name = "tsListar";
-            this.tsListar.Size = new System.Drawing.Size(112, 25);
+            this.tsListar.Size = new System.Drawing.Size(81, 25);
             this.tsListar.TabIndex = 0;
             // 
             // tsbNuevo

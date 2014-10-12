@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -21,13 +22,15 @@ namespace UI.Desktop
             this.CargarComboBox();
         }
 
-        public PersonaABM(ModoForm modo) : this() 
+        public PersonaABM(ModoForm modo)
+            : this()
         {
             this.Modo = modo;
             this.personaActual = new persona();
         }
 
-        public PersonaABM(int id, ModoForm modo) : this() 
+        public PersonaABM(int id, ModoForm modo)
+            : this()
         {
             this.Modo = modo;
             PersonaLogic logic = new PersonaLogic();
@@ -94,15 +97,57 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            //if (this.txtAñoCalendario.Text == "" || this.txtCupo.Text == "")
-            //{
-            //    this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return false;
-            //}
+            if (this.txtNombre.Text.Trim() == "" || this.txtApellido.Text.Trim() == "" ||
+                this.txtlegajo.Text.Trim() == "" || this.txtDireccion.Text.Trim() == "" ||
+                this.txtEmail.Text.Trim() == "" || this.txtTelefono.Text.Trim() == "" ||
+                this.txtFechaNac.Text.Trim() == "")
+            {
+                this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
 
-            this.Notificar("Atencion", "Este form no se esta validando (clase PersonaABM, metodo Validar).",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!(Validador.ValidarCadenaSoloTexto(this.txtNombre.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Nombre es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+
+            if (!(Validador.ValidarCadenaSoloTexto(this.txtApellido.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Apellido es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarLegajo(this.txtlegajo.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Legajo es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarDireccion(this.txtDireccion.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Direccion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarEMail(this.txtEmail.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Email es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarTelefono(this.txtTelefono.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Telefono es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarFecha(this.txtFechaNac.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Fecha es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+                return false;
+            }
             return true;
         }
 
@@ -123,7 +168,7 @@ namespace UI.Desktop
             this.personaActual.telefono = this.txtTelefono.Text;
             this.personaActual.fecha_nac = DateTime.Parse(this.txtFechaNac.Text);
             this.personaActual.tipo_persona = this.cbTiposPer.SelectedIndex;
-            this.personaActual.id_plan= (int)this.cbPlanes.SelectedValue;
+            this.personaActual.id_plan = (int)this.cbPlanes.SelectedValue;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

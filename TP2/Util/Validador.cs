@@ -50,11 +50,7 @@ namespace Util
 
         public static bool ValidarClave(string clave, string confirmacion)
         {
-            if (!(Regex.IsMatch(clave, @"^([a-zA-Z0-9]{8,15})$")) || !(clave.Equals(confirmacion)))
-            {
-                return false;
-            }
-            return true;
+            return ( (Regex.IsMatch(clave, @"^([a-zA-Z0-9]{8,15})$")) && (clave.Equals(confirmacion)) );
         }
 
         public static bool ValidarEMail(string email)
@@ -64,12 +60,12 @@ namespace Util
 
         public static bool ValidarFecha(string fecha)
         {
-            return Regex.IsMatch(fecha, @"^([1-31]){1,2}\/([1-12]){1,2}\/([0-9]){4}$");
+            return Regex.IsMatch(fecha, @"^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$");   
         }
 
-        public static bool ValidarCamposNoVacios(string campo)
+        public static bool ValidarCampoNoVacio(string campo)
         {
-            return campo.Trim() == "";
+            return campo.Trim() != "";
         }
 
     }

@@ -67,7 +67,6 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
-
                     break;
             }
         }
@@ -85,7 +84,6 @@ namespace UI.Desktop
             this.MapearADatos();
             MateriaLogic oMateriaLogic = new MateriaLogic();
             oMateriaLogic.Save(this.materiaActual,this.Modo.ToString());
-
         }
 
         public override bool Validar()
@@ -95,6 +93,24 @@ namespace UI.Desktop
                 this.txtHsTotales.Text.Trim()=="")
             {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if( !(Validador.ValidarCadenaSoloTexto(txtDescripcion.Text)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Descripcion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarNumericoPositivo(this.txtHsSemanales.Text,1,3)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Hs Semanales es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarNumericoPositivo(this.txtHsTotales.Text,1,3)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Hs Totales es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
