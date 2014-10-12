@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -81,11 +82,22 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-            if (/*this.txtID.Text == "" || */ this.txtDesc.Text == "" || this.txtAñoEsp.Text == "" /*|| 
-                this.txtIDplan.Text == ""*/)
+            if (this.txtDesc.Text == "" || this.txtAñoEsp.Text == "")
             {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarAnioEspecialidad(this.txtAñoEsp.Text)))
+            {
+                this.Notificar("Campo Invalido", "El campo Año Especialidad es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarCadenaTextoYNumeros(this.txtDesc.Text)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Descripcion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 

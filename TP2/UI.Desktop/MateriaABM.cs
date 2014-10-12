@@ -102,13 +102,13 @@ namespace UI.Desktop
                 return false;
             }
 
-            if ( !(Validador.ValidarNumericoPositivo(this.txtHsSemanales.Text,1,3)) )
+            if ( !(Validador.ValidarEnteroPositivo(this.txtHsSemanales.Text)) )
             {
                 this.Notificar("Campos Invalido", "El campo Hs Semanales es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
-            if ( !(Validador.ValidarNumericoPositivo(this.txtHsTotales.Text,1,3)) )
+            if (!(Validador.ValidarEnteroPositivo(this.txtHsTotales.Text)))
             {
                 this.Notificar("Campos Invalido", "El campo Hs Totales es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;

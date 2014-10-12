@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -91,6 +92,18 @@ namespace UI.Desktop
             {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (!(Validador.ValidarAnio(this.txtAñoCalendario.Text)))
+            {
+                this.Notificar("Campo Invalido", "El campo Año Calendario es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarEnteroPositivo(this.txtCupo.Text)) )
+            {
+                this.Notificar("Campo Invalido", "El campo Cupo es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 

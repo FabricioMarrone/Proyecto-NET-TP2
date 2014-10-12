@@ -51,8 +51,9 @@
             // 
             this.txtID.Location = new System.Drawing.Point(75, 18);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 1;
+            this.txtID.TabIndex = 8;
             // 
             // label2
             // 
@@ -109,6 +110,7 @@
             // 
             // PlanesABM
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 136);

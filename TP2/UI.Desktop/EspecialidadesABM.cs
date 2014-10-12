@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using Util;
 
 namespace UI.Desktop
 {
@@ -67,9 +68,14 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-            if (this.txtID.Text == "" || this.txtDesc.Text == "") {
+            if (this.txtDesc.Text == "") {
                 this.Notificar("Campos Incompletos", "Todos los campos deben ser completados.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if ( !(Validador.ValidarCadenaSoloTexto(this.txtDesc.Text)) )
+            {
+                this.Notificar("Campo Invalido", "El campo Descripcion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
@@ -85,7 +91,6 @@ namespace UI.Desktop
 
         public override void MapearADatos() 
         {
-            this.especialidadActual.id_especialidad = Int32.Parse(this.txtID.Text);
             this.especialidadActual.desc_especialidad = this.txtDesc.Text;
         }
 

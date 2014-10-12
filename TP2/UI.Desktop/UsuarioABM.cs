@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using Util;
 
 namespace UI.Desktop
 {
@@ -79,7 +80,6 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            //llamar a funciones de la capa Util, valir cadenas.
             if (this.txtNombre.Text.Trim() == "" || this.txtApellido.Text.Trim() == "" 
                 || this.txtEmail.Text.Trim() == "" || this.txtUsuario.Text.Trim() == "" 
                 || this.txtClave.Text.Trim() == "" || this.txtConfirmarClave.Text.Trim() == "")
@@ -89,21 +89,35 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (!(this.txtClave.Text.Equals(this.txtConfirmarClave.Text)))
+            if ( !(Validador.ValidarCadenaSoloTexto(this.txtNombre.Text)) )
             {
-                this.Notificar("Clave Incorrecta", "La Claves y Conformacion Clave deben ser iguales.",
+                this.Notificar("Campos Invalido", "El campo Nombre es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarCadenaSoloTexto(this.txtApellido.Text) ))
+            {
+                this.Notificar("Campos Invalido", "El campo Apellido es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if ( !(Validador.ValidarEMail(this.txtEmail.Text)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Email es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if ( !(Validador.ValidarNombreUsuario(this.txtUsuario.Text)) )
+            {
+                this.Notificar("Campos Invalido", "El campo Usuario es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( !(Validador.ValidarClave(this.txtClave.Text,this.txtConfirmarClave.Text)))
+            {
+                this.Notificar("Campos Invalido", "El campo Clave es Invalido.",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            else
-            {
-                if (this.txtClave.Text.Length < 8)
-                {
-                    this.Notificar("Clave Incorrecta", "La Claves debe tener al menos 8 caracteres.", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return false;
-                }
-            }
+
             return true;
         }
 

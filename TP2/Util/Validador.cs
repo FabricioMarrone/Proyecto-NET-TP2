@@ -8,26 +8,50 @@ namespace Util
 {
     public class Validador
     {
-        public static bool ValidarNumericoPositivo(string numero, int min, int max)
+        public static bool ValidarCadenaNumerica(string numero, int longMin, int longMax)
         {
+            // Aplicable Para Telefonos, Legajos, etc.
             string expresion = "^[0-9]";
-            if (max == 0)
+
+            if (longMax == 0)
             {
-                expresion += ("{" + min + "}$");
+                expresion += ("{" + longMin + "}$");
             }
             else
             {
-                expresion += "{" + min + "," + max + "}$";
+                expresion += "{" + longMin + "," + longMax + "}$";
             }
 
             return Regex.IsMatch(numero, expresion);
+        }
+
+        public static bool ValidarAnioEspecialidad(string numero)
+        {
+            return Regex.IsMatch(numero, @"^([1-5])$");
+        }
+
+        public static bool ValidarEnteroPositivo(string numero)
+        {
+            // Aplicable para Cantidades. Como por ej: Cupos.
+            //return Regex.IsMatch(numero, @"^([" + limiteMin + "-" + limiteMax + "])$");
+            return Regex.IsMatch(numero, @"^([1-9]|[1-9][0-9]|[1-9][0-9][0-9])$");
+        }
+
+        public static bool ValidarCadenaTextoYNumeros(string cadena)
+        {
+            return Regex.IsMatch(cadena, @"^(([a-zA-Z\d])+\s?)+$");
+        }
+
+        public static bool ValidarAnio(string numero) 
+        {
+            return Regex.IsMatch(numero, @"^20([1-9][\d])$");
         }
 
         public static bool ValidarTelefono(string numero)
         {
             // minimo = 5 para telefonos de rosario sin codigo de area.
             // maximo = 9 para telefonos con codigo de area. 
-            return ValidarNumericoPositivo(numero, 7, 11);
+            return ValidarCadenaNumerica(numero, 7, 11);
         }
 
         public static bool ValidarLegajo(string legajo)
@@ -35,12 +59,17 @@ namespace Util
             // Preguntar
             // {XX}-{XXXXX} con identificador especialidad? 
             // {XXXXX} sin identificador especialidad?
-            return ValidarNumericoPositivo(legajo, 5, 0);
+            return ValidarCadenaNumerica(legajo, 5, 0);
         }
 
         public static bool ValidarCadenaSoloTexto(string cadena)
         {
             return Regex.IsMatch(cadena, @"^(([a-zA-Z])+\s?)+$");
+        }
+
+        public static bool ValidarNombreUsuario(string cadena)
+        {
+            return Regex.IsMatch(cadena, @"^([a-zA-Z\d]+)$");
         }
 
         public static bool ValidarDireccion(string direccion)

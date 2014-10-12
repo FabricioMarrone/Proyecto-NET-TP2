@@ -29,7 +29,7 @@ namespace UI.Desktop
 
             MateriaLogic matLogic = new MateriaLogic();
             dgvColum = this.CrearNuevaColumna
-                (typeColumn.COMBOBOX, "materia", "Maeria", "id_materia", "desc_materia", matLogic.GetAll());
+                (typeColumn.COMBOBOX, "materia", "Materia", "id_materia", "desc_materia", matLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColum);
             //dgvColum = this.CrearNuevaColumna("materia", "Materia", "id_materia");
             //this.dgvListar.Columns.Add(dgvColum);

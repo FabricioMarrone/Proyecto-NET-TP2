@@ -55,8 +55,9 @@
             // 
             this.txtID.Location = new System.Drawing.Point(95, 26);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 1;
+            this.txtID.TabIndex = 12;
             // 
             // label2
             // 
@@ -126,6 +127,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAceptar.Location = new System.Drawing.Point(209, 148);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -136,6 +138,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(310, 148);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
