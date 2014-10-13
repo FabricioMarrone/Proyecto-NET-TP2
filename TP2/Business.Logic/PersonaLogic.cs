@@ -16,9 +16,10 @@ namespace Business.Logic
             this._personaData = new PersonaAdapter();
         }
 
-        public persona GetOne(int id)
+        public persona GetOne(int? id)
         {
-            return this._personaData.GetOne(id);
+            if (id == null) return null;
+            else return this._personaData.GetOne(id);
         }
 
         public List<persona> GetAll()

@@ -19,6 +19,11 @@ namespace UI.Desktop
         public UsuarioABM()
         {
             InitializeComponent();
+
+            PersonaLogic logic = new PersonaLogic();
+            this.cbPersonas.DataSource = logic.GetAll();
+            this.cbPersonas.ValueMember = "id_persona";
+            this.cbPersonas.DisplayMember = "apellido";
         }
 
         public UsuarioABM(ModoForm modo): this()
@@ -45,6 +50,7 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.nombre_usuario;
             this.txtClave.Text = this.UsuarioActual.clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.clave;
+            this.cbPersonas.SelectedValue = this.UsuarioActual.id_persona;
 
             switch (this.Modo)
             {
@@ -61,6 +67,7 @@ namespace UI.Desktop
                     this.txtUsuario.Enabled = false;
                     this.txtClave.Enabled = false;
                     this.txtConfirmarClave.Enabled = false;
+                    this.cbPersonas.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
                     this.btnAceptar.Text = "Guardar";
@@ -136,11 +143,13 @@ namespace UI.Desktop
             this.UsuarioActual.email = this.txtEmail.Text;
             this.UsuarioActual.clave = this.txtClave.Text;
             this.UsuarioActual.habilitado = this.chkHabilitado.Checked;
+            this.UsuarioActual.id_persona = (int)this.cbPersonas.SelectedValue;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

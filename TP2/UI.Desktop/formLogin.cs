@@ -13,9 +13,12 @@ namespace UI.Desktop
 {
     public partial class formLogin : Form
     {
-        public formLogin()
+        private formMain main;
+
+        public formLogin(formMain main)
         {
             InitializeComponent();
+            this.main = main;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -30,6 +33,7 @@ namespace UI.Desktop
                 if (usr.clave == this.txtPass.Text)
                 {
                     //Loggin exitoso
+                    main.Usuario = usr;
                     this.DialogResult = DialogResult.OK;
                 }
                 else { 

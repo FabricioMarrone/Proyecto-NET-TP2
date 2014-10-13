@@ -35,6 +35,15 @@ namespace UI.Desktop
             this.MapearDeDatos();
         }
 
+        public InscripcionAlumnoABM(persona per, ModoForm modo) : this() 
+        {
+            this.Modo = modo;
+            this._inscripcionAlumnoActual = new alumnos_inscripciones();
+            
+            this._inscripcionAlumnoActual.id_alumno = per.id_persona;
+            this.cbAlumnos.Enabled = false;
+        }
+
         private void loadComboBoxes()
         {
             PersonaLogic perLogic = new PersonaLogic();

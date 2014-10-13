@@ -22,7 +22,7 @@ namespace UI.Desktop
             //Console.WriteLine((int)persona.tipo.Profesor);
             //Console.WriteLine(DateTime.Today.ToShortDateString());
 
-            //Application.Run(new formMain());
+            Application.Run(new formMain());
             //Application.Run(new ListarUsuarios());
             //Application.Run(new ListarEspecialidades());
             //Application.Run(new ListarComisiones());
@@ -32,7 +32,7 @@ namespace UI.Desktop
             //Application.Run(new ListarPersonas());
             //Application.Run(new ProfesorCursoABM(ApplicationForm.ModoForm.Alta));
             //Application.Run(new ListarDocentesCursos());
-            Application.Run(new ListarInscripcionesAlumnos());
+            //Application.Run(new ListarInscripcionesAlumnos());
 
 
         }

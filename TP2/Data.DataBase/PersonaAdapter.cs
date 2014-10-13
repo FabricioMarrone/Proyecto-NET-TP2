@@ -9,7 +9,7 @@ namespace Data.DataBase
     public class PersonaAdapter : Data.DataBase.Adapter
     {
 
-        public persona GetOne(int id)
+        public persona GetOne(int? id)
         {
             using (AcademiaEntities academiaContext = new AcademiaEntities())
             {
