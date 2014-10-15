@@ -82,5 +82,17 @@ namespace Data.DataBase
             }
         }
 
-    }
+        public List<curso> getCursosDelDocente(persona docente) 
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var querySQL = (from dc in academiaContext.docentes_cursos
+                                join cur in academiaContext.cursos
+                                on dc.id_curso equals cur.id_curso
+                                where dc.id_docente == docente.id_persona
+                                select cur).ToList();
+                return querySQL;
+            }
+        }
+    }//end class
 }

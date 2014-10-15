@@ -35,6 +35,11 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnInscribirse = new System.Windows.Forms.Button();
+            this.btnNotas = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.cbCursosDelDocente = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -104,11 +109,64 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Apellido:";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(143, 65);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(87, 23);
+            this.btnModificar.TabIndex = 7;
+            this.btnModificar.Text = "Modificar datos ";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnInscribirse
+            // 
+            this.btnInscribirse.Location = new System.Drawing.Point(19, 138);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Size = new System.Drawing.Size(104, 23);
+            this.btnInscribirse.TabIndex = 8;
+            this.btnInscribirse.Text = "Inscribirse a curso";
+            this.btnInscribirse.UseVisualStyleBackColor = true;
+            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click);
+            // 
+            // btnNotas
+            // 
+            this.btnNotas.Location = new System.Drawing.Point(148, 179);
+            this.btnNotas.Name = "btnNotas";
+            this.btnNotas.Size = new System.Drawing.Size(104, 23);
+            this.btnNotas.TabIndex = 9;
+            this.btnNotas.Text = "Gestionar Notas";
+            this.btnNotas.UseVisualStyleBackColor = true;
+            this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(185, 287);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // cbCursosDelDocente
+            // 
+            this.cbCursosDelDocente.FormattingEnabled = true;
+            this.cbCursosDelDocente.Location = new System.Drawing.Point(21, 181);
+            this.cbCursosDelDocente.Name = "cbCursosDelDocente";
+            this.cbCursosDelDocente.Size = new System.Drawing.Size(121, 21);
+            this.cbCursosDelDocente.TabIndex = 11;
+            // 
             // MenuDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(352, 322);
+            this.Controls.Add(this.cbCursosDelDocente);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnNotas);
+            this.Controls.Add(this.btnInscribirse);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
@@ -132,5 +190,10 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnInscribirse;
+        private System.Windows.Forms.Button btnNotas;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox cbCursosDelDocente;
     }
 }

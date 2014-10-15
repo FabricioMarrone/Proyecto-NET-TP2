@@ -47,5 +47,6 @@ namespace Business.Logic
         {
             this._inscripcionAlumnoAdapter.Delete(id);
         }
+
     }//end class
 }

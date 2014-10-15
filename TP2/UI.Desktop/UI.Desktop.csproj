@@ -56,6 +56,12 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargarNotasCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargarNotasCurso.Designer.cs">
+      <DependentUpon>CargarNotasCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComisionesABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargarNotasCurso.resx">
+      <DependentUpon>CargarNotasCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComisionesABM.resx">
       <DependentUpon>ComisionesABM.cs</DependentUpon>

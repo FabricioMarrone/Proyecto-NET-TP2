@@ -33,6 +33,7 @@ namespace UI.Desktop
             DocenteCursoLogic logic = new DocenteCursoLogic();
             this.docenteCursoActual = logic.GetOne(id);
             this.MapearDeDatos();
+            this.cbProfesores.Enabled = false;
         }
 
         private void loadComboBoxes() 

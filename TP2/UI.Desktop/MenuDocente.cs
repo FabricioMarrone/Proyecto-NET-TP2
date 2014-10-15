@@ -33,6 +33,35 @@ namespace UI.Desktop
             this.lblLegajo.Text = this.personaActual.legajo.ToString();
             this.lblNombre.Text = this.personaActual.nombre;
             this.lblApellido.Text = this.personaActual.apellido;
+            DocenteCursoLogic docCurlogic= new DocenteCursoLogic();
+            this.cbCursosDelDocente.DataSource = docCurlogic.getCursosDelDocente(this.personaActual);
+            this.cbCursosDelDocente.ValueMember = "id_curso";
+            this.cbCursosDelDocente.DisplayMember = "id_curso";
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            PersonaABM form = new PersonaABM(this.personaActual.id_persona, ApplicationForm.ModoForm.Modificacion);
+            form.ShowDialog();
+            this.updateForm();
+        }
+
+        private void btnInscribirse_Click(object sender, EventArgs e)
+        {
+            DocenteCursoABM form = new DocenteCursoABM(this.personaActual.id_persona, ApplicationForm.ModoForm.Alta);
+            form.ShowDialog();
+            this.updateForm();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNotas_Click(object sender, EventArgs e)
+        {
+
+            this.updateForm();
         }
     }//end class
 }

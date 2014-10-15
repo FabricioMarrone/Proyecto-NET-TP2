@@ -42,5 +42,10 @@ namespace Business.Logic
                     break;
             }
         }
+
+        public List<curso> getCursosDelDocente(persona docente) 
+        {
+            return this._docenteCursoAdapter.getCursosDelDocente(docente);
+        }
     }//end class
 }
