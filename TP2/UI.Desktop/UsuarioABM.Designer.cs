@@ -210,6 +210,7 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(100, 20);
             this.txtClave.TabIndex = 13;
+            this.txtClave.UseSystemPasswordChar = true;
             // 
             // txtConfirmarClave
             // 
@@ -218,6 +219,7 @@
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.Size = new System.Drawing.Size(155, 20);
             this.txtConfirmarClave.TabIndex = 14;
+            this.txtConfirmarClave.UseSystemPasswordChar = true;
             // 
             // btnAceptar
             // 

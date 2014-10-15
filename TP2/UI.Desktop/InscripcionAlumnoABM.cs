@@ -42,6 +42,9 @@ namespace UI.Desktop
             
             this._inscripcionAlumnoActual.id_alumno = per.id_persona;
             this.cbAlumnos.Enabled = false;
+            this.txtCondicion.Text = "REGULAR";
+            this.txtCondicion.Enabled = false;
+            this.txtNota.Enabled = false;
         }
 
         private void loadComboBoxes()

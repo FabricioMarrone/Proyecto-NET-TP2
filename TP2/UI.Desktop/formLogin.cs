@@ -54,5 +54,6 @@ namespace UI.Desktop
             MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria.", "Olvidé mi contraseña", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-    }
+
+    }//end class
 }

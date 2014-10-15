@@ -10,6 +10,12 @@ namespace UI.Desktop
 {
     class ListarCursos : ListarBase
     {
+        public ListarCursos()
+            : base()
+        {
+            this.Text = "Listar Cursos";
+        }
+
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColum;

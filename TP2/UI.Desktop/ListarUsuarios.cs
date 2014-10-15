@@ -10,6 +10,12 @@ namespace UI.Desktop
 {
     public class ListarUsuarios : ListarBase
     {
+        public ListarUsuarios()
+            : base()
+        {
+            this.Text = "Listar Usuarios";
+        }
+
         public override void GenerarColumnas()
         {
             DataGridViewColumn col;

@@ -20,6 +20,8 @@ namespace UI.Desktop
             set { this._usuario = value; }
         }
 
+        private formLogin appLogin;
+
         public formMain()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace UI.Desktop
         {
             Usuario = null;
 
-            formLogin appLogin = new formLogin(this);
+            appLogin = new formLogin(this);
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
                 this.Dispose();
@@ -57,21 +59,27 @@ namespace UI.Desktop
                     return;
                 }
 
+                Form menu= new Form();
                 switch (per.tipo_persona)
                 {
                     case (int)persona.tipo.Alumno:
-                        MenuAlumno menu = new MenuAlumno(per);
-                        menu.ShowDialog();
+                        menu = new MenuAlumno(per);
                         break;
                     case (int)persona.tipo.Admin:
-
+                        menu = new MenuAdmin(per);
                         break;
                     case (int)persona.tipo.Profesor:
-
+                        menu = new MenuDocente(per);
                         break;
                 }//end switch
+                menu.ShowDialog();
 
             }//end else login ok
+        }
+
+        private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.showLogin();
         }
     }//end class
 }

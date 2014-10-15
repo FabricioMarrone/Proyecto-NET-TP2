@@ -140,6 +140,18 @@
     <Compile Include="MateriaABM.Designer.cs">
       <DependentUpon>MateriaABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDocente.Designer.cs">
+      <DependentUpon>MenuDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MateriaABM.resx">
       <DependentUpon>MateriaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdmin.resx">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDocente.resx">
+      <DependentUpon>MenuDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAlumno.resx">
       <DependentUpon>MenuAlumno.cs</DependentUpon>

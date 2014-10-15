@@ -10,6 +10,10 @@ namespace UI.Desktop
 {
     class ListarPlanes : ListarBase
     {
+        public ListarPlanes() : base()
+        {
+            this.Text = "Listar Planes";
+        }
 
         public override void GenerarColumnas()
         {

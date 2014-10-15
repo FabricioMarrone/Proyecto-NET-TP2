@@ -36,6 +36,11 @@ namespace UI.Desktop
             PersonaLogic logic = new PersonaLogic();
             this.personaActual = logic.GetOne(id);
             this.MapearDeDatos();
+            if (this.personaActual.tipo_persona != (int)persona.tipo.Admin) 
+            {
+                this.cbTiposPer.Enabled = false;
+                this.cbPlanes.Enabled = false;
+            }
         }
 
         public override void MapearDeDatos()

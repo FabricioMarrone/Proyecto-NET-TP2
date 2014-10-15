@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.iniciarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             // mnuArchivo
             // 
             this.mnuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iniciarSesiónToolStripMenuItem,
             this.mnuSalir});
             this.mnuArchivo.Name = "mnuArchivo";
             this.mnuArchivo.Size = new System.Drawing.Size(60, 20);
@@ -58,6 +60,13 @@
             this.mnuSalir.Size = new System.Drawing.Size(152, 22);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
+            // 
+            // iniciarSesiónToolStripMenuItem
+            // 
+            this.iniciarSesiónToolStripMenuItem.Name = "iniciarSesiónToolStripMenuItem";
+            this.iniciarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iniciarSesiónToolStripMenuItem.Text = "Iniciar sesión";
+            this.iniciarSesiónToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesiónToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -83,5 +92,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuArchivo;
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
+        private System.Windows.Forms.ToolStripMenuItem iniciarSesiónToolStripMenuItem;
     }
 }

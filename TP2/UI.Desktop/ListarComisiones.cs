@@ -10,6 +10,11 @@ namespace UI.Desktop
 {
     class ListarComisiones : ListarBase
     {
+        public ListarComisiones()
+            : base()
+        {
+            this.Text = "Listar Comisiones";
+        }
 
         public override void GenerarColumnas()
         {
