@@ -151,5 +151,18 @@ namespace UI.Desktop
             this.Close();
         }
 
-    }
+        private void cbPersonas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.UsuarioActual != null) 
+            {
+                int id_persona = (int)this.cbPersonas.SelectedValue;
+                PersonaLogic logic = new PersonaLogic();
+                persona p = logic.GetOne(id_persona);
+                this.txtNombre.Text = p.nombre;
+                this.txtApellido.Text = p.apellido;
+                this.txtEmail.Text = p.email;
+            }            
+        }
+
+    }//end class
 }
