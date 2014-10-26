@@ -32,6 +32,11 @@ namespace Business.Logic
             return this.MateriaData.GetAll();
         }
 
+        public List<Business.Entities.materia> GetMateriasParaInscripcion(persona oPersona)
+        {
+            return this.MateriaData.GetMateriasParaInscripcion(oPersona);
+        }
+
         public void Save(Business.Entities.materia oMateria,string modo)
         {
             switch (modo)
