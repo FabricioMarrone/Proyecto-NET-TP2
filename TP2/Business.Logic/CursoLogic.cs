@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Data.DataBase;
 using Business.Entities;
+using System.Collections;
 
 namespace Business.Logic
 {
@@ -24,6 +25,11 @@ namespace Business.Logic
         public List<curso> GetAll()
         {
             return this._cursoAdapter.GetAll();
+        }
+
+        public IList GetCursosParaInscripcion(int idMateria)
+        {
+            return this._cursoAdapter.GetCursosParaInscripcion(idMateria);
         }
 
         public void Save(curso cur, string modo)

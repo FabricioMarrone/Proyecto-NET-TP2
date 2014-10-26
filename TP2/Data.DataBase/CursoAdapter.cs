@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,25 @@ namespace Data.DataBase
                 return querySQL;
             }
         }
+
+        public IList GetCursosParaInscripcion(int idMateria)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                IList queryCursos = (from cur in academiaContext.cursos
+                                   where cur.id_materia == idMateria &&
+                                         cur.cupo > 0 &&
+                                         cur.anio_calendario == (DateTime.Now).Year
+                                   orderby cur.comisione.desc_comision
+                                   select new { 
+                                       IdCurso = cur.id_curso,
+                                       DescripcionComision = cur.comisione.desc_comision
+                                   }).ToList();
+
+                if (queryCursos.Count == 0) queryCursos = null;
+                return queryCursos;
+            }
+        } 
 
         public void Insert(curso cur)
         {

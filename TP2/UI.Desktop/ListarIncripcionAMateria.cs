@@ -17,14 +17,25 @@ namespace UI.Desktop
              /* Esto es una solucion temporal.
              * Deberia obtener el objeto Persona de la sesion actual del usuario.
              */
-        Business.Entities.persona p;
+        Business.Entities.persona personaActual;
 
         //  FUNCIONALIDAD AUN NO TERMINADA
         public enum typeColumn { TEXTBOX, CHECKBOX, COMBOBOX, BUTTON };
 
-        public ListarIncripcionAMateria()
+
+        public ListarIncripcionAMateria(/* persona oPersona */)
         {
             InitializeComponent();
+
+            /* Esto es una solucion temporal.
+            * Deberia obtener el objeto Persona de la sesion actual del usuario.
+            */
+            //this.personaActual = oPersona;
+            this.personaActual = new Business.Entities.persona();
+            this.personaActual.id_persona = 1; // Corresponde a Jose Garciar (en mi base de datos)
+            this.personaActual.id_plan = 2; // Corresponde a Plan 2008 de ISI. (en mi base de datos)
+
+
             this.dgvMaterias.AutoGenerateColumns = false;
             this.dgvMaterias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.GenerarColumnas();
@@ -92,16 +103,10 @@ namespace UI.Desktop
 
         public void Listar() 
         {
-            /* Esto es una solucion temporal.
-             * Deberia obtener el objeto Persona de la sesion actual del usuario.
-             */
-            p = new Business.Entities.persona();
-            p.id_persona = 1; // Corresponde a Jose Garcia
-            p.id_plan = 2; // Corresponde a Plan 2008 de ISI.
             try
             {
                 MateriaLogic materiaLogic = new MateriaLogic();
-                this.dgvMaterias.DataSource = materiaLogic.GetMateriasParaInscripcion(p);
+                this.dgvMaterias.DataSource = materiaLogic.GetMateriasParaInscripcion(personaActual);
             }
             catch (Exception ex)
             {
@@ -116,7 +121,7 @@ namespace UI.Desktop
             try
             {
                 materia oMateria = (materia)this.dgvMaterias.SelectedRows[0].DataBoundItem;
-                InscripcionComision formInscComision = new InscripcionComision(oMateria.id_materia, p.id_persona);
+                InscripcionComision formInscComision = new InscripcionComision(oMateria, personaActual.id_persona);
                 formInscComision.ShowDialog();
                 this.Listar();
             }

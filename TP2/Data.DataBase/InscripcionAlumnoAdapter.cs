@@ -38,6 +38,13 @@ namespace Data.DataBase
             {
                 academiaContext.alumnos_inscripciones.Add(ai);
                 academiaContext.SaveChanges();
+
+                // Resto una vacante al cupo actual del curso.
+                curso oCurso = (from cur in academiaContext.cursos
+                                where cur.id_curso == ai.id_curso
+                                select cur).First();
+                oCurso.cupo--;
+                academiaContext.SaveChanges();                
             }
         }
 

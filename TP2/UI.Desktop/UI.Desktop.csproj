@@ -229,6 +229,9 @@
     <EmbeddedResource Include="InscripcionAlumnoABM.resx">
       <DependentUpon>InscripcionAlumnoABM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InscripcionComision.resx">
+      <DependentUpon>InscripcionComision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarBase.resx">
       <DependentUpon>ListarBase.cs</DependentUpon>
     </EmbeddedResource>
