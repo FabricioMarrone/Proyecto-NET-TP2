@@ -14,6 +14,12 @@ namespace Business.Entities
     
     public partial class alumnos_inscripciones
     {
+        public enum tipoCondicion {
+            Inscripto,      //0
+            Regular,        //1
+            Libre           //2
+        }
+
         public int id_inscripcion { get; set; }
         public int id_alumno { get; set; }
         public int id_curso { get; set; }

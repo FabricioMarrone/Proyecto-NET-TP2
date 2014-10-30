@@ -14,28 +14,18 @@ namespace UI.Desktop
     public partial class ListarIncripcionAMateria : Form
     {
 
-             /* Esto es una solucion temporal.
-             * Deberia obtener el objeto Persona de la sesion actual del usuario.
-             */
-        Business.Entities.persona personaActual;
+        private persona personaActual;
 
         //  FUNCIONALIDAD AUN NO TERMINADA
         public enum typeColumn { TEXTBOX, CHECKBOX, COMBOBOX, BUTTON };
 
 
-        public ListarIncripcionAMateria(/* persona oPersona */)
+        public ListarIncripcionAMateria( persona oPersona)
         {
             InitializeComponent();
 
-            /* Esto es una solucion temporal.
-            * Deberia obtener el objeto Persona de la sesion actual del usuario.
-            */
-            //this.personaActual = oPersona;
-            this.personaActual = new Business.Entities.persona();
-            this.personaActual.id_persona = 1; // Corresponde a Jose Garciar (en mi base de datos)
-            this.personaActual.id_plan = 2; // Corresponde a Plan 2008 de ISI. (en mi base de datos)
-
-
+            this.personaActual = oPersona;
+            
             this.dgvMaterias.AutoGenerateColumns = false;
             this.dgvMaterias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.GenerarColumnas();

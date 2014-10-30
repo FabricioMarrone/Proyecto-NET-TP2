@@ -29,7 +29,7 @@ namespace UI.Desktop
             this.inscripcionActual = new alumnos_inscripciones();
             this.inscripcionActual.id_alumno = id_persona;
 //-----------> Faltaria establecer una enumeracion para las condiciones del alumno.
-            this.inscripcionActual.condicion = "Inscripto";// Solucion provisoria.
+            this.inscripcionActual.condicion = alumnos_inscripciones.tipoCondicion.Inscripto.ToString();
 
             this.oMateria = oMateria;
             this.lblMateria.Text = this.oMateria.desc_materia;

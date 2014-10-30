@@ -49,7 +49,7 @@ namespace UI.Desktop
 
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
-            InscripcionAlumnoABM form = new InscripcionAlumnoABM(this.personaActual, ApplicationForm.ModoForm.Alta);
+            ListarIncripcionAMateria form = new ListarIncripcionAMateria(this.personaActual);
             form.ShowDialog();
             this.updateForm();
         }
