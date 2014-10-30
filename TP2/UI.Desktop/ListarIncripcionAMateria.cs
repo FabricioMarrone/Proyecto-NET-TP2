@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,14 @@ namespace UI.Desktop
             try
             {
                 MateriaLogic materiaLogic = new MateriaLogic();
-                this.dgvMaterias.DataSource = materiaLogic.GetMateriasParaInscripcion(personaActual);
+                IList mats = materiaLogic.GetMateriasParaInscripcion(personaActual);
+                if (mats.Count == 0)
+                {
+                    MessageBox.Show("No hay materias disponibles para inscripción.");
+                    this.Close();
+                }
+
+                this.dgvMaterias.DataSource = mats;
             }
             catch (Exception ex)
             {
@@ -69,6 +77,7 @@ namespace UI.Desktop
                 materia oMateria = (materia)this.dgvMaterias.SelectedRows[0].DataBoundItem;
                 InscripcionComision formInscComision = new InscripcionComision(oMateria, personaActual.id_persona);
                 formInscComision.ShowDialog();
+                MessageBox.Show("Inscripción exitosa!");
                 this.Listar();
             }
             catch (Exception)

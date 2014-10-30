@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,5 +49,9 @@ namespace Business.Logic
             this._inscripcionAlumnoAdapter.Delete(id);
         }
 
+        public IList getInscripcionesDelAlumno(persona alu) 
+        {
+            return this._inscripcionAlumnoAdapter.getInscripcionesDelAlumno(alu);
+        }
     }//end class
 }

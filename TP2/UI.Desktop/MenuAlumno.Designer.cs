@@ -38,6 +38,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.btnInscribirse = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEstado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,9 +53,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(57, 144);
+            this.btnModificar.Location = new System.Drawing.Point(57, 123);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(97, 23);
+            this.btnModificar.Size = new System.Drawing.Size(118, 23);
             this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "Modificar datos";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -119,7 +120,7 @@
             // 
             // btnInscribirse
             // 
-            this.btnInscribirse.Location = new System.Drawing.Point(186, 144);
+            this.btnInscribirse.Location = new System.Drawing.Point(57, 184);
             this.btnInscribirse.Name = "btnInscribirse";
             this.btnInscribirse.Size = new System.Drawing.Size(118, 23);
             this.btnInscribirse.TabIndex = 8;
@@ -129,7 +130,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(57, 192);
+            this.btnSalir.Location = new System.Drawing.Point(57, 238);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 9;
@@ -137,11 +138,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnEstado
+            // 
+            this.btnEstado.Location = new System.Drawing.Point(57, 152);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(118, 23);
+            this.btnEstado.TabIndex = 10;
+            this.btnEstado.Text = "EstadoAcadémico";
+            this.btnEstado.UseVisualStyleBackColor = true;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
+            // 
             // MenuAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 227);
+            this.ClientSize = new System.Drawing.Size(419, 273);
+            this.Controls.Add(this.btnEstado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInscribirse);
             this.Controls.Add(this.lblApellido);
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Button btnInscribirse;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEstado;
     }
 }

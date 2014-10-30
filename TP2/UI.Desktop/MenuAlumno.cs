@@ -54,6 +54,13 @@ namespace UI.Desktop
             this.updateForm();
         }
 
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            AlumnoEstadoAcademico form = new AlumnoEstadoAcademico(this.personaActual);
+            form.ShowDialog();
+            this.updateForm();
+        }
+
 
     }//end class
 }

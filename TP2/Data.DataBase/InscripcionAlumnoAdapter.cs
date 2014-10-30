@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,6 +85,22 @@ namespace Data.DataBase
             {
                 academiaContext.alumnos_inscripciones.Remove(alumnoinscrip);
                 academiaContext.SaveChanges();
+            }
+        }
+
+        public IList getInscripcionesDelAlumno(persona alu) 
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                IList inscripciones = (from ai in academiaContext.alumnos_inscripciones
+                                     where ai.id_alumno == alu.id_persona
+                                     select new {
+                                         NombreMateria = ai.curso.materia.desc_materia, 
+                                         Año = ai.curso.anio_calendario,
+                                         Condicion = ai.condicion, 
+                                         Nota = ai.nota}).ToList();
+
+                return inscripciones;
             }
         }
 
