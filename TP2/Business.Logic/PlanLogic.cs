@@ -53,5 +53,54 @@ namespace Business.Logic
         {
             this.PlanData.Delete(id);
         }
-    }
+
+        public static PlanExtended getPlanExtended(plane plan)
+        {
+            return new PlanExtended(plan);
+        }
+
+        public static List<PlanExtended> getPlanesExtended(List<plane> planes)
+        {
+            List<PlanExtended> list = new List<PlanExtended>();
+            foreach (plane p in planes)
+            {
+                list.Add(getPlanExtended(p));
+            }
+            return list;
+        }
+
+        public class PlanExtended 
+        {
+            private int id_plan;
+            private string desc_plan;
+            private string especialidad;
+            #region propiedades
+            public string Especialidad
+            {
+                get { return especialidad; }
+                set { especialidad = value; }
+            }
+
+            public string Desc_plan
+            {
+                get { return desc_plan; }
+                set { desc_plan = value; }
+            }
+
+            public int Id_plan
+            {
+                get { return id_plan; }
+                set { id_plan = value; }
+            }
+            #endregion
+            public PlanExtended(plane plan) 
+            {
+                this.Id_plan = plan.id_plan;
+                this.Desc_plan = plan.desc_plan;
+                EspecialidadLogic logic = new EspecialidadLogic();
+                this.Especialidad = logic.GetOne(plan.id_especialidad).desc_especialidad;
+            }
+        }//end sub class
+
+    }//end class
 }

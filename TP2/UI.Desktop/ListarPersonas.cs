@@ -13,16 +13,15 @@ namespace UI.Desktop
         public ListarPersonas()
             : base()
         {
-            this.Text = "Listar Personas";
+            this.Text = "Listado de Personas";
+            this.Width = this.Width + 300;
         }
 
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColum;
 
-            PlanLogic planLogic = new PlanLogic();
-            dgvColum = ListarBase.CrearNuevaColumna
-                (typeColumn.COMBOBOX, "plan", "plan", "id_plan", "desc_plan", planLogic.GetAll());
+            dgvColum = ListarBase.CrearNuevaColumna("Plan", "Plan", "plan");
             this.dgvListar.Columns.Add(dgvColum);
 
             //No funca el combo con el enum!!
@@ -60,7 +59,7 @@ namespace UI.Desktop
         public override void Listar()
         {
             PersonaLogic logic = new PersonaLogic();
-            this.dgvListar.DataSource = logic.GetAll();
+            this.dgvListar.DataSource = PersonaLogic.getPersonasExtended(logic.GetAll());
         }
 
         public override void Nuevo_Click(object sender, EventArgs e)

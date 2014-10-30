@@ -12,16 +12,14 @@ namespace UI.Desktop
     {
         public ListarPlanes() : base()
         {
-            this.Text = "Listar Planes";
+            this.Text = "Listado de Planes";
         }
 
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColumn;
 
-            //dgvColumn = this.CrearNuevaColumna("especialidad", "Especialidad", "id_especialidad");
-            EspecialidadLogic espLogic = new EspecialidadLogic();
-            dgvColumn = ListarBase.CrearNuevaColumna(typeColumn.COMBOBOX, "especialidad", "Especialidad", "id_especialidad", "desc_especialidad", espLogic.GetAll());
+            dgvColumn = ListarBase.CrearNuevaColumna("especialidad", "Especialidad", "especialidad");
             this.dgvListar.Columns.Add(dgvColumn);
 
             dgvColumn = ListarBase.CrearNuevaColumna("plan", "plan", "desc_plan");
@@ -34,7 +32,7 @@ namespace UI.Desktop
         public override void Listar()
         {
             PlanLogic logic = new PlanLogic();
-            this.dgvListar.DataSource = logic.GetAll();
+            this.dgvListar.DataSource = PlanLogic.getPlanesExtended(logic.GetAll());
         }
 
         public override void Nuevo_Click(object sender, EventArgs e)

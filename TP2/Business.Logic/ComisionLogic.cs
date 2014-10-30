@@ -53,5 +53,61 @@ namespace Business.Logic
         {
             this._comisionData.Delete(id);
         }
-    }
+
+        public static ComisionExtended getComisionExtended(comisione com)
+        {
+            return new ComisionExtended(com);
+        }
+
+        public static List<ComisionExtended> getComisionesExtended(List<comisione> comisiones)
+        {
+            List<ComisionExtended> list = new List<ComisionExtended>();
+            foreach (comisione c in comisiones)
+            {
+                list.Add(getComisionExtended(c));
+            }
+            return list;
+        }
+
+        public class ComisionExtended 
+        {
+            private int id_comision;
+            private string desc_comision;
+            private int anio_especialidad;
+            private string plan;
+            #region propiedades
+            public string Plan
+            {
+                get { return plan; }
+                set { plan = value; }
+            }
+
+            public int Anio_especialidad
+            {
+                get { return anio_especialidad; }
+                set { anio_especialidad = value; }
+            }
+
+            public string Desc_comision
+            {
+                get { return desc_comision; }
+                set { desc_comision = value; }
+            }
+
+            public int Id_comision
+            {
+                get { return id_comision; }
+                set { id_comision = value; }
+            }
+            #endregion
+            public ComisionExtended(comisione com) 
+            {
+                this.Id_comision = com.id_comision;
+                this.Desc_comision = com.desc_comision;
+                this.Anio_especialidad = com.anio_especialidad;
+                PlanLogic logic = new PlanLogic();
+                this.Plan = logic.GetOne(com.id_plan).desc_plan;
+            }
+        }//end sub class
+    }//end class
 }

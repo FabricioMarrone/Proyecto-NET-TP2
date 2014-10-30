@@ -13,20 +13,15 @@ namespace UI.Desktop
         public ListarComisiones()
             : base()
         {
-            this.Text = "Listar Comisiones";
+            this.Text = "Listado de Comisiones";
         }
 
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColumn;
 
-            //dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");
-            //this.dgvListar.Columns.Add(dgvColumn);
-            PlanLogic planLogic = new PlanLogic();
-            dgvColumn = ListarBase.CrearNuevaColumna
-                (typeColumn.COMBOBOX,"plan","Plan","id_plan","desc_plan",planLogic.GetAll());
+            dgvColumn = ListarBase.CrearNuevaColumna("plan", "Plan", "plan");
             this.dgvListar.Columns.Add(dgvColumn);
-
 
             dgvColumn = ListarBase.CrearNuevaColumna("anio", "Año", "anio_especialidad");
             this.dgvListar.Columns.Add(dgvColumn);
@@ -41,7 +36,7 @@ namespace UI.Desktop
         public override void Listar()
         {
             ComisionLogic comisionesLogic = new ComisionLogic();
-            this.dgvListar.DataSource = comisionesLogic.GetAll();
+            this.dgvListar.DataSource = ComisionLogic.getComisionesExtended(comisionesLogic.GetAll());
         }
 
         public override void Nuevo_Click(object sender, EventArgs e)

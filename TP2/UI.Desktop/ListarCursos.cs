@@ -13,7 +13,7 @@ namespace UI.Desktop
         public ListarCursos()
             : base()
         {
-            this.Text = "Listar Cursos";
+            this.Text = "Listado de Cursos";
         }
 
         public override void GenerarColumnas()
@@ -26,30 +26,20 @@ namespace UI.Desktop
             dgvColum = ListarBase.CrearNuevaColumna("año", "Año calendario", "anio_calendario");
             this.dgvListar.Columns.Add(dgvColum);
 
-            ComisionLogic comLogic = new ComisionLogic();
-            dgvColum = ListarBase.CrearNuevaColumna
-                (typeColumn.COMBOBOX, "comision", "Comision", "id_comision", "desc_comision", comLogic.GetAll());
+            dgvColum = ListarBase.CrearNuevaColumna("comision", "Comision", "comision");
             this.dgvListar.Columns.Add(dgvColum);
-            //dgvColum = this.CrearNuevaColumna("comision", "Comision", "id_comision");
-            //this.dgvListar.Columns.Add(dgvColum);
 
-            MateriaLogic matLogic = new MateriaLogic();
-            dgvColum = ListarBase.CrearNuevaColumna
-                (typeColumn.COMBOBOX, "materia", "Materia", "id_materia", "desc_materia", matLogic.GetAll());
+            dgvColum = ListarBase.CrearNuevaColumna("materia", "Materia", "materia");
             this.dgvListar.Columns.Add(dgvColum);
-            //dgvColum = this.CrearNuevaColumna("materia", "Materia", "id_materia");
-            //this.dgvListar.Columns.Add(dgvColum);
 
             dgvColum = ListarBase.CrearNuevaColumna("id", "ID", "id_curso");
             this.dgvListar.Columns.Add(dgvColum);
-
-           
         }
 
         public override void Listar()
         {
             CursoLogic logic = new CursoLogic();
-            this.dgvListar.DataSource = logic.GetAll();
+            this.dgvListar.DataSource = CursoLogic.getCursosExtended(logic.GetAll());
         }
 
         public override void Nuevo_Click(object sender, EventArgs e)

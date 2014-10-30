@@ -71,7 +71,36 @@ namespace Business.Logic
         public class CursoExtended 
         {
             private int id_curso;
-            private string desc;
+            private string desc;    //<-- este es exclusivo para mostrar un curso en un combo box
+            private string materia;
+            private string comision;
+            private int anio_calendario;
+            private int cupo;
+
+            #region propiedades
+            public int Cupo
+            {
+                get { return cupo; }
+                set { cupo = value; }
+            }
+
+            public int Anio_calendario
+            {
+                get { return anio_calendario; }
+                set { anio_calendario = value; }
+            }
+
+            public string Comision
+            {
+                get { return comision; }
+                set { comision = value; }
+            }
+                
+            public string Materia
+            {
+                get { return materia; }
+                set { materia = value; }
+            }
 
             public string DESC
             {
@@ -83,18 +112,22 @@ namespace Business.Logic
                 get { return id_curso; }
                 set { id_curso = value; }
             }
+            #endregion
 
             public CursoExtended(curso cur)
             {
-
                 this.ID_CURSO = cur.id_curso;
                 MateriaLogic logic = new MateriaLogic();
                 materia mat = logic.GetOne(cur.id_materia);
+                this.Materia = mat.desc_materia;
                 ComisionLogic comLogic = new ComisionLogic();
                 comisione com = comLogic.GetOne(cur.id_comision);
+                this.Comision = com.desc_comision;
                 this.DESC = mat.desc_materia + " (Com:" + com.desc_comision + ")";
-
+                this.Anio_calendario = cur.anio_calendario;
+                this.Cupo = cur.cupo;
             }
+
         }//end sub class
 
     }//end class

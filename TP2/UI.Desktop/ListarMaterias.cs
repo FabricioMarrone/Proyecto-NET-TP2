@@ -18,8 +18,8 @@ namespace UI.Desktop
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColum;
-            PlanLogic planLogic = new PlanLogic();
-            dgvColum = ListarBase.CrearNuevaColumna(typeColumn.COMBOBOX, "plan", "Plan", "id_plan", "desc_plan", planLogic.GetAll());
+
+            dgvColum = ListarBase.CrearNuevaColumna("plan", "Plan", "plan");
             this.dgvListar.Columns.Add(dgvColum);
 
             dgvColum = ListarBase.CrearNuevaColumna("horasTotales", "Horas Totales", "hs_totales");
@@ -40,7 +40,7 @@ namespace UI.Desktop
             MateriaLogic materiaLogic = new MateriaLogic();
             try
             {
-                this.dgvListar.DataSource = materiaLogic.GetAll();
+                this.dgvListar.DataSource = MateriaLogic.getMateriasExtended(materiaLogic.GetAll());
             }
             catch (Exception ex)
             {
