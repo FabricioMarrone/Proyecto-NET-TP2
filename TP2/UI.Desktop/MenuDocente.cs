@@ -34,9 +34,9 @@ namespace UI.Desktop
             this.lblNombre.Text = this.personaActual.nombre;
             this.lblApellido.Text = this.personaActual.apellido;
             DocenteCursoLogic docCurlogic= new DocenteCursoLogic();
-            this.cbCursosDelDocente.DataSource = docCurlogic.getCursosDelDocente(this.personaActual);
+            this.cbCursosDelDocente.DataSource = CursoLogic.getCursosExtended(docCurlogic.getCursosDelDocente(this.personaActual));
             this.cbCursosDelDocente.ValueMember = "id_curso";
-            this.cbCursosDelDocente.DisplayMember = "id_curso";
+            this.cbCursosDelDocente.DisplayMember = "desc";
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

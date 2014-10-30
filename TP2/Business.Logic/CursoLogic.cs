@@ -53,5 +53,49 @@ namespace Business.Logic
         {
             this._cursoAdapter.Delete(id);
         }
+
+        public static CursoExtended getCursoExtended(curso cur) 
+        {
+            return new CursoExtended(cur);
+        }
+
+        public static List<CursoExtended> getCursosExtended(List<curso> cursos)
+        {
+            List<CursoExtended> list = new List<CursoExtended>();
+            foreach (curso cur in cursos) {
+                list.Add(getCursoExtended(cur));
+            }
+            return list;
+        }
+
+        public class CursoExtended 
+        {
+            private int id_curso;
+            private string desc;
+
+            public string DESC
+            {
+                get { return desc; }
+                set { desc = value; }
+            }
+            public int ID_CURSO
+            {
+                get { return id_curso; }
+                set { id_curso = value; }
+            }
+
+            public CursoExtended(curso cur)
+            {
+
+                this.ID_CURSO = cur.id_curso;
+                MateriaLogic logic = new MateriaLogic();
+                materia mat = logic.GetOne(cur.id_materia);
+                ComisionLogic comLogic = new ComisionLogic();
+                comisione com = comLogic.GetOne(cur.id_comision);
+                this.DESC = mat.desc_materia + " (Com:" + com.desc_comision + ")";
+
+            }
+        }//end sub class
+
     }//end class
 }

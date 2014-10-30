@@ -71,7 +71,7 @@
             this.cbCursos.FormattingEnabled = true;
             this.cbCursos.Location = new System.Drawing.Point(93, 98);
             this.cbCursos.Name = "cbCursos";
-            this.cbCursos.Size = new System.Drawing.Size(121, 21);
+            this.cbCursos.Size = new System.Drawing.Size(196, 21);
             this.cbCursos.TabIndex = 3;
             // 
             // label3

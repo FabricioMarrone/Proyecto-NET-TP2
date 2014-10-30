@@ -40,6 +40,7 @@
             this.btnNotas = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.cbCursosDelDocente = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -131,7 +132,7 @@
             // 
             // btnNotas
             // 
-            this.btnNotas.Location = new System.Drawing.Point(148, 179);
+            this.btnNotas.Location = new System.Drawing.Point(234, 225);
             this.btnNotas.Name = "btnNotas";
             this.btnNotas.Size = new System.Drawing.Size(104, 23);
             this.btnNotas.TabIndex = 9;
@@ -152,16 +153,27 @@
             // cbCursosDelDocente
             // 
             this.cbCursosDelDocente.FormattingEnabled = true;
-            this.cbCursosDelDocente.Location = new System.Drawing.Point(21, 181);
+            this.cbCursosDelDocente.Location = new System.Drawing.Point(19, 227);
             this.cbCursosDelDocente.Name = "cbCursosDelDocente";
-            this.cbCursosDelDocente.Size = new System.Drawing.Size(121, 21);
+            this.cbCursosDelDocente.Size = new System.Drawing.Size(209, 21);
             this.cbCursosDelDocente.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 18);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Cursos del docente:";
             // 
             // MenuDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 322);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbCursosDelDocente);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNotas);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Button btnNotas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cbCursosDelDocente;
+        private System.Windows.Forms.Label label3;
     }
 }

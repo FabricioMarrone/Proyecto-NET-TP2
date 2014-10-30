@@ -55,9 +55,9 @@ namespace UI.Desktop
             this.cbAlumnos.DisplayMember = "apellido";
 
             CursoLogic curLogic = new CursoLogic();
-            this.cbCursos.DataSource = curLogic.GetAll();
+            this.cbCursos.DataSource = CursoLogic.getCursosExtended(curLogic.GetAll());
             this.cbCursos.ValueMember = "id_curso";
-            this.cbCursos.DisplayMember = "id_curso";
+            this.cbCursos.DisplayMember = "desc";
         }
 
         public override void MapearDeDatos()
