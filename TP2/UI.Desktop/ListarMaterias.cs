@@ -19,19 +19,19 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColum;
             PlanLogic planLogic = new PlanLogic();
-            dgvColum = this.CrearNuevaColumna(typeColumn.COMBOBOX,"plan", "Plan", "id_plan","desc_plan",planLogic.GetAll());
+            dgvColum = ListarBase.CrearNuevaColumna(typeColumn.COMBOBOX, "plan", "Plan", "id_plan", "desc_plan", planLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("horasTotales","Horas Totales","hs_totales");
+            dgvColum = ListarBase.CrearNuevaColumna("horasTotales", "Horas Totales", "hs_totales");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("horasSemanales", "Horas Semanales", "hs_semanales");
+            dgvColum = ListarBase.CrearNuevaColumna("horasSemanales", "Horas Semanales", "hs_semanales");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("descMateria", "Descripcion Materia", "desc_materia");
+            dgvColum = ListarBase.CrearNuevaColumna("descMateria", "Descripcion Materia", "desc_materia");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("idMateria", "ID", "id_materia");
+            dgvColum = ListarBase.CrearNuevaColumna("idMateria", "ID", "id_materia");
             this.dgvListar.Columns.Add(dgvColum);
         }
 

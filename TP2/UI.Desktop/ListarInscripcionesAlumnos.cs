@@ -14,19 +14,19 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColumn;
 
-            dgvColumn = this.CrearNuevaColumna("nota", "nota", "nota");
+            dgvColumn = ListarBase.CrearNuevaColumna("nota", "nota", "nota");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("condicion", "condicion", "condicion");
+            dgvColumn = ListarBase.CrearNuevaColumna("condicion", "condicion", "condicion");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("curso", "Curso", "id_curso");
+            dgvColumn = ListarBase.CrearNuevaColumna("curso", "Curso", "id_curso");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("alumno", "Alumno", "id_alumno");
+            dgvColumn = ListarBase.CrearNuevaColumna("alumno", "Alumno", "id_alumno");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("id", "ID", "id_inscripcion");
+            dgvColumn = ListarBase.CrearNuevaColumna("id", "ID", "id_inscripcion");
             this.dgvListar.Columns.Add(dgvColumn);
         }
 

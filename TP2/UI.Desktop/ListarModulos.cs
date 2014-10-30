@@ -14,13 +14,13 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColumn;
 
-            dgvColumn = this.CrearNuevaColumna("ejecuta", "Ejecuta", "ejecuta");
+            dgvColumn = ListarBase.CrearNuevaColumna("ejecuta", "Ejecuta", "ejecuta");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("descipcion", "Descripcion", "desc_modulo");
+            dgvColumn = ListarBase.CrearNuevaColumna("descipcion", "Descripcion", "desc_modulo");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("id", "ID", "id_modulo");
+            dgvColumn = ListarBase.CrearNuevaColumna("id", "ID", "id_modulo");
             this.dgvListar.Columns.Add(dgvColumn);
         }
 

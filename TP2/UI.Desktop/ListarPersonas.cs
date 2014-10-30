@@ -21,7 +21,7 @@ namespace UI.Desktop
             DataGridViewColumn dgvColum;
 
             PlanLogic planLogic = new PlanLogic();
-            dgvColum = this.CrearNuevaColumna
+            dgvColum = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX, "plan", "plan", "id_plan", "desc_plan", planLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColum);
 
@@ -29,31 +29,31 @@ namespace UI.Desktop
             //dgvColum = this.CrearNuevaColumna
             //    (typeColumn.COMBOBOX, "tipoPersona", "Tipo persona", null, null, 
             //    Enum.GetValues(typeof(persona.tipo)));
-            dgvColum = this.CrearNuevaColumna("tipoPersona", "Tipo persona", "tipo_persona");
+            dgvColum = ListarBase.CrearNuevaColumna("tipoPersona", "Tipo persona", "tipo_persona");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("legajo", "legajo", "legajo");
+            dgvColum = ListarBase.CrearNuevaColumna("legajo", "legajo", "legajo");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("fechaNac", "Fecha Nacimiento", "fecha_nac");
+            dgvColum = ListarBase.CrearNuevaColumna("fechaNac", "Fecha Nacimiento", "fecha_nac");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("telefono", "telefono", "telefono");
+            dgvColum = ListarBase.CrearNuevaColumna("telefono", "telefono", "telefono");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("email", "Email", "email");
+            dgvColum = ListarBase.CrearNuevaColumna("email", "Email", "email");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("direccion", "Direccion", "direccion");
+            dgvColum = ListarBase.CrearNuevaColumna("direccion", "Direccion", "direccion");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("apellido", "Apellido", "apellido");
+            dgvColum = ListarBase.CrearNuevaColumna("apellido", "Apellido", "apellido");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("nombre", "Nombre", "nombre");
+            dgvColum = ListarBase.CrearNuevaColumna("nombre", "Nombre", "nombre");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("id", "ID", "id_persona");
+            dgvColum = ListarBase.CrearNuevaColumna("id", "ID", "id_persona");
             this.dgvListar.Columns.Add(dgvColum);
         }
 

@@ -20,27 +20,27 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColum;
 
-            dgvColum = this.CrearNuevaColumna("cupo", "Cupo", "cupo");
+            dgvColum = ListarBase.CrearNuevaColumna("cupo", "Cupo", "cupo");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("año", "Año calendario", "anio_calendario");
+            dgvColum = ListarBase.CrearNuevaColumna("año", "Año calendario", "anio_calendario");
             this.dgvListar.Columns.Add(dgvColum);
 
             ComisionLogic comLogic = new ComisionLogic();
-            dgvColum = this.CrearNuevaColumna
+            dgvColum = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX, "comision", "Comision", "id_comision", "desc_comision", comLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColum);
             //dgvColum = this.CrearNuevaColumna("comision", "Comision", "id_comision");
             //this.dgvListar.Columns.Add(dgvColum);
 
             MateriaLogic matLogic = new MateriaLogic();
-            dgvColum = this.CrearNuevaColumna
+            dgvColum = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX, "materia", "Materia", "id_materia", "desc_materia", matLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColum);
             //dgvColum = this.CrearNuevaColumna("materia", "Materia", "id_materia");
             //this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("id", "ID", "id_curso");
+            dgvColum = ListarBase.CrearNuevaColumna("id", "ID", "id_curso");
             this.dgvListar.Columns.Add(dgvColum);
 
            

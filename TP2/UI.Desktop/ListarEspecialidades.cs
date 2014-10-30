@@ -14,10 +14,10 @@ namespace UI.Desktop
         {
             DataGridViewColumn dgvColum;
 
-            dgvColum = this.CrearNuevaColumna("especialidad", "Especialidad", "desc_especialidad");
+            dgvColum = ListarBase.CrearNuevaColumna("especialidad", "Especialidad", "desc_especialidad");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("id", "ID", "id_especialidad");
+            dgvColum = ListarBase.CrearNuevaColumna("id", "ID", "id_especialidad");
             this.dgvListar.Columns.Add(dgvColum);
         }
 

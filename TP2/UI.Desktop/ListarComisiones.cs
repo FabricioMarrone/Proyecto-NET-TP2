@@ -23,18 +23,18 @@ namespace UI.Desktop
             //dgvColumn = this.CrearNuevaColumna("plan", "Plan", "id_plan");
             //this.dgvListar.Columns.Add(dgvColumn);
             PlanLogic planLogic = new PlanLogic();
-            dgvColumn = this.CrearNuevaColumna
+            dgvColumn = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX,"plan","Plan","id_plan","desc_plan",planLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColumn);
 
 
-            dgvColumn = this.CrearNuevaColumna("anio", "Año", "anio_especialidad");
+            dgvColumn = ListarBase.CrearNuevaColumna("anio", "Año", "anio_especialidad");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("comision", "Comision", "desc_comision");
+            dgvColumn = ListarBase.CrearNuevaColumna("comision", "Comision", "desc_comision");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("id", "ID", "id_comision");
+            dgvColumn = ListarBase.CrearNuevaColumna("id", "ID", "id_comision");
             this.dgvListar.Columns.Add(dgvColumn);
         }
 

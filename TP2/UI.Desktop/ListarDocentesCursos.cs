@@ -15,20 +15,20 @@ namespace UI.Desktop
             DataGridViewColumn dgvColumn;
 
             PersonaLogic perLogic = new PersonaLogic();
-            dgvColumn = this.CrearNuevaColumna
+            dgvColumn = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX, "docente", "Docente", "id_persona", "apellido", 
                 perLogic.GetAll(persona.tipo.Profesor));
             this.dgvListar.Columns.Add(dgvColumn);
 
             CursoLogic curLogic = new CursoLogic();
-            dgvColumn = this.CrearNuevaColumna
+            dgvColumn = ListarBase.CrearNuevaColumna
                 (typeColumn.COMBOBOX, "curso", "Curso", "id_curso", "id_curso", curLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("cargo", "Cargo", "cargo");
+            dgvColumn = ListarBase.CrearNuevaColumna("cargo", "Cargo", "cargo");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("id", "ID", "id_dictado");
+            dgvColumn = ListarBase.CrearNuevaColumna("id", "ID", "id_dictado");
             this.dgvListar.Columns.Add(dgvColumn);
         }
 

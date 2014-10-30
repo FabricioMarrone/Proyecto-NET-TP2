@@ -16,10 +16,6 @@ namespace UI.Desktop
 
         private persona personaActual;
 
-        //  FUNCIONALIDAD AUN NO TERMINADA
-        public enum typeColumn { TEXTBOX, CHECKBOX, COMBOBOX, BUTTON };
-
-
         public ListarIncripcionAMateria( persona oPersona)
         {
             InitializeComponent();
@@ -34,63 +30,23 @@ namespace UI.Desktop
         private void GenerarColumnas() 
         {
             DataGridViewColumn dgvColum;
-            dgvColum = this.CrearNuevaColumna(typeColumn.BUTTON, "btnInscripcion", "Inscribirme", null);
+            dgvColum = ListarBase.CrearNuevaColumna(ListarBase.typeColumn.BUTTON, "btnInscripcion", "Inscribirme", null);
             this.dgvMaterias.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("semanalesMateria", "Hs Semanales", "hs_semanales");
+            dgvColum = ListarBase.CrearNuevaColumna("semanalesMateria", "Hs Semanales", "hs_semanales");
             this.dgvMaterias.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("nombreMateria", "Materia", "desc_materia");
+            dgvColum = ListarBase.CrearNuevaColumna("nombreMateria", "Materia", "desc_materia");
             this.dgvMaterias.Columns.Add(dgvColum);
 
-            dgvColum = this.CrearNuevaColumna("idMateria", "Id", "id_materia");
+            dgvColum = ListarBase.CrearNuevaColumna("idMateria", "Id", "id_materia");
             this.dgvMaterias.Columns.Add(dgvColum);
 
             this.dgvMaterias.CellClick += new DataGridViewCellEventHandler(dgvMaterias_CellClick);
         }
 
 
-        private DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
-        {
-            return CrearNuevaColumna(typeColumn.TEXTBOX, name, header, propName);
-        }
-
-        /// <summary>
-        /// Devuelve un tipo de DataGridViewColum listo para ser agregado al DataGridView.
-        /// </summary>
-        /// <param name="type">Tipo Columna Requerida</param>
-        /// <param name="name">Nombre Referencia de la Columna</param>
-        /// <param name="header">Titulo de la Columna</param>
-        /// <param name="propName">Propiedad de Entidad Asociada a la Columna</param>
-        /// <returns>DataGridVieColum</returns>
-        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
-        {
-            switch (type)
-            {
-                case typeColumn.TEXTBOX:
-                    DataGridViewTextBoxColumn dgvc = new DataGridViewTextBoxColumn();
-                    dgvc.Name = name;
-                    dgvc.HeaderText = header;
-                    dgvc.DataPropertyName = propName;
-                    dgvc.DisplayIndex = 0;
-                    dgvc.ReadOnly = true;
-                    return dgvc;
-
-                case typeColumn.BUTTON:
-                    DataGridViewButtonColumn dgvbc = new DataGridViewButtonColumn();
-                    dgvbc.Name = name;
-                    dgvbc.HeaderText = header;
-                    //dgvbc.DataPropertyName = propName;
-                    dgvbc.DisplayIndex = 0;
-                    dgvbc.Text = header;
-                    dgvbc.UseColumnTextForButtonValue = true;
-                    return dgvbc;
-            }
-
-            return null;
-            
-        }
-
+       
         public void Listar() 
         {
             try

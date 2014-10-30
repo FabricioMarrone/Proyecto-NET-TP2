@@ -21,15 +21,13 @@ namespace UI.Desktop
 
             //dgvColumn = this.CrearNuevaColumna("especialidad", "Especialidad", "id_especialidad");
             EspecialidadLogic espLogic = new EspecialidadLogic();
-            dgvColumn = this.CrearNuevaColumna
-                (typeColumn.COMBOBOX, "especialidad", "Especialidad", "id_especialidad", "desc_especialidad", 
-                espLogic.GetAll());
+            dgvColumn = ListarBase.CrearNuevaColumna(typeColumn.COMBOBOX, "especialidad", "Especialidad", "id_especialidad", "desc_especialidad", espLogic.GetAll());
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("plan", "plan", "desc_plan");
+            dgvColumn = ListarBase.CrearNuevaColumna("plan", "plan", "desc_plan");
             this.dgvListar.Columns.Add(dgvColumn);
 
-            dgvColumn = this.CrearNuevaColumna("id", "ID", "id_plan");
+            dgvColumn = ListarBase.CrearNuevaColumna("id", "ID", "id_plan");
             this.dgvListar.Columns.Add(dgvColumn);
         }
 

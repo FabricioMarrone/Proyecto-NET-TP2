@@ -20,23 +20,23 @@ namespace UI.Desktop
         {
             DataGridViewColumn col;
 
-            col = this.CrearNuevaColumna(typeColumn.CHECKBOX, "habilitado", "Habilitado", "habilitado");
+            col = ListarBase.CrearNuevaColumna(typeColumn.CHECKBOX, "habilitado", "Habilitado", "habilitado");
             this.dgvListar.Columns.Add(col);
 
-            col = this.CrearNuevaColumna("email", "EMail", "email");
+            col = ListarBase.CrearNuevaColumna("email", "EMail", "email");
             col.Width = 250;
             this.dgvListar.Columns.Add(col);
 
-            col = this.CrearNuevaColumna("usuario", "Usuario", "nombre_usuario");
+            col = ListarBase.CrearNuevaColumna("usuario", "Usuario", "nombre_usuario");
             this.dgvListar.Columns.Add(col);
 
-            col = this.CrearNuevaColumna("nombre", "Nombre", "nombre");
+            col = ListarBase.CrearNuevaColumna("nombre", "Nombre", "nombre");
             this.dgvListar.Columns.Add(col);
 
-            col = this.CrearNuevaColumna("apellido", "Apellido", "apellido");
+            col = ListarBase.CrearNuevaColumna("apellido", "Apellido", "apellido");
             this.dgvListar.Columns.Add(col);
 
-            col = this.CrearNuevaColumna("id", "ID", "id_usuario");
+            col = ListarBase.CrearNuevaColumna("id", "ID", "id_usuario");
             this.dgvListar.Columns.Add(col);
         }
 

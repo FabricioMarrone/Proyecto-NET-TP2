@@ -10,7 +10,7 @@ namespace UI.Desktop
 {
     public abstract partial class ListarBase : Form
     {
-        public enum typeColumn {TEXTBOX,CHECKBOX,COMBOBOX};
+        public enum typeColumn {TEXTBOX,CHECKBOX,COMBOBOX, BUTTON};
 
         public ListarBase()
         {
@@ -21,12 +21,12 @@ namespace UI.Desktop
             this.GenerarColumnas();
         }
 
-        public DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
+        public static DataGridViewColumn CrearNuevaColumna(string name, string header, string propName)
         {
             return CrearNuevaColumna(typeColumn.TEXTBOX, name, header, propName, null, null);
         }
 
-        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
+        public static DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName)
         {
             return CrearNuevaColumna(type, name, header, propName, null, null);
         }
@@ -41,7 +41,7 @@ namespace UI.Desktop
         /// <param name="descEntity">Valor a mostrar en ComboBox</param>
         /// <param name="source">Origen de Datos para CombosBox</param>
         /// <returns>DataGridVieColum</returns>
-        public DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName, string descEntity, System.Collections.IList source)
+        public static DataGridViewColumn CrearNuevaColumna(typeColumn type, string name, string header, string propName, string descEntity, System.Collections.IList source)
         {
 
             DataGridViewColumn dgvc;
@@ -63,6 +63,12 @@ namespace UI.Desktop
                     dgvc = (DataGridViewColumn)dgvcbxc;
                     break;
 
+                case typeColumn.BUTTON:
+                    DataGridViewButtonColumn dgvbc = new DataGridViewButtonColumn();
+                    dgvbc.Text = header;
+                    dgvbc.UseColumnTextForButtonValue = true;
+                    dgvc = (DataGridViewColumn)dgvbc;
+                    break;
                 default:
                     dgvc = new DataGridViewColumn();
                     break;
