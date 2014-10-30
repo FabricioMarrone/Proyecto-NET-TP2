@@ -104,5 +104,17 @@ namespace Data.DataBase
             }
         }
 
+        public List<alumnos_inscripciones> GetAlumnosDeCurso(int IDCurso)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var queryAlumnos = (from ai in academiaContext.alumnos_inscripciones
+                                    where ai.id_curso == IDCurso
+                                    select ai).ToList();
+                return queryAlumnos;
+            }
+
+        }
+
     }//end class
 }

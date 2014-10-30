@@ -60,7 +60,8 @@ namespace UI.Desktop
 
         private void btnNotas_Click(object sender, EventArgs e)
         {
-
+            CargarNotasCurso cargarNotas = new CargarNotasCurso(this.personaActual,null);
+            cargarNotas.ShowDialog();
             this.updateForm();
         }
     }//end class

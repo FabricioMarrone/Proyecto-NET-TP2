@@ -21,20 +21,24 @@ namespace UI.Desktop
             InitializeComponent();
             this.docenteActual = docente;
             this.cursoActual = curso;
-            this.updateForm();
+
+            this.lblApellidoDocente.Text = this.docenteActual.apellido;
+            this.Listar();
         }
 
-        private void updateForm() 
-        {
-            this.lblApellidoDocente.Text = this.docenteActual.apellido;
-            //this.dgvAlumnosDelCurso.DataSource = this.cursoActual.alumnos_inscripciones;
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void Listar()
+        {
+
+            InscripcionAlumnoLogic aiLogic = new InscripcionAlumnoLogic();
+            this.dgvAlumnosDelCurso.DataSource = InscripcionAlumnoLogic.getAlumnosInscripcionesExtended(aiLogic.GetAlumnosDeCurso(38/*cursoActual.id_curso*/));
+            
+        }
 
     }//end class
 }
