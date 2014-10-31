@@ -44,6 +44,14 @@ namespace Business.Logic
             }
         }
 
+        public void Save(List<alumnos_inscripciones> alumsIncriptos)
+        {
+            foreach (alumnos_inscripciones ai in alumsIncriptos)
+            {
+                this.Save(ai, "Modificacion");
+            }
+        }
+
         public void Delete(int id)
         {
             this._inscripcionAlumnoAdapter.Delete(id);
@@ -53,7 +61,6 @@ namespace Business.Logic
         {
             return this._inscripcionAlumnoAdapter.getInscripcionesDelAlumno(alu);
         }
-
 
         public List<alumnos_inscripciones> GetAlumnosDeCurso(int IDCurso)
         {

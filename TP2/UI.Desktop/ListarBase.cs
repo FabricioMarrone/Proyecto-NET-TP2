@@ -58,8 +58,8 @@ namespace UI.Desktop
                 case typeColumn.COMBOBOX:
                     DataGridViewComboBoxColumn dgvcbxc = new DataGridViewComboBoxColumn();
                     dgvcbxc.DataSource = source;
-                    dgvcbxc.ValueMember = propName;
-                    dgvcbxc.DisplayMember = descEntity;
+                    //dgvcbxc.ValueMember = propName;
+                    //dgvcbxc.DisplayMember = descEntity;
                     dgvc = (DataGridViewColumn)dgvcbxc;
                     break;
 
@@ -73,6 +73,7 @@ namespace UI.Desktop
                     dgvc = new DataGridViewColumn();
                     break;
             }
+
             dgvc.Name = name;
             dgvc.HeaderText = header;
             dgvc.DataPropertyName = propName;

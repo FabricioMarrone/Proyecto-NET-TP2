@@ -34,7 +34,6 @@ namespace UI.Desktop
             //Application.Run(new ListarDocentesCursos());
             //Application.Run(new ListarInscripcionesAlumnos());
             //Application.Run(new ListarIncripcionAMateria());
-
         }
     }
 }

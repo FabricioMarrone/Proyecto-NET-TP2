@@ -33,6 +33,7 @@
             this.lblApellidoDocente = new System.Windows.Forms.Label();
             this.dgvAlumnosDelCurso = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosDelCurso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +68,10 @@
             // 
             // dgvAlumnosDelCurso
             // 
+            this.dgvAlumnosDelCurso.AllowUserToAddRows = false;
+            this.dgvAlumnosDelCurso.AllowUserToDeleteRows = false;
+            this.dgvAlumnosDelCurso.AllowUserToResizeColumns = false;
+            this.dgvAlumnosDelCurso.AllowUserToResizeRows = false;
             this.dgvAlumnosDelCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnosDelCurso.Location = new System.Drawing.Point(17, 54);
             this.dgvAlumnosDelCurso.Name = "dgvAlumnosDelCurso";
@@ -84,11 +89,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(444, 254);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // CargarNotasCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 296);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvAlumnosDelCurso);
             this.Controls.Add(this.lblApellidoDocente);
@@ -96,6 +112,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CargarNotasCurso";
             this.Text = "CargarNotasCurso";
+            this.Load += new System.EventHandler(this.CargarNotasCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosDelCurso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,5 +126,6 @@
         private System.Windows.Forms.Label lblApellidoDocente;
         private System.Windows.Forms.DataGridView dgvAlumnosDelCurso;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

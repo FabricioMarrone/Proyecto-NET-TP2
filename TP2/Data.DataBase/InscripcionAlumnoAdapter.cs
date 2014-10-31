@@ -58,10 +58,10 @@ namespace Data.DataBase
                                    select ai).First();
                 alumnos_inscripciones ali = queryGetOne;
 
-                ali.id_alumno = alu_i.id_alumno;
-                ali.id_curso = alu_i.id_curso;
-                ali.condicion = alu_i.condicion;
-                ali.nota = alu_i.nota;
+                if (alu_i.id_alumno != 0) ali.id_alumno = alu_i.id_alumno;
+                if (alu_i.id_curso != 0) ali.id_curso = alu_i.id_curso;
+                if ( !string.IsNullOrWhiteSpace(alu_i.condicion) ) ali.condicion = alu_i.condicion;
+                if (alu_i.nota != null) ali.nota = alu_i.nota;
 
                 academiaContext.SaveChanges();
             }
