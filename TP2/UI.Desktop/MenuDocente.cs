@@ -48,7 +48,7 @@ namespace UI.Desktop
 
         private void btnInscribirse_Click(object sender, EventArgs e)
         {
-            DocenteCursoABM form = new DocenteCursoABM(this.personaActual.id_persona, ApplicationForm.ModoForm.Alta);
+            DocenteCursoABM form = new DocenteCursoABM(this.personaActual.id_persona, this.personaActual.id_plan, ApplicationForm.ModoForm.Alta);
             form.ShowDialog();
             this.updateForm();
         }

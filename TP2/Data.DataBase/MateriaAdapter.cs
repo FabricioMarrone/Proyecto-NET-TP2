@@ -65,6 +65,40 @@ namespace Data.DataBase
             }            
         }
 
+        public List<materia> GetMateriasParaDictado(int idDocente,int idPlan) 
+        {
+            // Podria hacer que se filtre por Especialidad ya que un profesor po
+
+            /* PosibleS reglas de Negocio a Aplicar:
+             * 
+             * RNXX:
+             * Un Curso de una Materia solo tiene 1 prof de Teoria, y 1 prof de Practica.
+             * Solucion: 
+             *          Nueva clausula where en la consulta de list Materia: 
+             *          doc_cur.curso.docentes_cursos.Count < 2 
+             * 
+             * RNXX: (por ahora se considera que el prof Teoria != prof Practica, no puede ser el mismo.)
+             * Un Profesor puede dar teoria y practica para un mismo Curso.
+             * Sulucion: pendiente:
+             * 
+             */
+            // oPersona tiene un perfil de Profesor.
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                var subQuery = from doc_cur in academiaContext.docentes_cursos
+                               where
+                                    (doc_cur.id_docente == idDocente) &&
+                                    (doc_cur.curso.anio_calendario == (DateTime.Now.Year))
+                               select doc_cur.curso.id_materia;
+
+                List<materia> materias = (from mat in academiaContext.materias
+                                         where (mat.id_plan == idPlan) &&
+                                               !(subQuery.Contains(mat.id_materia))
+                                         select mat).ToList();
+                return materias;
+            }
+        }
+
         public List<materia> GetMateriasParaInscripcion(persona oPersona)
         {
             using (AcademiaEntities academiaContext = new AcademiaEntities())

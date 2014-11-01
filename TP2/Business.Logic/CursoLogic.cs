@@ -32,6 +32,11 @@ namespace Business.Logic
             return this._cursoAdapter.GetCursosParaInscripcion(idMateria);
         }
 
+        public List<curso> GetCursosParaDictado(int idMateria) 
+        {
+            return this._cursoAdapter.GetCursosParaDictado(idMateria);
+        }
+
         public void Save(curso cur, string modo)
         {
             switch (modo)

@@ -9,9 +9,9 @@ namespace Business.Logic
 {
     public class MateriaLogic : BusinessLogic
     {
-        private Data.DataBase.MateriaAdapter _materiaData;
+        private MateriaAdapter _materiaData;
 
-        public Data.DataBase.MateriaAdapter MateriaData
+        public MateriaAdapter MateriaData
         {
             get { return _materiaData; }
             set { _materiaData = value; }
@@ -22,22 +22,27 @@ namespace Business.Logic
             this._materiaData = new MateriaAdapter();
         }
 
-        public Business.Entities.materia GetOne(int id)
+        public materia GetOne(int id)
         {
             return this.MateriaData.GetOne(id);
         }
 
-        public List<Business.Entities.materia> GetAll()
+        public List<materia> GetAll()
         {
             return this.MateriaData.GetAll();
         }
 
-        public List<Business.Entities.materia> GetMateriasParaInscripcion(persona oPersona)
+        public List<materia> GetMateriasParaInscripcion(persona oPersona)
         {
             return this.MateriaData.GetMateriasParaInscripcion(oPersona);
         }
 
-        public void Save(Business.Entities.materia oMateria,string modo)
+        public List<materia> GetMateriasParaDictado(int idDocente, int idPlan) 
+        {
+            return this.MateriaData.GetMateriasParaDictado(idDocente,idPlan);
+        }
+
+        public void Save(materia oMateria,string modo)
         {
             switch (modo)
             {

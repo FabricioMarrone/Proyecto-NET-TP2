@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.cbCargos = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbMateria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,13 +56,13 @@
             this.cbProfesores.FormattingEnabled = true;
             this.cbProfesores.Location = new System.Drawing.Point(93, 61);
             this.cbProfesores.Name = "cbProfesores";
-            this.cbProfesores.Size = new System.Drawing.Size(121, 21);
+            this.cbProfesores.Size = new System.Drawing.Size(132, 21);
             this.cbProfesores.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 98);
+            this.label2.Location = new System.Drawing.Point(41, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -69,7 +71,7 @@
             // cbCursos
             // 
             this.cbCursos.FormattingEnabled = true;
-            this.cbCursos.Location = new System.Drawing.Point(93, 98);
+            this.cbCursos.Location = new System.Drawing.Point(93, 140);
             this.cbCursos.Name = "cbCursos";
             this.cbCursos.Size = new System.Drawing.Size(196, 21);
             this.cbCursos.TabIndex = 3;
@@ -77,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 136);
+            this.label3.Location = new System.Drawing.Point(41, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 4;
@@ -85,20 +87,20 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(93, 183);
+            this.btnAceptar.Location = new System.Drawing.Point(93, 225);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 6;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(214, 183);
+            this.btnCancelar.Location = new System.Drawing.Point(214, 225);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -123,16 +125,36 @@
             // cbCargos
             // 
             this.cbCargos.FormattingEnabled = true;
-            this.cbCargos.Location = new System.Drawing.Point(93, 127);
+            this.cbCargos.Location = new System.Drawing.Point(93, 169);
             this.cbCargos.Name = "cbCargos";
             this.cbCargos.Size = new System.Drawing.Size(121, 21);
-            this.cbCargos.TabIndex = 10;
+            this.cbCargos.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(41, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Materia:";
+            // 
+            // cbMateria
+            // 
+            this.cbMateria.FormattingEnabled = true;
+            this.cbMateria.Location = new System.Drawing.Point(93, 102);
+            this.cbMateria.Name = "cbMateria";
+            this.cbMateria.Size = new System.Drawing.Size(132, 21);
+            this.cbMateria.TabIndex = 2;
+            this.cbMateria.SelectionChangeCommitted += new System.EventHandler(this.cbMateria_SelectionChangeCommitted);
             // 
             // DocenteCursoABM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 230);
+            this.ClientSize = new System.Drawing.Size(314, 282);
+            this.Controls.Add(this.cbMateria);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cbCargos);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label4);
@@ -145,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DocenteCursoABM";
             this.Text = "InscripcionProfesorCurso";
+            this.Load += new System.EventHandler(this.DocenteCursoABM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +185,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox cbCargos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbMateria;
     }
 }

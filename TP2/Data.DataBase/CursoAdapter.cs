@@ -51,7 +51,21 @@ namespace Data.DataBase
                 if (queryCursos.Count == 0) queryCursos = null;
                 return queryCursos;
             }
-        } 
+        }
+
+        public List<curso> GetCursosParaDictado(int idMateria) 
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                List<curso> queryCursos = (from cur in academiaContext.cursos
+                                           where cur.id_materia == idMateria &&
+                                                 cur.anio_calendario == (DateTime.Now).Year
+                                           orderby cur.comisione.desc_comision
+                                           select cur).ToList();
+                return queryCursos;
+            }
+        }
+
 
         public void Insert(curso cur)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,12 @@ namespace UI.Desktop
     {
         private docentes_cursos docenteCursoActual;
         private int id_docente;
+        private int id_plan;
 
         public DocenteCursoABM()
         {
             InitializeComponent();
-            this.loadComboBoxes();
+
         }
 
         public DocenteCursoABM(ModoForm modo)
@@ -30,14 +32,26 @@ namespace UI.Desktop
         }
 
         //UNICAMENTE SE USA ALTA
-        public DocenteCursoABM(int id, ModoForm modo) : this() 
+        public DocenteCursoABM(int id_docente,int id_plan, ModoForm modo) : this() 
         {
             this.Modo = modo;
             this.docenteCursoActual = new docentes_cursos();
-            this.id_docente = id;
+            this.id_docente = id_docente;
+            this.id_plan = id_plan;
             this.MapearDeDatos();
             this.cbProfesores.Enabled = false;
-            this.cbProfesores.SelectedValue = id;
+            this.cbProfesores.SelectedValue = id_docente;
+        }
+
+        public DocenteCursoABM(int id_docente, ModoForm modo)
+            : this()
+        {
+            this.Modo = modo;
+            this.docenteCursoActual = new docentes_cursos();
+            this.id_docente = id_docente;
+            this.MapearDeDatos();
+            this.cbProfesores.Enabled = false;
+            this.cbProfesores.SelectedValue = id_docente;
         }
 
         private void loadComboBoxes() 
@@ -47,10 +61,15 @@ namespace UI.Desktop
             this.cbProfesores.ValueMember = "id_persona";
             this.cbProfesores.DisplayMember = "desc";
 
-            CursoLogic curLogic = new CursoLogic();
-            this.cbCursos.DataSource = CursoLogic.getCursosExtended(curLogic.GetAll());
-            this.cbCursos.ValueMember = "id_curso";
-            this.cbCursos.DisplayMember = "desc";
+
+
+            MateriaLogic matLogic = new MateriaLogic();
+            this.cbMateria.DataSource = matLogic.GetMateriasParaDictado(id_docente,id_plan);
+            this.cbMateria.ValueMember = "id_materia";
+            this.cbMateria.DisplayMember = "desc_materia";
+            this.cbMateria.Text = "[Seleccione una Materia]";
+
+            this.cbCursos.Enabled = false;
 
             this.cbCargos.DataSource = Enum.GetValues(typeof(persona.cargo));
         }
@@ -81,21 +100,13 @@ namespace UI.Desktop
             }
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            if (this.Validar())
-            {
-                this.GuardarCambios();
-                this.Close();
-            }
-        }
-
         public override bool Validar() 
         {
-            //NOTA: creo que con validar que los combobox no esten vacios alcanza, porque el contenido de los mismos tiene que estar OK
-            this.Notificar("Atencion", "No se esta validando el formulario (ProfesorCursoABM).", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
-            return true;
+            if (this.cbCursos.SelectedValue != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public override void GuardarCambios()
@@ -112,9 +123,40 @@ namespace UI.Desktop
             this.docenteCursoActual.cargo = this.cbCargos.SelectedIndex;
         }
 
+        private void DocenteCursoABM_Load(object sender, EventArgs e)
+        {
+            this.loadComboBoxes();
+        }
+
+        private void cbMateria_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Aca haga la busqueda de la comisiones.
+            int idMateria = (int)this.cbMateria.SelectedValue;
+
+            //buscar comisiones disponibles.
+            CursoLogic curLogic = new CursoLogic();
+            this.cbCursos.DataSource = CursoLogic.getCursosExtended(curLogic.GetCursosParaDictado(idMateria));
+
+            this.cbCursos.ValueMember = "id_curso";
+            this.cbCursos.DisplayMember = "comision";
+            this.cbCursos.Text = "[Seleccione un Curso]";
+            this.cbCursos.SelectedItem = null;
+            this.cbCursos.Enabled = true;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (this.Validar())
+            {
+                this.GuardarCambios();
+                this.Close();
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }//end class
 }
