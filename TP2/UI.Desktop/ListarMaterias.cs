@@ -12,7 +12,7 @@ namespace UI.Desktop
     {
         public ListarMaterias() : base()
         {
-            this.Text = "Listar Materias";
+            this.Text = "Listado de Materias";
         }
 
         public override void GenerarColumnas()
@@ -60,7 +60,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((materia)this.dgvListar.SelectedRows[0].DataBoundItem).id_materia;
+                int id = ((MateriaLogic.MateriaExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_materia;
 
                 MateriaABM formMatAbm = new MateriaABM(id,ApplicationForm.ModoForm.Modificacion);
                 formMatAbm.ShowDialog();
@@ -77,7 +77,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((materia)this.dgvListar.SelectedRows[0].DataBoundItem).id_materia;
+                int id = ((MateriaLogic.MateriaExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_materia;
                 MateriaABM formMatAbm = new MateriaABM(id,ApplicationForm.ModoForm.Baja);
                 formMatAbm.ShowDialog();
                 this.Listar();

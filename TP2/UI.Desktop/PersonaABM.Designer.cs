@@ -64,6 +64,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(79, 35);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
@@ -208,14 +209,6 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Plan:";
             // 
-            // cbPlanes
-            // 
-            this.cbPlanes.FormattingEnabled = true;
-            this.cbPlanes.Location = new System.Drawing.Point(270, 166);
-            this.cbPlanes.Name = "cbPlanes";
-            this.cbPlanes.Size = new System.Drawing.Size(121, 21);
-            this.cbPlanes.TabIndex = 19;
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(195, 216);
@@ -240,11 +233,19 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(386, 102);
+            this.label11.Location = new System.Drawing.Point(376, 102);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 13);
+            this.label11.Size = new System.Drawing.Size(82, 13);
             this.label11.TabIndex = 22;
-            this.label11.Text = "dd/mm/aaaa (hay que meter un mask)";
+            this.label11.Text = "DD/MM/AAAA ";
+            // 
+            // cbPlanes
+            // 
+            this.cbPlanes.FormattingEnabled = true;
+            this.cbPlanes.Location = new System.Drawing.Point(270, 168);
+            this.cbPlanes.Name = "cbPlanes";
+            this.cbPlanes.Size = new System.Drawing.Size(121, 21);
+            this.cbPlanes.TabIndex = 24;
             // 
             // PersonaABM
             // 
@@ -304,9 +305,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTiposPer;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbPlanes;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbPlanes;
     }
 }

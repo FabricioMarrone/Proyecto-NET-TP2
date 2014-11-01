@@ -40,6 +40,7 @@ namespace UI.Desktop
             {
                 this.cbTiposPer.Enabled = false;
                 this.cbPlanes.Enabled = false;
+                this.txtlegajo.Enabled = false;
             }
         }
 

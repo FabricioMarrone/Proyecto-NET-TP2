@@ -81,8 +81,9 @@ namespace Business.Logic
             private int? legajo;
             private string tipo_persona;
             private string plan;
-
-#region Propiedades
+            private string desc;    //<--especialmente para combo box!
+           
+            #region Propiedades
             public string Plan
             {
                 get { return plan; }
@@ -142,7 +143,13 @@ namespace Business.Logic
                 get { return id_persona; }
                 set { id_persona = value; }
             }
-#endregion
+
+            public string Desc
+            {
+                get { return desc; }
+                set { desc = value; }
+            }
+            #endregion
 
             public PersonaExtended(persona per) 
             {
@@ -164,6 +171,7 @@ namespace Business.Logic
                 plane p = logic.GetOne(per.id_plan);
                 this.Plan = p.desc_plan;
 
+                this.Desc = this.Legajo + " - " + this.Nombre + " " + this.Apellido;
             }
         }//end sub class
     }//end class

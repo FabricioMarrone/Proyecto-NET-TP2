@@ -53,7 +53,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((curso)this.dgvListar.SelectedRows[0].DataBoundItem).id_curso;
+                int id = ((CursoLogic.CursoExtended)this.dgvListar.SelectedRows[0].DataBoundItem).ID_CURSO;
                 CursoABM form = new CursoABM(id, ApplicationForm.ModoForm.Modificacion);
                 form.ShowDialog();
                 this.Listar();
@@ -68,7 +68,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((curso)this.dgvListar.SelectedRows[0].DataBoundItem).id_curso;
+                int id = ((CursoLogic.CursoExtended)this.dgvListar.SelectedRows[0].DataBoundItem).ID_CURSO;
                 CursoABM form = new CursoABM(id, ApplicationForm.ModoForm.Baja);
                 form.ShowDialog();
                 this.Listar();

@@ -50,7 +50,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((comisione)this.dgvListar.SelectedRows[0].DataBoundItem).id_comision;
+                int id = ((ComisionLogic.ComisionExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_comision;
                 ComisionesABM form = new ComisionesABM(id, ApplicationForm.ModoForm.Modificacion);
                 form.ShowDialog();
                 this.Listar();
@@ -65,7 +65,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((comisione)this.dgvListar.SelectedRows[0].DataBoundItem).id_comision;
+                int id = ((ComisionLogic.ComisionExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_comision;
                 ComisionesABM form = new ComisionesABM(id, ApplicationForm.ModoForm.Baja);
                 form.ShowDialog();
                 this.Listar();

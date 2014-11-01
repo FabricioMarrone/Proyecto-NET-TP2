@@ -46,7 +46,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((plane)this.dgvListar.SelectedRows[0].DataBoundItem).id_plan;
+                int id = ((PlanLogic.PlanExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_plan;
                 PlanesABM form = new PlanesABM(id, ApplicationForm.ModoForm.Modificacion);
                 form.ShowDialog();
                 this.Listar();
@@ -61,7 +61,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((plane)this.dgvListar.SelectedRows[0].DataBoundItem).id_plan;
+                int id = ((PlanLogic.PlanExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_plan;
                 PlanesABM form = new PlanesABM(id, ApplicationForm.ModoForm.Baja);
                 form.ShowDialog();
                 this.Listar();

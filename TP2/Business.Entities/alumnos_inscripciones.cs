@@ -17,7 +17,8 @@ namespace Business.Entities
         public enum tipoCondicion {
             Inscripto,      //0
             Regular,        //1
-            Libre           //2
+            Libre,          //2
+            Aprobado        //3
         }
 
         public int id_inscripcion { get; set; }

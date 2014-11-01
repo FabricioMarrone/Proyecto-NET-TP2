@@ -52,7 +52,7 @@ namespace UI.Desktop
             dgvColum = ListarBase.CrearNuevaColumna("nombre", "Nombre", "nombre");
             this.dgvListar.Columns.Add(dgvColum);
 
-            dgvColum = ListarBase.CrearNuevaColumna("id", "ID", "id_persona");
+            dgvColum = ListarBase.CrearNuevaColumna("id_persona", "ID", "id_persona");
             this.dgvListar.Columns.Add(dgvColum);
         }
 
@@ -73,7 +73,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((persona)this.dgvListar.SelectedRows[0].DataBoundItem).id_persona;
+                int id = ((PersonaLogic.PersonaExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_persona;
                 PersonaABM form = new PersonaABM(id, ApplicationForm.ModoForm.Modificacion);
                 form.ShowDialog();
                 this.Listar();
@@ -88,7 +88,7 @@ namespace UI.Desktop
         {
             try
             {
-                int id = ((persona)this.dgvListar.SelectedRows[0].DataBoundItem).id_persona;
+                int id = ((PersonaLogic.PersonaExtended)this.dgvListar.SelectedRows[0].DataBoundItem).Id_persona;
                 PersonaABM form = new PersonaABM(id, ApplicationForm.ModoForm.Baja);
                 form.ShowDialog();
                 this.Listar();

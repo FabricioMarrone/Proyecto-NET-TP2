@@ -58,7 +58,8 @@ namespace UI.Desktop
         private void Listar()
         {
             InscripcionAlumnoLogic aiLogic = new InscripcionAlumnoLogic();
-            this.dgvAlumnosDelCurso.DataSource = InscripcionAlumnoLogic.getAlumnosInscripcionesExtended(aiLogic.GetAlumnosDeCurso(IdCurso.id_curso));
+            this.dgvAlumnosDelCurso.DataSource = InscripcionAlumnoLogic.getAlumnosInscripcionesExtended(
+                aiLogic.GetAlumnosDeCurso(IdCurso));
         }
 
         private void GuardarCambios() 

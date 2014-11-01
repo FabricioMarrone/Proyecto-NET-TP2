@@ -21,9 +21,9 @@ namespace UI.Desktop
             InitializeComponent();
 
             PersonaLogic logic = new PersonaLogic();
-            this.cbPersonas.DataSource = logic.GetAll();
+            this.cbPersonas.DataSource = PersonaLogic.getPersonasExtended(logic.GetAll());
             this.cbPersonas.ValueMember = "id_persona";
-            this.cbPersonas.DisplayMember = "apellido";
+            this.cbPersonas.DisplayMember = "desc";
         }
 
         public UsuarioABM(ModoForm modo): this()
