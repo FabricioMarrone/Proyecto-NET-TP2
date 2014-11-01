@@ -14,6 +14,7 @@ namespace UI.Desktop
     public partial class DocenteCursoABM : ApplicationForm
     {
         private docentes_cursos docenteCursoActual;
+        private int id_docente;
 
         public DocenteCursoABM()
         {
@@ -21,27 +22,30 @@ namespace UI.Desktop
             this.loadComboBoxes();
         }
 
-        public DocenteCursoABM(ModoForm modo) : this() 
+        public DocenteCursoABM(ModoForm modo)
+            : this()
         {
             this.Modo = modo;
             this.docenteCursoActual = new docentes_cursos();
         }
 
+        //UNICAMENTE SE USA ALTA
         public DocenteCursoABM(int id, ModoForm modo) : this() 
         {
             this.Modo = modo;
-            DocenteCursoLogic logic = new DocenteCursoLogic();
-            this.docenteCursoActual = logic.GetOne(id);
+            this.docenteCursoActual = new docentes_cursos();
+            this.id_docente = id;
             this.MapearDeDatos();
             this.cbProfesores.Enabled = false;
+            this.cbProfesores.SelectedValue = id;
         }
 
         private void loadComboBoxes() 
         {
             PersonaLogic perLogic = new PersonaLogic();
-            this.cbProfesores.DataSource = perLogic.GetAll(persona.tipo.Profesor);
+            this.cbProfesores.DataSource = PersonaLogic.getPersonasExtended(perLogic.GetAll(persona.tipo.Profesor));
             this.cbProfesores.ValueMember = "id_persona";
-            this.cbProfesores.DisplayMember = "apellido";
+            this.cbProfesores.DisplayMember = "desc";
 
             CursoLogic curLogic = new CursoLogic();
             this.cbCursos.DataSource = CursoLogic.getCursosExtended(curLogic.GetAll());
@@ -53,10 +57,10 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.docenteCursoActual.id_dictado.ToString();
-            this.cbCargos.SelectedIndex = this.docenteCursoActual.cargo;
-            this.cbProfesores.SelectedValue = this.docenteCursoActual.id_docente;
-            this.cbCursos.SelectedValue = this.docenteCursoActual.id_curso;
+            //this.txtID.Text = this.docenteCursoActual.id_dictado.ToString();
+            //this.cbCargos.SelectedIndex = this.docenteCursoActual.cargo;
+            //this.cbProfesores.SelectedValue = this.docenteCursoActual.id_docente;
+            //this.cbCursos.SelectedValue = this.docenteCursoActual.id_curso;
              
             switch (Modo)
             {
@@ -88,8 +92,8 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-
-            this.Notificar("Atencion", "No se esta validando el formulario (ProfesorCursoABM)", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //NOTA: creo que con validar que los combobox no esten vacios alcanza, porque el contenido de los mismos tiene que estar OK
+            this.Notificar("Atencion", "No se esta validando el formulario (ProfesorCursoABM).", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             return true;
         }
