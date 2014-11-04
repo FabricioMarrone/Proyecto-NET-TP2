@@ -13,23 +13,18 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
-            //if (!IsPostBack)
-            //{
-            //    linkIniciarSesion.Text = "Iniciar sesion";
-
-            //    LinkButton linkMenuOption1 = (LinkButton)FindControlRecursive(Master, "linkMenuOption1");
-            //    LinkButton linkMenuOption2 = (LinkButton)FindControlRecursive(Master, "linkMenuOption2");
-            //    LinkButton linkMenuOption3 = (LinkButton)FindControlRecursive(Master, "linkMenuOption3");
-            //    linkMenuOption1.Visible = false;
-            //    linkMenuOption2.Visible = false;
-            //    linkMenuOption3.Visible = false;
-                
-            //}
-            //else 
-            //{
-            //    if (this.Session[Global.USUARIO_ACTUAL] != null) linkIniciarSesion.Text = "Cerrar sesión";
-            //}
+            
+            if (IsPostBack)
+            {
+                if (this.Session[Global.USUARIO_ACTUAL] != null)
+                {
+                    this.occultLogin();
+                }
+                else 
+                {
+                    this.showLogin();
+                }
+            }
         }
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -57,14 +52,14 @@ namespace UI.Web
                         return;
                     }
 
-                    LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
-                    linkIniciarSesion.Text = "Cerrar sesion";
-
-                    this.showMenu(per.tipo_persona);
-                    
                     this.Session[Global.USUARIO_ACTUAL] = usr;
                     this.Session[Global.PERSONA_ACTUAL] = per;
-                    Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Usuario OK')</SCRIPT>");
+
+                    Site master = (Site)this.Master;
+                    master.showMenu(per.tipo_persona);
+
+                    this.occultLogin();
+                    //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Usuario OK')</SCRIPT>");
                 }
                 else
                 {
@@ -81,39 +76,31 @@ namespace UI.Web
             }
         }//end boton iniciar sesion
 
-        public void showMenu(int tipo) 
+        
+        public void showLogin() 
         {
-            LinkButton linkMenuOption1 = (LinkButton)FindControlRecursive(Master, "linkMenuOption1");
-            LinkButton linkMenuOption2 = (LinkButton)FindControlRecursive(Master, "linkMenuOption2");
-            LinkButton linkMenuOption3 = (LinkButton)FindControlRecursive(Master, "linkMenuOption3");
-
-            switch (tipo)
-            {
-                case (int)persona.tipo.Alumno:
-                    linkMenuOption1.Text = "Modificar datos";
-                    linkMenuOption2.Text = "Estado academico";
-                    linkMenuOption3.Text = "Inscripcion a materia";
-                    linkMenuOption1.Visible = true;
-                    linkMenuOption2.Visible = true;
-                    linkMenuOption3.Visible = true;
-                    break;
-                case (int)persona.tipo.Admin:
-                    
-                    break;
-                case (int)persona.tipo.Profesor:
-                    
-                    break;
-            }//end switch
+            LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
+            linkIniciarSesion.Text = "Iniciar sesión";
+            this.lblUsuario.Visible = true;
+            this.lblPass.Visible = true;
+            this.txtUsuario.Visible = true;
+            this.txtContraseña.Visible = true;
+            this.btnIniciarSesion.Visible = true;
+            this.lblMsg.Text = "Ingrese sus datos para comenzar";
         }
 
-        public void occultMenu() 
+        public void occultLogin() 
         {
-            LinkButton linkMenuOption1 = (LinkButton)FindControlRecursive(Master, "linkMenuOption1");
-            LinkButton linkMenuOption2 = (LinkButton)FindControlRecursive(Master, "linkMenuOption2");
-            LinkButton linkMenuOption3 = (LinkButton)FindControlRecursive(Master, "linkMenuOption3");
-            linkMenuOption1.Visible = false;
-            linkMenuOption2.Visible = false;
-            linkMenuOption3.Visible = false;
+            LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
+            linkIniciarSesion.Text = "Cerrar sesión";
+            this.lblUsuario.Visible = false;
+            this.lblPass.Visible = false;
+            this.txtUsuario.Visible = false;
+            this.txtContraseña.Visible = false;
+            this.btnIniciarSesion.Visible = false;
+            persona per = (persona)this.Session[Global.PERSONA_ACTUAL];
+            this.lblMsg.Text = "Bienvenido " + per.nombre + " " + per.apellido + "!";
+            //String.Format("Bienvenido {0} {1}!", user.nombre, user.apellido)
         }
 
         private static Control FindControlRecursive(Control control, string id)

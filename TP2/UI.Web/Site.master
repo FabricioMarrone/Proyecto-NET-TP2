@@ -15,11 +15,11 @@
         <div>Menu de cosas<br />
             <asp:LinkButton ID="linkMenuOption0" runat="server" OnClick="linkMenuOption0_Click">Iniciar Sesion</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption1" runat="server" Enabled="False">LinkButton</asp:LinkButton>
+            <asp:LinkButton ID="linkMenuOption1" runat="server" OnClick="linkMenuOption1_Click" Visible="False">LinkButton</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption2" runat="server" Enabled="False">LinkButton</asp:LinkButton>
+            <asp:LinkButton ID="linkMenuOption2" runat="server" OnClick="linkMenuOption2_Click" Visible="False">LinkButton</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption3" runat="server" Enabled="False">LinkButton</asp:LinkButton>
+            <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False">LinkButton</asp:LinkButton>
             <br />
             <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server"></asp:ContentPlaceHolder></div>
         
