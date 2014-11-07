@@ -25,7 +25,6 @@ namespace UI.Desktop
             this.lblApellidoDocente.Text = this.docenteActual.apellido;
 
             this.dgvAlumnosDelCurso.AutoGenerateColumns = false;
-            this.dgvAlumnosDelCurso.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             this.GenerarColumnas();
         }

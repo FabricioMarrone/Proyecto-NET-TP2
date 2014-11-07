@@ -70,6 +70,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(263, 183);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -102,12 +103,14 @@
             // 
             // InscripcionComision
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(341, 210);
             this.Controls.Add(this.tblPanel);
             this.Name = "InscripcionComision";
-            this.Text = "InscripcionComision";
+            this.Text = "Comisiones disponibles";
             this.Load += new System.EventHandler(this.InscripcionComision_Load);
             this.tblPanel.ResumeLayout(false);
             this.tblPanel.PerformLayout();

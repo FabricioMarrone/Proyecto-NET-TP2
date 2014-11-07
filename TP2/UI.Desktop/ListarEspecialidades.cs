@@ -10,6 +10,12 @@ namespace UI.Desktop
 {
     public class ListarEspecialidades : ListarBase
     {
+        public ListarEspecialidades()
+            : base()
+        {
+            this.Text = "Listado de Especialidades";
+        }
+
         public override void GenerarColumnas()
         {
             DataGridViewColumn dgvColum;

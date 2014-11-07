@@ -106,6 +106,7 @@
             this.dgvListar.MultiSelect = false;
             this.dgvListar.Name = "dgvListar";
             this.dgvListar.ReadOnly = true;
+            this.dgvListar.RowHeadersVisible = false;
             this.dgvListar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListar.Size = new System.Drawing.Size(476, 205);
             this.dgvListar.TabIndex = 1;

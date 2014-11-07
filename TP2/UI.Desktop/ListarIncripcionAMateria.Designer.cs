@@ -61,7 +61,10 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
+            this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.RowHeadersVisible = false;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaterias.Size = new System.Drawing.Size(529, 230);
             this.dgvMaterias.TabIndex = 0;
