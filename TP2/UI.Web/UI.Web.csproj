@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,6 +67,7 @@
     <Content Include="InscripcionAmateria.aspx" />
     <Content Include="ModificarDatos.aspx" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="VisorRepRegularidadesCurso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +137,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorRepRegularidadesCurso.aspx.cs">
+      <DependentUpon>VisorRepRegularidadesCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorRepRegularidadesCurso.aspx.designer.cs">
+      <DependentUpon>VisorRepRegularidadesCurso.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
