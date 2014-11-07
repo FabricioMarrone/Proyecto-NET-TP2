@@ -70,13 +70,6 @@ namespace Data.DataBase
             // Podria hacer que se filtre por Especialidad ya que un profesor po
 
             /* PosibleS reglas de Negocio a Aplicar:
-             * 
-             * RNXX:
-             * Un Curso de una Materia solo tiene 1 prof de Teoria, y 1 prof de Practica.
-             * Solucion: 
-             *          Nueva clausula where en la consulta de list Materia: 
-             *          doc_cur.curso.docentes_cursos.Count < 2 
-             * 
              * RNXX: (por ahora se considera que el prof Teoria != prof Practica, no puede ser el mismo.)
              * Un Profesor puede dar teoria y practica para un mismo Curso.
              * Sulucion: pendiente:
@@ -87,7 +80,11 @@ namespace Data.DataBase
             {
                 var subQuery = from doc_cur in academiaContext.docentes_cursos
                                where
+                                   // Valida que el profesor no este dictando el curso.
                                     (doc_cur.id_docente == idDocente) &&
+                                   // Valida que no se registren mas de 2 profesores (1 teo y 1 pract) por Curso.
+                                    (doc_cur.curso.docentes_cursos.Count < 2) &&
+                                   // Busca materias que tenga definido un curos para el año actual.
                                     (doc_cur.curso.anio_calendario == (DateTime.Now.Year))
                                select doc_cur.curso.id_materia;
 
