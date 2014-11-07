@@ -133,6 +133,9 @@ namespace Business.Logic
                 this.Condicion = ai.condicion;
                 this.nota = ai.nota;
             }
+
+            public InscripcionAlumnoExtendent() { 
+            }
         
         }
 

@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\InscripcionAlumnoLogic.InscripcionAlumnoExtendent.datasource" />
+    <None Include="Properties\DataSources\PersonaLogic.PersonaExtended.datasource" />
+    <None Include="Properties\DataSources\PlanLogic.PlanExtended.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">

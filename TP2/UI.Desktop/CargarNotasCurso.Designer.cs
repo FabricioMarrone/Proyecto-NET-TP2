@@ -35,6 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnImprReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosDelCurso)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +125,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblApellidoDocente, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvAlumnosDelCurso, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnImprReporte, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -133,6 +135,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(540, 296);
             this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // btnImprReporte
+            // 
+            this.btnImprReporte.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnImprReporte.Location = new System.Drawing.Point(210, 270);
+            this.btnImprReporte.Name = "btnImprReporte";
+            this.btnImprReporte.Size = new System.Drawing.Size(171, 23);
+            this.btnImprReporte.TabIndex = 6;
+            this.btnImprReporte.Text = "Emitir Reporte de Regularidades";
+            this.btnImprReporte.UseVisualStyleBackColor = true;
+            this.btnImprReporte.Click += new System.EventHandler(this.btnImprReporte_Click);
             // 
             // CargarNotasCurso
             // 
@@ -161,5 +174,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnImprReporte;
     }
 }
