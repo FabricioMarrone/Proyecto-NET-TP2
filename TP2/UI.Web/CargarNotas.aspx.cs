@@ -67,8 +67,8 @@ namespace UI.Web
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Esto falla, los valores de los combo son vacios.')</SCRIPT>");
-            return;
+            //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Esto falla, los valores de los combo son vacios.')</SCRIPT>");
+            //return;
 
             List<alumnos_inscripciones> inscripciones = new List<alumnos_inscripciones>();
 
@@ -78,8 +78,8 @@ namespace UI.Web
                 int id_inscripcion = Int32.Parse(row.Cells[0].Text);
                 //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('ID: " + row.Cells[0].Text + "')</SCRIPT>");
                 insc.id_inscripcion = id_inscripcion;
-                insc.condicion = row.Cells[3].Text;
-                string nota = row.Cells[4].Text;
+                insc.condicion = ((DropDownList)row.Cells[3].FindControl("ddlCondicion")).SelectedValue;
+                string nota = ((DropDownList)row.Cells[4].FindControl("ddlNota")).SelectedValue;
                 if (nota != null) insc.nota = int.Parse(nota);
 
                 inscripciones.Add(insc);
