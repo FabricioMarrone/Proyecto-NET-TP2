@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\InscripcionAlumnoLogic.InscripcionAlumnoExtendent.datasource" />
+    <None Include="Properties\DataSources\PersonaLogic.PersonaExtended.datasource" />
+    <None Include="Properties\DataSources\PlanLogic.PlanExtended.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
@@ -69,6 +72,10 @@
       <Project>{8B7C7DC9-CD23-4A84-BC58-0FAC77AFFD77}</Project>
       <Name>Data.DataBase</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RepEstadoAcademico.rdlc" />
+    <EmbeddedResource Include="RepRegulidadesDeCurso.rdlc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

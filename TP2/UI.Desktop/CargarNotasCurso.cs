@@ -101,5 +101,45 @@ namespace UI.Desktop
             this.GuardarCambios();
             this.Close();
         }
+
+        private List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> GetDatosDeGrilla()
+        {
+            List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos = new List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent>();
+
+             foreach (DataGridViewRow fila in this.dgvAlumnosDelCurso.Rows)
+             {
+                 InscripcionAlumnoLogic.InscripcionAlumnoExtendent insc = new InscripcionAlumnoLogic.InscripcionAlumnoExtendent();
+
+                 insc.Legajo = int.Parse(fila.Cells["legajo"].Value.ToString());
+                 insc.Alumno = fila.Cells["alumno"].Value.ToString();
+                 insc.Condicion = fila.Cells["condicion"].Value.ToString();                     
+                 // Valido que nota no este null para evitar error de NullReference al convertir a int.
+                 object nota = fila.Cells["nota"].Value;
+                 if (nota != null) insc.Nota = int.Parse(nota.ToString());
+
+                 alumnos.Add(insc);
+             }
+
+             return alumnos;
+        }
+
+        private void btnImprReporte_Click(object sender, EventArgs e)
+        {
+            this.EmitirReporte();
+        }
+
+        private void EmitirReporte()
+        {
+            PersonaLogic perLogic = new PersonaLogic();
+            PersonaLogic.PersonaExtended oDocente = PersonaLogic.getPersonaExtended(perLogic.GetOne(this.docenteActual.id_persona));
+
+            CursoLogic curLogic = new CursoLogic();
+            CursoLogic.CursoExtended oCurso = CursoLogic.getCursoExtended(curLogic.GetOne(this.IdCurso));
+
+            // Falta enviar la especialidad de la materia.
+
+            VisorRepRegularidadesCur vrRegularidades = new VisorRepRegularidadesCur(oDocente, oCurso,"Pruebas especialidad", this.GetDatosDeGrilla());
+            vrRegularidades.ShowDialog();
+        }
     }//end class
 }

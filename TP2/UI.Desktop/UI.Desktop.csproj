@@ -38,8 +38,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -208,6 +211,12 @@
     <Compile Include="UsuarioABM.Designer.cs">
       <DependentUpon>UsuarioABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisorRepRegularidadesCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorRepRegularidadesCurso.Designer.cs">
+      <DependentUpon>VisorRepRegularidadesCurso.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AlumnoEstadoAcademico.resx">
       <DependentUpon>AlumnoEstadoAcademico.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,8 +286,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\RepRegulidadesDeCurso.rdlc" />
     <EmbeddedResource Include="UsuarioABM.resx">
       <DependentUpon>UsuarioABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorRepRegularidadesCurso.resx">
+      <DependentUpon>VisorRepRegularidadesCurso.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>
@@ -307,6 +320,7 @@
       <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
