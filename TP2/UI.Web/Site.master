@@ -19,7 +19,7 @@
 &nbsp;&nbsp;&nbsp;
             <asp:LinkButton ID="linkMenuOption2" runat="server" OnClick="linkMenuOption2_Click" Visible="False">LinkButton</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False">LinkButton</asp:LinkButton>
+            <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False" OnClick="linkMenuOption3_Click">LinkButton</asp:LinkButton>
             <br />
             <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server"></asp:ContentPlaceHolder></div>
         

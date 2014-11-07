@@ -103,7 +103,7 @@ namespace UI.Web
             //String.Format("Bienvenido {0} {1}!", user.nombre, user.apellido)
         }
 
-        private static Control FindControlRecursive(Control control, string id)
+        public static Control FindControlRecursive(Control control, string id)
         {
             if (control.ID == id)
             {

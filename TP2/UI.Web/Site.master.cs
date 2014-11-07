@@ -59,7 +59,27 @@ namespace UI.Web
 
                     break;
                 case (int)persona.tipo.Profesor:
+                    //Cargar notas
+                    Response.Redirect("CargarNotas.aspx");
+                    break;
+            }
+        }
 
+        protected void linkMenuOption3_Click(object sender, EventArgs e)
+        {
+            persona per = (persona)this.Session[Global.PERSONA_ACTUAL];
+            switch (per.tipo_persona)
+            {
+                case (int)persona.tipo.Alumno:
+                    //Inscripcion a materia
+                    Response.Redirect("InscripcionAmateria.aspx");
+                    break;
+                case (int)persona.tipo.Admin:
+                 
+                    break;
+                case (int)persona.tipo.Profesor:
+                    //Inscripcion a curso
+                    Response.Redirect("InscribirseAcurso.aspx");
                     break;
             }
         }
@@ -81,10 +101,13 @@ namespace UI.Web
                     linkMenuOption3.Visible = true;
                     break;
                 case (int)persona.tipo.Admin:
-
+                    
                     break;
                 case (int)persona.tipo.Profesor:
-
+                    linkMenuOption2.Text = "Cargar notas";
+                    linkMenuOption3.Text = "Inscripcion a curso";
+                    linkMenuOption2.Visible = true;
+                    linkMenuOption3.Visible = true;
                     break;
             }//end switch
         }
@@ -98,6 +121,8 @@ namespace UI.Web
             linkMenuOption2.Visible = false;
             linkMenuOption3.Visible = false;
         }
+
+       
 
     }//end class
 }

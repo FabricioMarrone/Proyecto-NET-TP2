@@ -107,14 +107,14 @@ namespace Data.DataBase
                 // ya esta Inscripto o Regular.
                 var subQuery = from insc in academiaContext.alumnos_inscripciones
                                where (insc.id_alumno == oPersona.id_persona) &&
-                                     (insc.condicion == "Regular" || insc.condicion == "Inscripto")
+                                     (insc.condicion == "Regular" || insc.condicion == "Inscripto" || insc.condicion == "Aprobado")
                                select insc.curso.id_materia;
 
                 /* Consulta que devuelve las materias de acuerdo a la especialidad y
                  * plan de la persona(Alumno). Asi nos evitamos que puedan inscribirse
                  * a materias de otras especialidades que no son de la suya.
                  * Tampoco se incluiran las materias a las cuales el alumno ya esta
-                 * Inscrito o Regular.
+                 * Inscrito o Regular o Aprobado.
                 */
                 var queryMaterias = (from mat in academiaContext.materias
                                      where (mat.id_plan == oPersona.id_plan) &&

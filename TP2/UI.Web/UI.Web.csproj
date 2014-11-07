@@ -57,14 +57,32 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CargarNotas.aspx" />
+    <Content Include="ElegirComision.aspx" />
     <Content Include="EstadoAcademico.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="InscribirseAcurso.aspx" />
+    <Content Include="InscripcionAmateria.aspx" />
     <Content Include="ModificarDatos.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargarNotas.aspx.cs">
+      <DependentUpon>CargarNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargarNotas.aspx.designer.cs">
+      <DependentUpon>CargarNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirComision.aspx.cs">
+      <DependentUpon>ElegirComision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElegirComision.aspx.designer.cs">
+      <DependentUpon>ElegirComision.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EstadoAcademico.aspx.cs">
       <DependentUpon>EstadoAcademico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -81,6 +99,20 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InscribirseAcurso.aspx.cs">
+      <DependentUpon>InscribirseAcurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscribirseAcurso.aspx.designer.cs">
+      <DependentUpon>InscribirseAcurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InscripcionAmateria.aspx.cs">
+      <DependentUpon>InscripcionAmateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InscripcionAmateria.aspx.designer.cs">
+      <DependentUpon>InscripcionAmateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarDatos.aspx.cs">
       <DependentUpon>ModificarDatos.aspx</DependentUpon>

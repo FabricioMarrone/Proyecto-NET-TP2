@@ -12,7 +12,8 @@ namespace UI.Web
     {
         public static string USUARIO_ACTUAL = "Usuario";
         public static string PERSONA_ACTUAL = "Persona";
-
+        public static string INSCRIPCION_ACTUAL = "InscripcionAlumno";
+        public static string ID_MATERIA_SELECCIONADA = "id_materia";
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -23,6 +24,8 @@ namespace UI.Web
         {
             this.Session[USUARIO_ACTUAL] = null;
             this.Session[PERSONA_ACTUAL] = null;
+            this.Session[INSCRIPCION_ACTUAL] = null;
+            this.Session[ID_MATERIA_SELECCIONADA] = null;
         }
 
         protected void Session_End(object sender, EventArgs e)
