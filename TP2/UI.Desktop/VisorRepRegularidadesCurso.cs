@@ -14,9 +14,9 @@ namespace UI.Desktop
     public partial class VisorRepRegularidadesCur : Form
     {
         private List<ReportParameter> parametros;
-        List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos;
+        private List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos;
 
-        public VisorRepRegularidadesCur(PersonaLogic.PersonaExtended oDocente, CursoLogic.CursoExtended oCurso, string oEspecialidad, List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos)
+        public VisorRepRegularidadesCur(persona oDocente, CursoLogic.CursoExtended oCurso, PlanLogic.PlanExtended oPlan, List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos)
         {
             InitializeComponent();
 
@@ -25,20 +25,17 @@ namespace UI.Desktop
 
             // Carga de parametros para el Reporte.
             this.parametros = new List<ReportParameter>();
-            this.parametros.Add(new ReportParameter("paramPlanNombre", oDocente.Plan));
+            this.parametros.Add(new ReportParameter("paramPlanNombre", oPlan.Desc_plan));
             this.parametros.Add(new ReportParameter("paramMateriaNomb", oCurso.Materia));
             this.parametros.Add(new ReportParameter("paramComisionDesc", oCurso.Comision));
-            this.parametros.Add(new ReportParameter("paramEspecialidadDesc", oEspecialidad));
-            this.parametros.Add(new ReportParameter("paramDocenteNomApe", oDocente.Apellido + " " + oDocente.Nombre));
-            this.parametros.Add(new ReportParameter("paramDocenteLeg", oDocente.Legajo.ToString()));
+            this.parametros.Add(new ReportParameter("paramEspecialidadDesc", oPlan.Especialidad));
+            this.parametros.Add(new ReportParameter("paramDocenteNomApe", oDocente.apellido + " " + oDocente.nombre));
+            this.parametros.Add(new ReportParameter("paramDocenteLeg", oDocente.legajo.ToString()));
         }
 
         private void cargarReporte() 
         {
             this.rvReportesAcademia.LocalReport.DataSources.Clear();
-
-            
-
             this.rvReportesAcademia.LocalReport.DataSources.Add(new ReportDataSource("Alumnos_Inscriptos", this.alumnos));
             this.rvReportesAcademia.LocalReport.SetParameters(parametros);
             this.rvReportesAcademia.RefreshReport();

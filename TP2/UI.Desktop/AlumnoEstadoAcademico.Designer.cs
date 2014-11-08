@@ -32,6 +32,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tblEstadoAcademico = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEstadoAcad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).BeginInit();
             this.tblEstadoAcademico.SuspendLayout();
             this.SuspendLayout();
@@ -41,11 +42,13 @@
             this.dgvInscripciones.AllowUserToAddRows = false;
             this.dgvInscripciones.AllowUserToDeleteRows = false;
             this.dgvInscripciones.AllowUserToResizeColumns = false;
+            this.dgvInscripciones.AllowUserToResizeRows = false;
             this.dgvInscripciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInscripciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblEstadoAcademico.SetColumnSpan(this.dgvInscripciones, 2);
             this.dgvInscripciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInscripciones.Location = new System.Drawing.Point(3, 23);
+            this.dgvInscripciones.MultiSelect = false;
             this.dgvInscripciones.Name = "dgvInscripciones";
             this.dgvInscripciones.ReadOnly = true;
             this.dgvInscripciones.RowHeadersVisible = false;
@@ -82,6 +85,7 @@
             this.tblEstadoAcademico.Controls.Add(this.dgvInscripciones, 0, 1);
             this.tblEstadoAcademico.Controls.Add(this.label1, 0, 0);
             this.tblEstadoAcademico.Controls.Add(this.btnSalir, 1, 2);
+            this.tblEstadoAcademico.Controls.Add(this.btnEstadoAcad, 0, 2);
             this.tblEstadoAcademico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblEstadoAcademico.Location = new System.Drawing.Point(0, 0);
             this.tblEstadoAcademico.Name = "tblEstadoAcademico";
@@ -92,6 +96,16 @@
             this.tblEstadoAcademico.Size = new System.Drawing.Size(479, 330);
             this.tblEstadoAcademico.TabIndex = 3;
             // 
+            // btnEstadoAcad
+            // 
+            this.btnEstadoAcad.Location = new System.Drawing.Point(3, 304);
+            this.btnEstadoAcad.Name = "btnEstadoAcad";
+            this.btnEstadoAcad.Size = new System.Drawing.Size(133, 23);
+            this.btnEstadoAcad.TabIndex = 3;
+            this.btnEstadoAcad.Text = "Emitir Estado Academico";
+            this.btnEstadoAcad.UseVisualStyleBackColor = true;
+            this.btnEstadoAcad.Click += new System.EventHandler(this.btnEstadoAcad_Click);
+            // 
             // AlumnoEstadoAcademico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +114,7 @@
             this.Controls.Add(this.tblEstadoAcademico);
             this.Name = "AlumnoEstadoAcademico";
             this.Text = "Estado Academico";
+            this.Load += new System.EventHandler(this.AlumnoEstadoAcademico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();
             this.tblEstadoAcademico.ResumeLayout(false);
             this.tblEstadoAcademico.PerformLayout();
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tblEstadoAcademico;
+        private System.Windows.Forms.Button btnEstadoAcad;
     }
 }

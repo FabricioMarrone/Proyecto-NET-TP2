@@ -9,7 +9,7 @@
     <br />
     <asp:GridView ID="grdAlumnos" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="Id_inscripcion" HeaderText="ID inscripcion" ReadOnly="True" Visible="true" />
+            <asp:BoundField DataField="Id_inscripcion" HeaderText="ID Inscripcion" ReadOnly="True" Visible="true" />
             <asp:BoundField DataField="Legajo" HeaderText="Legajo" ReadOnly="True" />
             <asp:BoundField DataField="Alumno" HeaderText="Alumno" ReadOnly="True" />
             <asp:TemplateField HeaderText="Condicion">

@@ -107,6 +107,23 @@ namespace Business.Logic
                 set { legajo = value; }
             }
 
+            private string materia;
+
+            public string Materia
+            {
+                get { return materia; }
+                set { materia = value; }
+            }
+
+            private int anioCalendario;
+
+            public int AnioCalendario
+            {
+                get { return anioCalendario; }
+                set { anioCalendario = value; }
+            }
+
+
             private string condicion;
 
             public string Condicion
@@ -130,6 +147,15 @@ namespace Business.Logic
                 persona p = personaLogic.GetOne(ai.id_alumno);
                 this.Alumno = p.apellido + ", "+ p.nombre;
                 this.Legajo = p.legajo;
+
+                //Para obtener el nombre de la materia.
+                CursoLogic cursoLogic = new CursoLogic();
+                MateriaLogic materiaLogic = new MateriaLogic();
+                curso oCurso = cursoLogic.GetOne(ai.id_curso);
+                this.Materia = (materiaLogic.GetOne(oCurso.id_materia)).desc_materia;
+
+                this.anioCalendario = oCurso.anio_calendario;
+
                 this.Condicion = ai.condicion;
                 this.nota = ai.nota;
             }

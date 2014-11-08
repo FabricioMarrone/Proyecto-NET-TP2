@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class VisorRepRegularidadesCur
+    partial class VisorRepEstadoAcad
     {
         /// <summary>
         /// Required designer variable.
@@ -31,51 +31,43 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.InscripcionAlumnoExtendentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PersonaExtendedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rvReportesAcademia = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvEstadoAcademico = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionAlumnoExtendentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonaExtendedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // InscripcionAlumnoExtendentBindingSource
             // 
             this.InscripcionAlumnoExtendentBindingSource.DataSource = typeof(Business.Logic.InscripcionAlumnoLogic.InscripcionAlumnoExtendent);
             // 
-            // PersonaExtendedBindingSource
+            // rvEstadoAcademico
             // 
-            this.PersonaExtendedBindingSource.DataSource = typeof(Business.Logic.PersonaLogic.PersonaExtended);
-            // 
-            // rvReportesAcademia
-            // 
-            this.rvReportesAcademia.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Alumnos_Inscriptos";
+            this.rvEstadoAcademico.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Materias";
             reportDataSource1.Value = this.InscripcionAlumnoExtendentBindingSource;
-            this.rvReportesAcademia.LocalReport.DataSources.Add(reportDataSource1);
-            this.rvReportesAcademia.LocalReport.ReportEmbeddedResource = "UI.Desktop.Reportes.RepRegulidadesDeCurso.rdlc";
-            this.rvReportesAcademia.Location = new System.Drawing.Point(0, 0);
-            this.rvReportesAcademia.Name = "rvReportesAcademia";
-            this.rvReportesAcademia.Size = new System.Drawing.Size(724, 473);
-            this.rvReportesAcademia.TabIndex = 0;
+            this.rvEstadoAcademico.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvEstadoAcademico.LocalReport.ReportEmbeddedResource = "UI.Desktop.Reportes.RepEstadoAcademico.rdlc";
+            this.rvEstadoAcademico.Location = new System.Drawing.Point(0, 0);
+            this.rvEstadoAcademico.Name = "rvEstadoAcademico";
+            this.rvEstadoAcademico.Size = new System.Drawing.Size(715, 395);
+            this.rvEstadoAcademico.TabIndex = 0;
             // 
-            // VisorRepRegularidadesCur
+            // VisorRepEstadoAcad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 473);
-            this.Controls.Add(this.rvReportesAcademia);
-            this.Name = "VisorRepRegularidadesCur";
-            this.Text = "Listado de Regularidades";
-            this.Load += new System.EventHandler(this.VisorRepRegularidadesCur_Load);
+            this.ClientSize = new System.Drawing.Size(715, 395);
+            this.Controls.Add(this.rvEstadoAcademico);
+            this.Name = "VisorRepEstadoAcad";
+            this.Text = "VisorRepEstadoAcad";
+            this.Load += new System.EventHandler(this.VisorRepEstadoAcad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionAlumnoExtendentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PersonaExtendedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvReportesAcademia;
+        private Microsoft.Reporting.WinForms.ReportViewer rvEstadoAcademico;
         private System.Windows.Forms.BindingSource InscripcionAlumnoExtendentBindingSource;
-        private System.Windows.Forms.BindingSource PersonaExtendedBindingSource;
     }
 }

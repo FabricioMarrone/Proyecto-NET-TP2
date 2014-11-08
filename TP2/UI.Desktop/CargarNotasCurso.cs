@@ -130,15 +130,15 @@ namespace UI.Desktop
 
         private void EmitirReporte()
         {
-            PersonaLogic perLogic = new PersonaLogic();
-            PersonaLogic.PersonaExtended oDocente = PersonaLogic.getPersonaExtended(perLogic.GetOne(this.docenteActual.id_persona));
-
             CursoLogic curLogic = new CursoLogic();
             CursoLogic.CursoExtended oCurso = CursoLogic.getCursoExtended(curLogic.GetOne(this.IdCurso));
 
+            PlanLogic planLogic = new PlanLogic();
+            PlanLogic.PlanExtended oPlan = PlanLogic.getPlanExtended(planLogic.GetOne(this.docenteActual.id_plan));
+
             // Falta enviar la especialidad de la materia.
 
-            VisorRepRegularidadesCur vrRegularidades = new VisorRepRegularidadesCur(oDocente, oCurso,"Pruebas especialidad", this.GetDatosDeGrilla());
+            VisorRepRegularidadesCur vrRegularidades = new VisorRepRegularidadesCur(this.docenteActual, oCurso, oPlan, this.GetDatosDeGrilla());
             vrRegularidades.ShowDialog();
         }
     }//end class

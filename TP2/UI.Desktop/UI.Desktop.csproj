@@ -211,6 +211,12 @@
     <Compile Include="UsuarioABM.Designer.cs">
       <DependentUpon>UsuarioABM.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisorRepEstadoAcad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorRepEstadoAcad.Designer.cs">
+      <DependentUpon>VisorRepEstadoAcad.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisorRepRegularidadesCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,9 +292,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\RepEstadoAcademico.rdlc" />
     <EmbeddedResource Include="Reportes\RepRegulidadesDeCurso.rdlc" />
     <EmbeddedResource Include="UsuarioABM.resx">
       <DependentUpon>UsuarioABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorRepEstadoAcad.resx">
+      <DependentUpon>VisorRepEstadoAcad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisorRepRegularidadesCurso.resx">
       <DependentUpon>VisorRepRegularidadesCurso.cs</DependentUpon>
