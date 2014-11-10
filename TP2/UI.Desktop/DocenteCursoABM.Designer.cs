@@ -53,6 +53,7 @@
             // 
             // cbProfesores
             // 
+            this.cbProfesores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProfesores.FormattingEnabled = true;
             this.cbProfesores.Location = new System.Drawing.Point(93, 61);
             this.cbProfesores.Name = "cbProfesores";
@@ -70,6 +71,7 @@
             // 
             // cbCursos
             // 
+            this.cbCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCursos.FormattingEnabled = true;
             this.cbCursos.Location = new System.Drawing.Point(93, 140);
             this.cbCursos.Name = "cbCursos";
@@ -124,6 +126,7 @@
             // 
             // cbCargos
             // 
+            this.cbCargos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargos.FormattingEnabled = true;
             this.cbCargos.Location = new System.Drawing.Point(93, 169);
             this.cbCargos.Name = "cbCargos";
@@ -141,6 +144,7 @@
             // 
             // cbMateria
             // 
+            this.cbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMateria.FormattingEnabled = true;
             this.cbMateria.Location = new System.Drawing.Point(93, 102);
             this.cbMateria.Name = "cbMateria";

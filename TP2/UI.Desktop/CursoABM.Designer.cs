@@ -93,6 +93,7 @@
             // 
             // cbMaterias
             // 
+            this.cbMaterias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaterias.FormattingEnabled = true;
             this.cbMaterias.Location = new System.Drawing.Point(288, 26);
             this.cbMaterias.Name = "cbMaterias";
@@ -119,6 +120,7 @@
             // 
             // cbComisiones
             // 
+            this.cbComisiones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbComisiones.FormattingEnabled = true;
             this.cbComisiones.Location = new System.Drawing.Point(288, 63);
             this.cbComisiones.Name = "cbComisiones";

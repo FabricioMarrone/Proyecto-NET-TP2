@@ -194,6 +194,7 @@
             // 
             // cbTiposPer
             // 
+            this.cbTiposPer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTiposPer.FormattingEnabled = true;
             this.cbTiposPer.Location = new System.Drawing.Point(270, 138);
             this.cbTiposPer.Name = "cbTiposPer";
@@ -241,6 +242,7 @@
             // 
             // cbPlanes
             // 
+            this.cbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlanes.FormattingEnabled = true;
             this.cbPlanes.Location = new System.Drawing.Point(270, 168);
             this.cbPlanes.Name = "cbPlanes";

@@ -148,6 +148,7 @@
             // cbPlan
             // 
             this.cbPlan.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlan.FormattingEnabled = true;
             this.cbPlan.Location = new System.Drawing.Point(276, 30);
             this.cbPlan.Name = "cbPlan";
@@ -205,6 +206,7 @@
             // 
             // cbEspecialidad
             // 
+            this.cbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEspecialidad.FormattingEnabled = true;
             this.cbEspecialidad.Location = new System.Drawing.Point(276, 3);
             this.cbEspecialidad.Name = "cbEspecialidad";

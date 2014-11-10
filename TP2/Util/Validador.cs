@@ -8,7 +8,7 @@ namespace Util
 {
     public class Validador
     {
-        private static string expreCadenaNumerica = @"^[0-9]{7,11}$";
+        private static string expreCadenaNumerica = @"^[0-9]{2}$";
 
         public static string ExpreCadenaNumerica
         {
