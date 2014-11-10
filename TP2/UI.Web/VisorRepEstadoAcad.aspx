@@ -11,9 +11,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="width: 771px; height: 558px">
+    <div style="width: 753px; height: 558px">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer ID="rvEstadoAcademico" runat="server" Font-Names="Verdana" Font-Size="8pt" style="margin-right: 4px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="763px" Height="516px">
+        <rsweb:ReportViewer ID="rvEstadoAcademico" runat="server" Font-Names="Verdana" Font-Size="8pt" style="margin-right: 4px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="743px" Height="516px">
             <LocalReport ReportPath="Reportes\RepEstadoAcademico.rdlc">
             </LocalReport>
         </rsweb:ReportViewer>

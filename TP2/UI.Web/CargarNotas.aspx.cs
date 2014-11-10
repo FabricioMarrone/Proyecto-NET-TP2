@@ -108,7 +108,7 @@ namespace UI.Web
 
             this.Session["alumnos"] = this.GetDatosDeGrilla();
 
-            Response.Redirect("VisorRepRegularidadesCurso.aspx");
+            Response.Write("<script language='javascript'> window.open('VisorRepRegularidadesCurso.aspx','','width=710,Height=600,fullscreen=0,location=0,scrollbars=1,menubar=0,toolbar=0'); </script>");
         }
 
         private List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> GetDatosDeGrilla() 

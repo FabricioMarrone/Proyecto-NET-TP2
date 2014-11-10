@@ -51,7 +51,9 @@ namespace UI.Web
 
             this.Session["materias"] = this.GetDatosDeGrilla();
 
-            Response.Redirect("~/VisorRepEstadoAcad.aspx");
+
+            Response.Write("<script language='javascript'> window.open('VisorRepEstadoAcad.aspx','','width=765,Height=600,fullscreen=0,location=0,scrollbars=1,menubar=0,toolbar=0'); </script>");
+            //Response.Redirect("~/VisorRepEstadoAcad.aspx");
         }
 
         private List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> GetDatosDeGrilla()
