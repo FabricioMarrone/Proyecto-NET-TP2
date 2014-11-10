@@ -67,7 +67,7 @@ namespace UI.Web
                 {
                     //Contraseña incorrecta
                     this.messageLoginPanel.Visible = true;
-                    this.messageLogin.Text = "La contraseña es incorrecta.";
+                    this.messageLogin.Text = "La contraseña es Incorrecta.";
 
                     //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('La contraseña es incorrecta.')</SCRIPT>");
                     this.txtContraseña.Text = "";
@@ -77,7 +77,7 @@ namespace UI.Web
             {
                 //El usuario no existe
                 this.messageLoginPanel.Visible = true;
-                this.messageLogin.Text = "El usuario no existe.";
+                this.messageLogin.Text = "El usuario no Existe.";
 
                 //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('El usuario no existe.')</SCRIPT>");
                 this.txtContraseña.Text = "";

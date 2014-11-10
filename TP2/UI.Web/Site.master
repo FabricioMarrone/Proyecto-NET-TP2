@@ -9,31 +9,45 @@
     <link rel="Stylesheet" href="~/Estilos/Master.css" />
 </head>
 <body>
-      <div id="header">
-        <div id="logo">
-        <!-- <img alt="UTN" src="Images/logo-utn.jpg"/> -->
+
+    <div id="header">
+       <div id="logo">
+        <!-- <img alt="UTN" src="Images/logo-utn.jpg" /> -->
         </div>
         <div class="titlesmall"><span>UTN Rosario</span></div>
         <div class="titlebig"><span>Sistema Academia</span></div>
         <asp:ContentPlaceHolder id="ContentPlaceHeader" runat="server"></asp:ContentPlaceHolder>
-      </div>
+    </div>
 
-    <form id="bodyForm" runat="server">
-        <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>
-        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+    <div id="main">
+            <form id="bodyForm" runat="server">
+                <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
 
-        <div>Menu de cosas<br />
-            <asp:LinkButton ID="linkMenuOption0" runat="server" OnClick="linkMenuOption0_Click">Iniciar Sesion</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption1" runat="server" OnClick="linkMenuOption1_Click" Visible="False">LinkButton</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption2" runat="server" OnClick="linkMenuOption2_Click" Visible="False">LinkButton</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False" OnClick="linkMenuOption3_Click">LinkButton</asp:LinkButton>
-            <br />
-            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server"></asp:ContentPlaceHolder></div>
-        
-    </form>
+                <div>
+                    <div id="menuUsuarios">
+                        <h4>Menu de Usuario</h4>
+                        <ul>
+                            <li>
+                                <asp:LinkButton ID="linkMenuOption0" runat="server" OnClick="linkMenuOption0_Click">Iniciar Sesion</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="linkMenuOption1" runat="server" OnClick="linkMenuOption1_Click" Visible="False">LinkButton</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="linkMenuOption2" runat="server" OnClick="linkMenuOption2_Click" Visible="False">LinkButton</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False" OnClick="linkMenuOption3_Click">LinkButton</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </form>
+    </div>
+
     <div id="footer">
        <span style="color: White; font-size: 1em">Copyright © <a href="#">CompanyName</a> 2014</span>
        <asp:ContentPlaceHolder id="ContentPlaceFooter" runat="server"></asp:ContentPlaceHolder>
