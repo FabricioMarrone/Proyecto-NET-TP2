@@ -31,6 +31,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtLegajo;
         
         /// <summary>
+        /// Control revLegajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revLegajo;
+        
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        
+        /// <summary>
+        /// Control revNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
         
         /// <summary>
         /// Control Label2.
@@ -67,6 +85,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
         
         /// <summary>
+        /// Control revApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revApellido;
+        
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+        
+        /// <summary>
+        /// Control revDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revDireccion;
         
         /// <summary>
         /// Control Label5.
@@ -103,6 +139,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
+        /// Control revEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
+        
+        /// <summary>
         /// Control Label6.
         /// </summary>
         /// <remarks>
@@ -121,6 +166,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
+        /// Control revTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revTelefono;
+        
+        /// <summary>
         /// Control Label7.
         /// </summary>
         /// <remarks>
@@ -137,6 +191,15 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaNac;
+        
+        /// <summary>
+        /// Control revFechaNac.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFechaNac;
         
         /// <summary>
         /// Control Label8.

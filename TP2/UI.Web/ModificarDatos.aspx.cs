@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Web
 {
@@ -19,9 +20,11 @@ namespace UI.Web
                 {
                     this.loadDropDownLists();
                     this.mapearDeDatos((persona)this.Session[Global.PERSONA_ACTUAL]);
+
+                    
                 }
             }
-            
+            this.CargarExpresionesRegulares();
         }
 
         public void loadDropDownLists() 
@@ -98,6 +101,17 @@ namespace UI.Web
             per.fecha_nac = DateTime.Parse(this.txtFechaNac.Text);
             per.tipo_persona = this.ddlTipo.SelectedIndex;
             per.id_plan = Int32.Parse(this.ddlPlan.SelectedValue);
+        }
+
+        private void CargarExpresionesRegulares() 
+        { 
+            this.revLegajo.ValidationExpression = Validador.ExpreLegajo;
+            this.revNombre.ValidationExpression = Validador.ExpreCadenaSoloTexto;
+            this.revApellido.ValidationExpression = Validador.ExpreCadenaSoloTexto;
+            this.revDireccion.ValidationExpression = Validador.ExpreDireccion;
+            this.revEmail.ValidationExpression = Validador.ExpreEMail;
+            this.revTelefono.ValidationExpression = Validador.ExpreTelefono;
+            this.revFechaNac.ValidationExpression = Validador.ExpreFecha;
         }
     }//end class
 }
