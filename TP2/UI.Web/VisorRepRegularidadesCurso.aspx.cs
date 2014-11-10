@@ -19,7 +19,7 @@ namespace UI.Web
             {
 //--------------->
                 // Colocar Bloque try Cacht para ver si existe la session.
-                persona oDocente = (persona)this.Session["PERSONA_ACTUAL"];
+                persona oDocente = (persona)this.Session[Global.PERSONA_ACTUAL];
                 // Valido que quien entre sea un profesor.
                 if (oDocente.tipo_persona == (int)persona.tipo.Profesor)
                 {

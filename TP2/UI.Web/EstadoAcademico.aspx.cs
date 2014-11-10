@@ -28,10 +28,10 @@ namespace UI.Web
         private void EmitirReporte()
         {
             persona personaActual = (persona)this.Session[Global.PERSONA_ACTUAL];
-            if (this.Session["PERSONA_ACTUAL"] == null)
-            {
-                this.Session["PERSONA_ACTUAL"] = personaActual;
-            }
+            //if (this.Session["PERSONA_ACTUAL"] == null)
+            //{
+            //    this.Session["PERSONA_ACTUAL"] = personaActual;
+            //}
 
             PlanLogic planLogic = new PlanLogic();
             PlanLogic.PlanExtended planExt = PlanLogic.getPlanExtended(planLogic.GetOne(personaActual.id_plan));

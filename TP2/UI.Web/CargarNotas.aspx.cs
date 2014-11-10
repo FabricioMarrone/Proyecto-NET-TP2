@@ -97,10 +97,10 @@ namespace UI.Web
             this.Session["oCurso"] = oCurso;
 
             persona pActual = (persona)this.Session[Global.PERSONA_ACTUAL];
-            if (this.Session["PERSONA_ACTUAL"] == null)
-            {
-                this.Session["PERSONA_ACTUAL"] = pActual;
-            }
+            //if (this.Session["PERSONA_ACTUAL"] == null)
+            //{
+            //    this.Session["PERSONA_ACTUAL"] = pActual;
+            //}
 
             PlanLogic planLogic = new PlanLogic();
             PlanLogic.PlanExtended oPlan = PlanLogic.getPlanExtended(planLogic.GetOne(pActual.id_plan));

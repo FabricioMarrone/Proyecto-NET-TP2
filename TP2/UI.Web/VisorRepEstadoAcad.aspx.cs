@@ -16,7 +16,7 @@ namespace UI.Web
         {
             if (!Page.IsPostBack)
             {
-                persona oAlumno = (persona)this.Session["PERSONA_ACTUAL"];
+                persona oAlumno = (persona)this.Session[Global.PERSONA_ACTUAL];
                 // Valido que quien entre sea un Alumno.
                 if (oAlumno.tipo_persona == (int)persona.tipo.Alumno)
                 {
