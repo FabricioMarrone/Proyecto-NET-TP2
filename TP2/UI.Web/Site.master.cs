@@ -56,7 +56,7 @@ namespace UI.Web
                     Response.Redirect("EstadoAcademico.aspx");
                     break;
                 case (int)persona.tipo.Admin:
-
+                    Response.Redirect("~/Usuarios.aspx");
                     break;
                 case (int)persona.tipo.Profesor:
                     //Cargar notas
@@ -101,6 +101,11 @@ namespace UI.Web
                     linkMenuOption3.Visible = true;
                     break;
                 case (int)persona.tipo.Admin:
+                    linkMenuOption2.Text = "Lista de Usuarios";
+                    linkMenuOption2.Visible = true;
+
+                    linkMenuOption3.Text = "Otra Opciones de ADMIN";
+                    linkMenuOption3.Visible = true;
                     
                     break;
                 case (int)persona.tipo.Profesor:

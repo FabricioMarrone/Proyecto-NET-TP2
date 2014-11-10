@@ -98,13 +98,14 @@
 
 #main {
     padding: 10px;
-         font-family: Gill Sans, Verdana;
-              font-size: 11pt;
+    font-family: Gill Sans, Verdana;
+    font-size: 11pt;
 }
 
-#mainPanel {
-
-
+#main h1#titulo{
+    padding: 5px 0px 5px 0px;
+    font-weight: bold;
+    font-size: 13pt;
 }
 
 #leftBar {

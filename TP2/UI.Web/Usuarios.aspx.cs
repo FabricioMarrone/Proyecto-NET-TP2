@@ -54,7 +54,15 @@ namespace UI.Web
         {
             if (!IsPostBack)
             {
-                this.loadGrid();
+                persona personaActual = (persona)this.Session[Global.PERSONA_ACTUAL];
+                if (personaActual != null && personaActual.tipo_persona == (int)persona.tipo.Admin)
+                {
+                    this.loadGrid();
+                }
+                else
+                {
+                    Response.Redirect("~/Home.aspx");
+                }
             }
             else { 
                 //...

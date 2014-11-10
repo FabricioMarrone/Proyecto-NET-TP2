@@ -174,6 +174,10 @@
       <Project>{87059555-6f71-4311-bd77-657e52a78068}</Project>
       <Name>Business.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9fad9328-b004-43e1-9e29-403976c02cc7}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RepEstadoAcademico.rdlc" />

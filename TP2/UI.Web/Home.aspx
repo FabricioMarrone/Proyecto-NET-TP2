@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Label ID="lblMsg" runat="server" Text="Ingrese sus datos para comenzar"></asp:Label>
     <br />
-    <asp:Panel ID="loginPanel" CssClass="mainPanel" runat="server">
+    <asp:Panel ID="loginPanel" runat="server">
         <table>
                <tr>
                    <td>

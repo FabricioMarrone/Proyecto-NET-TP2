@@ -8,6 +8,102 @@ namespace Util
 {
     public class Validador
     {
+        private static string expreCadenaNumerica = @"^[0-9]{7,11}$";
+
+        public static string ExpreCadenaNumerica
+        {
+            get { return Validador.expreCadenaNumerica; }
+        }
+
+        private static string expreAnioEspecialidad = @"^([1-5])$";
+
+        public static string ExpreAnioEspecialidad
+        {
+            get { return Validador.expreAnioEspecialidad; }
+            set { Validador.expreAnioEspecialidad = value; }
+        }
+
+        private static string expreEnteroPositivo = @"^([1-9]|[1-9][0-9]|[1-9][0-9][0-9])$";
+
+        public static string ExpreEnteroPositivo
+        {
+            get { return Validador.expreEnteroPositivo; }
+            set { Validador.expreEnteroPositivo = value; }
+        }
+
+        private static string expreCadenaTextoYNumeros = @"^(([a-zA-Z\d])+\s?)+$";
+
+        public static string ExpreCadenaTextoYNumeros
+        {
+            get { return Validador.expreCadenaTextoYNumeros; }
+            set { Validador.expreCadenaTextoYNumeros = value; }
+        }
+
+        private static string expreAnio = @"^20([1-9][\d])$";
+
+        public static string ExpreAnio
+        {
+            get { return Validador.expreAnio; }
+            set { Validador.expreAnio = value; }
+        }
+
+        private static string expreTelefono = @"^[0-9]{7,11}$";
+
+        public static string ExpreTelefono
+        {
+            get { return Validador.expreTelefono; }
+            set { Validador.expreTelefono = value; }
+        }
+
+        private static string expreLegajo = @"^[0-9]{5}$";
+
+        public static string ExpreLegajo
+        {
+            get { return Validador.expreLegajo; }
+        }
+
+        private static string expreCadenaSoloTexto = @"^(([a-zA-Z])+\s?)+$";
+
+        public static string ExpreCadenaSoloTexto
+        {
+            get { return Validador.expreCadenaSoloTexto; }
+        }
+
+        private static string expreNombreUsuario = @"^([a-zA-Z\d]+)$";
+
+        public static string ExpreNombreUsuario
+        {
+            get { return Validador.expreNombreUsuario; }
+        }
+
+        private static string expreDireccion = @"^(([a-zA-Z])+\s?)+([\d]+){1}(\s?(P|p)\d{1,3}\s?(D|d)\d{1,3})?$";
+
+        public static string ExpreDireccion
+        {
+            get { return Validador.expreDireccion; }
+        }
+
+        private static string expreClave = @"^([a-zA-Z0-9]{8,15})$";
+
+        public static string ExpreClave
+        {
+            get { return Validador.expreClave; }
+        }
+
+        private static string expreEMail = @"^([\w-]+\.)*?[\w-]+@[\w-]+\.([\w-]+\.)*?[\w]+$";
+
+        public static string ExpreEMail
+        {
+            get { return Validador.expreEMail; }
+        }
+
+        private static string expreFecha = @"^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)$";
+
+        public static string ExpreFecha
+        {
+            get { return Validador.expreFecha; }
+        }
+
         public static bool ValidarCadenaNumerica(string numero, int longMin, int longMax)
         {
             // Aplicable Para Telefonos, Legajos, etc.
