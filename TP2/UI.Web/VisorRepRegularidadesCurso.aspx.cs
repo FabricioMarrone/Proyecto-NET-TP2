@@ -16,19 +16,25 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (! Page.IsPostBack)
+            {
 //--------------->
-            // Colocar Bloque try Cacht para ver si existe la session.
-            persona oDocente = (persona)this.Session["PERSONA_ACTUAL"];
-            // Valido que quien entre sea un profesor.
-            if (oDocente.tipo_persona == (int)persona.tipo.Profesor)
-            {
-                this.cargarReporte(oDocente);
+                // Colocar Bloque try Cacht para ver si existe la session.
+                persona oDocente = (persona)this.Session["PERSONA_ACTUAL"];
+                // Valido que quien entre sea un profesor.
+                if (oDocente.tipo_persona == (int)persona.tipo.Profesor)
+                {
+                    this.cargarReporte(oDocente);
+                }
+                else
+                {
+                    // Si no es Prof. se redirecciona a la pagina de Inicio.
+                    this.Response.Redirect("/Home.aspx");
+                }
+
             }
-            else
-            {
-                // Si no es Prof. se redirecciona a la pagina de Inicio.
-                this.Response.Redirect("/Home.aspx");
-            }
+
         }
 
         private void cargarReporte(persona oDocente)
@@ -51,7 +57,7 @@ namespace UI.Web
             this.rvReportesAcademia.LocalReport.DataSources.Clear();
             this.rvReportesAcademia.LocalReport.DataSources.Add(new ReportDataSource("Alumnos_Inscriptos", alumnos));
             this.rvReportesAcademia.LocalReport.SetParameters(parametros);
-            this.rvReportesAcademia.LocalReport.Refresh();
+            //this.rvReportesAcademia.Repo
         }
 
 
