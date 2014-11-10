@@ -86,14 +86,22 @@
                 <asp:DropDownList ID="ddlTipo" runat="server"></asp:DropDownList>
             </td>
             <td>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td>
                 <asp:Label ID="Label9" runat="server" Text="Plan:"></asp:Label>
             </td>
+            
             <td>
                 <asp:DropDownList ID="ddlPlan" runat="server"></asp:DropDownList>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <asp:Label ID="lblOperationMessage" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
             </td>
         </tr>
         <tr>

@@ -238,6 +238,15 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.DropDownList ddlPlan;
         
         /// <summary>
+        /// Control lblOperationMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOperationMessage;
+        
+        /// <summary>
         /// Control btnModificar.
         /// </summary>
         /// <remarks>

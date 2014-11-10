@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Web
 {
@@ -58,6 +59,8 @@ namespace UI.Web
                 if (personaActual != null && personaActual.tipo_persona == (int)persona.tipo.Admin)
                 {
                     this.loadGrid();
+
+                    this.CargarExpresionesRegulares();
                 }
                 else
                 {
@@ -86,6 +89,8 @@ namespace UI.Web
             this.emailTextBox.Text = this.entity.email;
             this.habilitadoCheckBox.Checked = this.entity.habilitado;
             this.nombreUsuarioTextBox.Text = this.entity.nombre_usuario;
+            this.claveTextBox.Text = this.entity.clave;
+            this.repetirClaveTextBox.Text = this.entity.clave;
         }
 
         private void loadEntity(usuario usuario) {
@@ -150,10 +155,8 @@ namespace UI.Web
             this.claveLabel.Enabled = enable;
             this.repetirClaveTextBox.Enabled = enable;
             this.repetirClaveLabel.Enabled = enable;
+            this.habilitadoCheckBox.Enabled = enable;
 
-            this.valReqNombre.Enabled = enable;
-            this.valReqApellido.Enabled = enable;
-            this.valReqNombreUsuario.Enabled = enable;
             this.CompareValidatorClave.Enabled = enable;
             this.ValidationSummary.Enabled = enable;
         }
@@ -186,6 +189,17 @@ namespace UI.Web
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+            this.claveTextBox.Text = string.Empty;
+            this.repetirClaveTextBox.Text = string.Empty;
+        }
+
+        private void CargarExpresionesRegulares()
+        {
+            this.revNombre.ValidationExpression = Validador.ExpreCadenaSoloTexto;
+            this.revApellido.ValidationExpression = Validador.ExpreCadenaSoloTexto;
+            this.revEmail.ValidationExpression = Validador.ExpreEMail;
+            this.revNombUsuario.ValidationExpression = Validador.ExpreNombreUsuario;
+            this.revClave.ValidationExpression = Validador.ExpreClave;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

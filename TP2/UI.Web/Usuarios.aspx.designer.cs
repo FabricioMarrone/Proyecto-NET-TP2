@@ -94,13 +94,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox nombreTextBox;
         
         /// <summary>
-        /// Control valReqNombre.
+        /// Control revNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valReqNombre;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
         
         /// <summary>
         /// Control apellidoLabel.
@@ -121,13 +121,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox apellidoTextBox;
         
         /// <summary>
-        /// Control valReqApellido.
+        /// Control revApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valReqApellido;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revApellido;
         
         /// <summary>
         /// Control emailLabel.
@@ -148,13 +148,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
-        /// Control valExpEmail.
+        /// Control revEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator valExpEmail;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revEmail;
         
         /// <summary>
         /// Control habilitadoLabel.
@@ -193,13 +193,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
         
         /// <summary>
-        /// Control valReqNombreUsuario.
+        /// Control revNombUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valReqNombreUsuario;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombUsuario;
         
         /// <summary>
         /// Control claveLabel.
@@ -218,6 +218,15 @@ namespace UI.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox claveTextBox;
+        
+        /// <summary>
+        /// Control revClave.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revClave;
         
         /// <summary>
         /// Control repetirClaveLabel.

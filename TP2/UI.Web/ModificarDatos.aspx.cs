@@ -20,8 +20,6 @@ namespace UI.Web
                 {
                     this.loadDropDownLists();
                     this.mapearDeDatos((persona)this.Session[Global.PERSONA_ACTUAL]);
-
-                    
                 }
             }
             this.CargarExpresionesRegulares();
@@ -77,7 +75,19 @@ namespace UI.Web
 
         public bool Validar() 
         {
-            Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('NO SE ESTA VALIDANDO EL FORM')</SCRIPT>");
+            //this.planMessage.Text="";
+            //this.tipoMessage.Text = "";
+            //if (this.ddlPlan.SelectedValue == null)
+            //{
+            //    this.planMessage.Text = "Debe selecionar un Plan.";
+            //    return false;
+            //}
+            //if (this.ddlTipo.SelectedValue != null)
+            //{
+            //    this.tipoMessage.Text = "Debe selecionar un Tipo de Usuario.";
+            //    return false;
+            //}
+
             return true;
         }
 
@@ -87,7 +97,8 @@ namespace UI.Web
             this.mapearAdatos(per);
             PersonaLogic logic = new PersonaLogic();
             logic.Save(per, "Modificacion");
-            Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Datos modificados correctamente.')</SCRIPT>");
+            this.lblOperationMessage.Text = "Datos modificados correctamente.";
+            //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Datos modificados correctamente.')</SCRIPT>");
         }
 
         public void mapearAdatos(persona per) 
