@@ -1,0 +1,430 @@
+﻿body
+{
+	background-color: #f5f5f5;
+	padding: 0;
+	margin: 0;
+}
+
+#container {
+  margin:auto;
+  width: 960px;
+  background-color: #EBEBEB;
+}
+
+#content-body {
+    border: 1px solid #b5b5b5;
+    border-width: 0 1px;
+}
+
+#logo {
+  float: left;
+  margin-right: 5px;
+}
+
+.titlesmall
+{
+	font-family: Gill Sans, Verdana;
+	font-size: 11px;
+	line-height: 14px;
+    text-align: right;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	color: White;
+	padding-bottom: 1px;
+	margin-top: 15px;
+}
+.titlebig 
+{
+	font-family: Gill Sans, Verdana;
+	color: White;
+    text-align: right;
+	margin: 0;
+	padding: 0px 0px 6px 0px;
+	font-size: 45px;
+	line-height: 44px;
+	letter-spacing: -2px;
+	font-weight: bold;
+}
+
+#header {
+  display: block;
+  background-color: #205791;
+  padding: 8px;
+  height: 80px;
+}
+
+#leftBar {
+  float: left; 
+  width: 185px;
+  background: #EBEBEB;
+}
+
+#content {
+  float:right;
+  width:771px;
+}
+
+#content.login 
+{
+    float: none;
+    width: auto;
+}
+
+#LoginUser {
+    width: 310px;
+    margin: 40px auto;
+}
+
+#footer { 
+  clear:both;
+  padding: 8px;
+  background-color: #205791;
+  /*background-image: url("Images/footer.png");*/
+  color: White;
+  font-family: Gill Sans, Verdana;
+  font-size: 10pt;
+  text-align: right;
+}
+
+#footer a 
+{
+	color: White;
+	text-decoration: none;
+}
+
+#footer a:hover 
+{
+	text-decoration: underline;
+}
+
+#userid
+{
+	padding: 12px 0 12px 45px;
+	background: url("Images/user_friend.png") 5px;
+	background-repeat:no-repeat;
+}
+
+#userid a
+{
+	text-decoration: none;
+	color: #3688BA;
+	text-transform: capitalize;
+}
+
+#userid a:hover
+{
+	text-decoration: underline;
+	color: #3688BA;
+}
+
+.accordionHeader, .accordionHeaderSelected, .accordionContent {
+	width: 180px;
+	border-style: solid solid none solid;
+	border-color: #D8D5D1;
+	border-width: 1px;
+	}
+	
+.accordionHeader, .accordionHeaderSelected, .accordionContent li a {
+	height: 32px;
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}
+	
+.accordionHeader, .accordionHeaderSelected, .accordionContent li a:link, .accordionHeader, .accordionHeaderSelected, .accordionContent li a:visited {
+	color: #3688BA;
+	display: block;
+	background:  url("Images/menu2.gif");
+	padding: 8px 0 0 27px;
+	}
+	
+.accordionHeader, .accordionHeaderSelected, .accordionContent li a:hover {
+	color: #3688BA;
+	background:  url("Images/menu2.gif") 0 -32px;
+	padding: 8px 0 0 32px;
+	}
+	
+.accordionHeader, .accordionHeaderSelected, .accordionContent ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	}
+
+.accordionHeader, .accordionHeaderSelected, .accordionContent  img {
+    border: none;
+}
+
+input {
+    display: block;
+    border: 1px solid #b5b5b5;
+    background: #FFF;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #666;
+}
+
+input.submit {
+    background: #f5f5f5;
+}
+
+input.first, select.first {
+    margin: 0 15px 0 5px;
+    width: 200px;
+}
+
+select {
+    display: block;
+}
+
+input.expand, select.expand {
+    width: 100%;
+}
+
+.expand {
+    width: 99%;
+}
+
+.col1 .expand {
+    width: 333px;
+}
+
+.col2 .expand {
+    width: 367px;
+}
+
+input.inline, select.inline {
+    display: inline-block;
+}
+
+inline {
+    display: inline-block;
+}
+
+fieldset.permisos {
+    float: right;
+}
+
+fieldset.left {
+    float: left;
+    clear: left;
+}
+
+fieldset.col1 {
+    width: 360px;
+    margin-left: 10px;
+}
+
+fieldset.col2 {
+    width: 335px;
+    margin-left: 0;
+}
+
+.checkbox {
+    display: block;
+}
+
+.checkbox input {
+    display: inline-block;
+}
+
+.imgsmall img
+{
+	width: 22px;
+	height: 22px;
+}
+
+fieldset {
+    background: #D5EDF8;
+    border: 2px solid #92CAE4;
+    border-radius: 5px;
+    color: #205791;
+    margin: 5px 5px 5px 10px;
+    padding: 5px 10px 15px;
+}
+
+legend {
+    background: inherit;
+    border: inherit;
+    border-radius: inherit;
+    padding: 2px 10px;
+}
+
+.error {
+    padding: 3px 9px;
+    border-radius: 5px;
+    color: #A00;
+    background: #FBE3E4;
+    border: 2px solid #A00;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.success {
+    background: #B9E0A5;
+    border-radius: 5px;
+    color: #1B4D00;
+    padding: 3px 9px;
+    border-radius: 5px;
+    border: 2px solid #74C14A;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.error.float, .success.float {
+    float: left;
+    clear: both;
+}
+
+.col1 .error.extended, .col1 .success.extended {
+    display: block;
+    margin: 4px 0;
+    padding: 2px 5px;
+    width: 341px;
+}
+
+.button-set {
+    margin: 5px 0;
+    clear: both;
+}
+
+.button-set input {
+    border-radius: 0;
+    margin: inherit 0;
+}
+
+.button-set input:first-child {
+    border-radius: 5px 0 0 5px;
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.button-set input:last-child {
+    border-radius: 0 5px 5px 0;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.button.verde {
+    background: #D5E8D4;
+    border-color: #51B11D;
+    color: #2E7309; 
+}
+
+.button.verde:hover {
+    background: #b9e0a5;
+    border-color: #4F8531;
+    color: #2F561B;
+}
+
+.button.rojo {
+    background: #f8cecc;
+    border-color: #dc0800;
+    color: #A52C29; 
+}
+
+.button.rojo:hover {
+    background: #f19c99;
+    border-color: #8F0400;
+    color: #8F0400;
+}
+
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+ }
+
+.clearfix {
+        display: inline-block;
+ }
+
+/* start commented backslash hack \*/
+
+* html .clearfix {
+        height: 1%;
+ }
+
+.clearfix {
+        display: block;
+}
+/* close commented backslash hack */
+
+table.style {
+    border-color: #404080;
+}
+
+table.expand {
+    width: 100%;
+}
+
+.col1 table.expand {
+    width: 333px;
+}
+
+.col2 table.expand {
+    width: 335px;
+}
+
+table.style th {
+    text-transform: capitalize;
+    background-color: #346492;
+    color: #FFF;
+    border: 1px solid #000;
+}
+
+table.style tr {
+    background-color: #CADDF0;
+}
+
+table.style tr a {
+    text-decoration: none;
+}
+
+table.style tr a:hover {
+    text-decoration: underline;
+}
+
+.capitalize
+{
+	text-transform: capitalize;
+}
+/** Zebra, only CSS3+ */
+table.style tr:nth-child(odd) {
+    background-color: #BCD6F0;
+}
+
+table.style tr:hover {
+    background-color: #A0C1E0;
+}
+
+#error img 
+{
+	float: left;
+}
+
+#error .content
+{
+	margin: 20px 0 125px 10px;
+	color: #AA0000;
+}
+
+#error .content h1 
+{
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 30px;
+	margin: 0 0 10px 0;
+	padding: 20px 0 0;
+}
+
+#error .content span
+{
+	margin-left: 10px;

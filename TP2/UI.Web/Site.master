@@ -6,8 +6,18 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Academia</title>
+    <link rel="Stylesheet" href="~/Estilos/Master.css" />
 </head>
 <body>
+      <div id="header">
+        <div id="logo">
+        <!-- <img alt="UTN" src="Images/logo-utn.jpg"/> -->
+        </div>
+        <div class="titlesmall"><span>UTN Rosario</span></div>
+        <div class="titlebig"><span>Sistema Academia</span></div>
+        <asp:ContentPlaceHolder id="ContentPlaceHeader" runat="server"></asp:ContentPlaceHolder>
+      </div>
+
     <form id="bodyForm" runat="server">
         <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource"></asp:Menu>
         <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
@@ -24,5 +34,9 @@
             <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server"></asp:ContentPlaceHolder></div>
         
     </form>
+    <div id="footer">
+       <span style="color: White; font-size: 1em">Copyright © <a href="#">CompanyName</a> 2014</span>
+       <asp:ContentPlaceHolder id="ContentPlaceFooter" runat="server"></asp:ContentPlaceHolder>
+    </div>
 </body>
 </html>

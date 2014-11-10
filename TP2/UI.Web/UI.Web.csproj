@@ -61,6 +61,7 @@
     <Content Include="CargarNotas.aspx" />
     <Content Include="ElegirComision.aspx" />
     <Content Include="EstadoAcademico.aspx" />
+    <Content Include="Estilos\Master.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="InscribirseAcurso.aspx" />
@@ -177,6 +178,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RepEstadoAcademico.rdlc" />
     <EmbeddedResource Include="Reportes\RepRegulidadesDeCurso.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
