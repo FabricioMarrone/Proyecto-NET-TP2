@@ -81,5 +81,10 @@ namespace Business.Logic
             }
         }
 
+
+        public List<usuario> BuscarPorApellido(string apellido)
+        {
+            return this.UsuarioData.BuscarPorApellido(apellido);
+        }
     }
 }

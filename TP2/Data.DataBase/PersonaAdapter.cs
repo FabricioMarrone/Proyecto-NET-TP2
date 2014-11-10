@@ -96,5 +96,16 @@ namespace Data.DataBase
                 academiaContext.SaveChanges();
             }
         }
+
+        public List<persona> BuscarPorLegajo(int legajo)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                List<persona> queryPersonas = (from p in academiaContext.personas
+                                               where p.legajo == legajo
+                                               select p).ToList();
+                return queryPersonas;
+            }
+        }
     }//end class
 }

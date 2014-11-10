@@ -112,5 +112,16 @@ namespace Data.DataBase
                 throw ex;
             }
         }
+
+        public List<usuario> BuscarPorApellido(string apellido)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                List<usuario> queryUsuarios = (from u in academiaContext.usuarios
+                                               where u.apellido.ToLower() == apellido.ToLower()
+                                               select u).ToList();
+                return queryUsuarios;
+            }
+        }
     }
 }

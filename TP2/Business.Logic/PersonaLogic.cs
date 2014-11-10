@@ -174,5 +174,10 @@ namespace Business.Logic
                 this.Desc = this.Legajo + " - " + this.Nombre + " " + this.Apellido;
             }
         }//end sub class
+
+        public List<persona> BuscarPorLegajo(int legajo)
+        {
+            return this._personaData.BuscarPorLegajo(legajo);
+        }
     }//end class
 }
