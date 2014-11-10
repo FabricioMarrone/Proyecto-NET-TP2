@@ -6,5 +6,5 @@
 <asp:GridView ID="grdEstadoAcademico" runat="server">
 </asp:GridView>
 <br />
-<br />
+    <asp:Button ID="btnEstadoAcad" runat="server" Text="Emitir Estado Academico" OnClick="btnEstadoAcad_Click" Width="162px" />
 </asp:Content>

@@ -67,6 +67,7 @@
     <Content Include="InscripcionAmateria.aspx" />
     <Content Include="ModificarDatos.aspx" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="VisorRepEstadoAcad.aspx" />
     <Content Include="VisorRepRegularidadesCurso.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisorRepEstadoAcad.aspx.cs">
+      <DependentUpon>VisorRepEstadoAcad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisorRepEstadoAcad.aspx.designer.cs">
+      <DependentUpon>VisorRepEstadoAcad.aspx</DependentUpon>
     </Compile>
     <Compile Include="VisorRepRegularidadesCurso.aspx.cs">
       <DependentUpon>VisorRepRegularidadesCurso.aspx</DependentUpon>

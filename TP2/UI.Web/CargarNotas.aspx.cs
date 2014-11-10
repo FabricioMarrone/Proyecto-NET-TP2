@@ -62,7 +62,6 @@ namespace UI.Web
                 else ddlNota.SelectedValue = inscripciones[i].Nota.ToString();
                 ddlNota.DataBind();
             }
-            
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -126,7 +125,8 @@ namespace UI.Web
                 // 2 alumno
                 insc.Alumno = fila.Cells[2].Text;
                 // 3 = condicion
-                insc.Condicion = fila.Cells[3].Text;
+                //insc.Condicion = fila.Cells[3].Text;
+                insc.Condicion = ((DropDownList)fila.Cells[3].FindControl("ddlCondicion")).SelectedValue;
                 // 4 = nota.
                 // Valido que nota no este null para evitar error de NullReference al convertir a int.
 

@@ -10,33 +10,33 @@
 namespace UI.Web {
     
     
-    public partial class EstadoAcademico {
+    public partial class VisorRepEstadoAcad {
         
         /// <summary>
-        /// Control lblEstadoAcademico.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoAcademico;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control grdEstadoAcademico.
+        /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdEstadoAcademico;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Control btnEstadoAcad.
+        /// Control rvEstadoAcademico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEstadoAcad;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer rvEstadoAcademico;
     }
 }

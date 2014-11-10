@@ -12,8 +12,6 @@ namespace UI.Web
 {
     public partial class VisorRepRegularidadesCurso : System.Web.UI.Page
     {
-        private List<ReportParameter> parametros;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -45,13 +43,13 @@ namespace UI.Web
             List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos = (List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent>)this.Session["alumnos"];
 
             // Carga de parametros para el Reporte.
-            this.parametros = new List<ReportParameter>();
-            this.parametros.Add(new ReportParameter("paramPlanNombre", oPlan.Desc_plan));
-            this.parametros.Add(new ReportParameter("paramMateriaNomb", oCurso.Materia));
-            this.parametros.Add(new ReportParameter("paramComisionDesc", oCurso.Comision));
-            this.parametros.Add(new ReportParameter("paramEspecialidadDesc", oPlan.Especialidad));
-            this.parametros.Add(new ReportParameter("paramDocenteNomApe", oDocente.apellido + " " + oDocente.nombre));
-            this.parametros.Add(new ReportParameter("paramDocenteLeg", oDocente.legajo.ToString()));
+            List<ReportParameter> parametros = new List<ReportParameter>();
+            parametros.Add(new ReportParameter("paramPlanNombre", oPlan.Desc_plan));
+            parametros.Add(new ReportParameter("paramMateriaNomb", oCurso.Materia));
+            parametros.Add(new ReportParameter("paramComisionDesc", oCurso.Comision));
+            parametros.Add(new ReportParameter("paramEspecialidadDesc", oPlan.Especialidad));
+            parametros.Add(new ReportParameter("paramDocenteNomApe", oDocente.apellido + " " + oDocente.nombre));
+            parametros.Add(new ReportParameter("paramDocenteLeg", oDocente.legajo.ToString()));
 
 
             this.rvReportesAcademia.LocalReport.DataSources.Clear();
