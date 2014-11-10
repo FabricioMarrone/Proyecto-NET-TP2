@@ -130,7 +130,7 @@
             this.tsbEliminar});
             this.tsListar.Location = new System.Drawing.Point(3, 0);
             this.tsListar.Name = "tsListar";
-            this.tsListar.Size = new System.Drawing.Size(81, 25);
+            this.tsListar.Size = new System.Drawing.Size(112, 25);
             this.tsListar.TabIndex = 0;
             // 
             // tsbNuevo
@@ -147,7 +147,7 @@
             // tsbEditar
             // 
             this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.pencil_small1;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
@@ -158,7 +158,7 @@
             // tsbEliminar
             // 
             this.tsbEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
+            this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.trash_small1;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);

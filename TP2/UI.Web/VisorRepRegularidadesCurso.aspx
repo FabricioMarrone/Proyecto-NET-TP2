@@ -11,11 +11,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
+    <div style="width: 606px">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+    <rsweb:ReportViewer ID="rvReportesAcademia" runat="server" Height="371px" SizeToReportContent="True" Width="592px" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+        <LocalReport ReportPath="Reportes\RepRegulidadesDeCurso.rdlc">
+        </LocalReport>
+    </rsweb:ReportViewer>
     </div>
-        <rsweb:ReportViewer ID="rvReportesAcademia" runat="server" Height="371px" SizeToReportContent="True" Width="592px">
-        </rsweb:ReportViewer>
     </form>
 </body>
 </html>

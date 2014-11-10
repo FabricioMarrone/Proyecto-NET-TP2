@@ -19,7 +19,7 @@ namespace UI.Desktop
         public MateriaABM()
         {
             InitializeComponent();
-            this.CargarComboBox();
+            this.CargarComboBoxEspecialidad();
         }
 
         public MateriaABM(ModoForm modo) : this() 
@@ -36,12 +36,31 @@ namespace UI.Desktop
             this.MapearDeDatos();
         }
 
-        private void CargarComboBox()
+        private void CargarComboBoxEspecialidad()
+        {
+            EspecialidadLogic espLogic = new EspecialidadLogic();
+            this.cbEspecialidad.DataSource = espLogic.GetAll();
+            this.cbEspecialidad.ValueMember = "id_especialidad";
+            this.cbEspecialidad.DisplayMember = "desc_especialidad";
+            this.cbEspecialidad.SelectedItem = null;
+            this.cbEspecialidad.Text = "[Especialidad]";
+
+            this.cbPlan.Enabled = false;
+        }
+
+        private void CargarComboBoxPlan(int idEspecialidad)
         {
             PlanLogic planLogic = new PlanLogic();
-            this.cbPlan.DataSource = planLogic.GetAll();
+            this.cbPlan.DataSource = planLogic.GetPlanesDeEspecialidad(idEspecialidad);
+            // Validar que la lista que devuelva no este vacia.
+            // Si esta vacia deshabilitar el boton de aceptar.
             this.cbPlan.ValueMember = "id_plan";
             this.cbPlan.DisplayMember = "desc_plan";
+            this.cbPlan.SelectedItem = null;
+            this.cbPlan.Text = "[Plan]";
+            
+
+            this.cbPlan.Enabled = true;
         }
 
         public override void MapearDeDatos()
@@ -50,6 +69,12 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.materiaActual.desc_materia;
             this.txtHsSemanales.Text = this.materiaActual.hs_semanales.ToString();
             this.txtHsTotales.Text = this.materiaActual.hs_totales.ToString();
+
+            PlanLogic planLogic = new PlanLogic();
+            plane p = planLogic.GetOne(this.materiaActual.id_plan);
+            this.cbEspecialidad.SelectedValue = p.id_especialidad;
+
+            this.CargarComboBoxPlan(p.id_especialidad);
             this.cbPlan.SelectedValue = this.materiaActual.id_plan;
 
             switch (Modo)
@@ -63,6 +88,7 @@ namespace UI.Desktop
                     this.txtDescripcion.Enabled = false;
                     this.txtHsSemanales.Enabled = false;
                     this.txtHsTotales.Enabled = false;
+                    this.cbEspecialidad.Enabled = false;
                     this.cbPlan.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
@@ -96,7 +122,7 @@ namespace UI.Desktop
                 return false;
             }
 
-            if( !(Validador.ValidarCadenaSoloTexto(txtDescripcion.Text)) )
+            if( !(Validador.ValidarCadenaSoloTexto(this.txtDescripcion.Text)) )
             {
                 this.Notificar("Campos Invalido", "El campo Descripcion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -111,6 +137,18 @@ namespace UI.Desktop
             if (!(Validador.ValidarEnteroPositivo(this.txtHsTotales.Text)))
             {
                 this.Notificar("Campos Invalido", "El campo Hs Totales es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (this.cbEspecialidad.SelectedValue == null)
+            {
+                this.Notificar("Campos Invalido", "Debe seleccionar una Especialidad.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (this.cbPlan.SelectedValue == null)
+            {
+                this.Notificar("Campos Invalido", "Debe seleccionar un Plan.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 
@@ -131,5 +169,9 @@ namespace UI.Desktop
             this.Close();
         }
 
+        private void cbEspecialidad_SelectionChangeCommitted(object sender, EventArgs e)
+        {            
+            this.CargarComboBoxPlan( (int)this.cbEspecialidad.SelectedValue );
+        }
     }
 }

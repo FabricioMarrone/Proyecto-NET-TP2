@@ -26,5 +26,6 @@
     </asp:GridView>
     <br />
     <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+    <asp:Button ID="btnImprReporte" runat="server" OnClick="btnImprReporte_Click" Text="Emitir Reporte de Regularidades" Width="212px" />
     <br />
 </asp:Content>

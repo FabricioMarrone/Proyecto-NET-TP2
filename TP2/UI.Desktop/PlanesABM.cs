@@ -25,6 +25,8 @@ namespace UI.Desktop
             this.cbEspecialidad.DataSource = espLogic.GetAll();
             this.cbEspecialidad.ValueMember = "id_especialidad";
             this.cbEspecialidad.DisplayMember = "desc_especialidad";
+            this.cbEspecialidad.SelectedItem = null;
+            this.cbEspecialidad.Text = "[Especialidad]";
         }
 
         public PlanesABM(ModoForm modo) : this() 
@@ -86,6 +88,12 @@ namespace UI.Desktop
             if ( !(Validador.ValidarCadenaTextoYNumeros(this.txtDesc.Text)))
             {
                 this.Notificar("Campos Invalido", "El campo Descripcion es Invalido.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if ( this.cbEspecialidad.SelectedValue == null)
+            {
+                this.Notificar("Campos Invalido", "Debe selccionar una Especialidad.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
 

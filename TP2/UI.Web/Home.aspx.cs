@@ -29,6 +29,9 @@ namespace UI.Web
 
         protected void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+            //Se limpia el area de mensajes.
+            this.messageLogin.Text = "";
+
             //Obtenemos datos del form
             string usu = this.txtUsuario.Text;
             string pass = this.txtContraseña.Text;
@@ -59,19 +62,24 @@ namespace UI.Web
                     master.showMenu(per.tipo_persona);
 
                     this.occultLogin();
-                    //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Usuario OK')</SCRIPT>");
                 }
                 else
                 {
                     //Contraseña incorrecta
-                    Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('La contraseña es incorrecta.')</SCRIPT>");
+                    this.messageLoginPanel.Visible = true;
+                    this.messageLogin.Text = "La contraseña es incorrecta.";
+
+                    //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('La contraseña es incorrecta.')</SCRIPT>");
                     this.txtContraseña.Text = "";
                 }
             }
             else
             {
                 //El usuario no existe
-                Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('El usuario no existe.')</SCRIPT>");
+                this.messageLoginPanel.Visible = true;
+                this.messageLogin.Text = "El usuario no existe.";
+
+                //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('El usuario no existe.')</SCRIPT>");
                 this.txtContraseña.Text = "";
             }
         }//end boton iniciar sesion
@@ -81,25 +89,33 @@ namespace UI.Web
         {
             LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
             linkIniciarSesion.Text = "Iniciar sesión";
-            this.lblUsuario.Visible = true;
-            this.lblPass.Visible = true;
-            this.txtUsuario.Visible = true;
-            this.txtContraseña.Visible = true;
-            this.btnIniciarSesion.Visible = true;
-            this.lblMsg.Text = "Ingrese sus datos para comenzar";
+
+            this.loginPanel.Visible = true;
+
+            //this.lblUsuario.Visible = true;
+            //this.lblPass.Visible = true;
+            //this.txtUsuario.Visible = true;
+            //this.txtContraseña.Visible = true;
+            //this.btnIniciarSesion.Visible = true;
+            //this.lblMsg.Text = "Ingrese sus datos para comenzar";
         }
 
         public void occultLogin() 
         {
             LinkButton linkIniciarSesion = (LinkButton)FindControlRecursive(Master, "linkMenuOption0");
             linkIniciarSesion.Text = "Cerrar sesión";
-            this.lblUsuario.Visible = false;
-            this.lblPass.Visible = false;
-            this.txtUsuario.Visible = false;
-            this.txtContraseña.Visible = false;
-            this.btnIniciarSesion.Visible = false;
+
+            this.loginPanel.Visible = false;
+            //this.lblUsuario.Visible = false;
+            //this.lblPass.Visible = false;
+            //this.txtUsuario.Visible = false;
+            //this.txtContraseña.Visible = false;
+            //this.btnIniciarSesion.Visible = false;
+
+
             persona per = (persona)this.Session[Global.PERSONA_ACTUAL];
             this.lblMsg.Text = "Bienvenido " + per.nombre + " " + per.apellido + "!";
+            
             //String.Format("Bienvenido {0} {1}!", user.nombre, user.apellido)
         }
 

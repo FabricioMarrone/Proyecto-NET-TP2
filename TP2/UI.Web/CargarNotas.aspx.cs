@@ -89,5 +89,58 @@ namespace UI.Web
             insAlumLogic.Save(inscripciones);
             Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Notas registradas con exito.')</SCRIPT>");
         }
+
+        private void EmitirReporte()
+        {
+            int id_curso = Int32.Parse(this.ddlCursos.SelectedValue);
+            CursoLogic curLogic = new CursoLogic();
+            CursoLogic.CursoExtended oCurso = CursoLogic.getCursoExtended(curLogic.GetOne(id_curso));
+            this.Session["oCurso"] = oCurso;
+
+            persona pActual = (persona)this.Session[Global.PERSONA_ACTUAL];
+            if (this.Session["PERSONA_ACTUAL"] == null)
+            {
+                this.Session["PERSONA_ACTUAL"] = pActual;
+            }
+
+            PlanLogic planLogic = new PlanLogic();
+            PlanLogic.PlanExtended oPlan = PlanLogic.getPlanExtended(planLogic.GetOne(pActual.id_plan));
+            this.Session["oPlan"] = oPlan;
+
+            this.Session["alumnos"] = this.GetDatosDeGrilla();
+
+            Response.Redirect("VisorRepRegularidadesCurso.aspx");
+        }
+
+        private List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> GetDatosDeGrilla() 
+        {
+            List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent> alumnos = new List<InscripcionAlumnoLogic.InscripcionAlumnoExtendent>();
+
+            foreach (GridViewRow fila in this.grdAlumnos.Rows)
+            {
+                InscripcionAlumnoLogic.InscripcionAlumnoExtendent insc = new InscripcionAlumnoLogic.InscripcionAlumnoExtendent();
+
+                // 0 id_inscirpcion
+                // 1 legajo
+                insc.Legajo = int.Parse(fila.Cells[1].Text);
+                // 2 alumno
+                insc.Alumno = fila.Cells[2].Text;
+                // 3 = condicion
+                insc.Condicion = fila.Cells[3].Text;
+                // 4 = nota.
+                // Valido que nota no este null para evitar error de NullReference al convertir a int.
+
+                string nota = ((DropDownList)fila.Cells[4].FindControl("ddlNota")).SelectedValue;
+                if (nota != null) insc.Nota = int.Parse(nota);
+
+                alumnos.Add(insc);
+            }
+            return alumnos;
+        }
+
+        protected void btnImprReporte_Click(object sender, EventArgs e)
+        {
+            this.EmitirReporte();
+        }
     }//end class
 }

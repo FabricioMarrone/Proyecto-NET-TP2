@@ -67,6 +67,7 @@ namespace UI.Desktop
             this.cbMateria.DataSource = matLogic.GetMateriasParaDictado(id_docente,id_plan);
             this.cbMateria.ValueMember = "id_materia";
             this.cbMateria.DisplayMember = "desc_materia";
+            this.cbMateria.SelectedItem = null;
             this.cbMateria.Text = "[Seleccione una Materia]";
 
             this.cbCursos.Enabled = false;
@@ -102,11 +103,18 @@ namespace UI.Desktop
 
         public override bool Validar() 
         {
-            if (this.cbCursos.SelectedValue != null)
+            if (this.cbMateria.SelectedValue == null)
             {
-                return true;
+                this.Notificar("Campos Incompletos", "Deben seleccionar una Materia.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
             }
-            return false;
+
+            if (this.cbCursos.SelectedValue == null)
+            {
+                this.Notificar("Campos Incompletos", "Deben seleccionar una Curso.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            return true;
         }
 
         public override void GuardarCambios()
@@ -139,8 +147,8 @@ namespace UI.Desktop
 
             this.cbCursos.ValueMember = "id_curso";
             this.cbCursos.DisplayMember = "comision";
-            this.cbCursos.Text = "[Seleccione un Curso]";
             this.cbCursos.SelectedItem = null;
+            this.cbCursos.Text = "[Seleccione un Curso]";
             this.cbCursos.Enabled = true;
         }
 

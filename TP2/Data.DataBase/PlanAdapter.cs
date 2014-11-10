@@ -76,5 +76,16 @@ namespace Data.DataBase
             }
         }
 
+        public List<plane> GetPlanesDeEspecialidad(int idEspecialidad)
+        {
+            using (AcademiaEntities academiaContext = new AcademiaEntities())
+            {
+                List<plane> planesQuery = (from p in academiaContext.planes
+                                           where p.id_especialidad == idEspecialidad
+                                           select p).ToList();
+                return planesQuery;
+            }
+        }
+
     }
 }

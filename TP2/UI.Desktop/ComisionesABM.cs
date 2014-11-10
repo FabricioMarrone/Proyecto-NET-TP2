@@ -19,7 +19,7 @@ namespace UI.Desktop
         public ComisionesABM()
         {
             InitializeComponent();
-            this.CargarComboBox();
+            this.CargarComboBoxEspecialidad();
         }
 
         public ComisionesABM(ModoForm modo): this()
@@ -36,11 +36,45 @@ namespace UI.Desktop
             this.MapearDeDatos();
         }
 
+        private void CargarComboBoxEspecialidad()
+        {
+            EspecialidadLogic espLogic = new EspecialidadLogic();
+            this.cbEspecialidad.DataSource = espLogic.GetAll();
+            this.cbEspecialidad.ValueMember = "id_especialidad";
+            this.cbEspecialidad.DisplayMember = "desc_especialidad";
+            this.cbEspecialidad.SelectedItem = null;
+            this.cbEspecialidad.Text = "[Especialidad]";
+
+            this.cbPlan.Enabled = false;
+        }
+
+        private void CargarComboBoxPlan(int idEspecialidad)
+        {
+            PlanLogic planLogic = new PlanLogic();
+            this.cbPlan.DataSource = planLogic.GetPlanesDeEspecialidad(idEspecialidad);
+            // Validar que la lista que devuelva no este vacia.
+            // Si esta vacia deshabilitar el boton de aceptar.
+            this.cbPlan.ValueMember = "id_plan";
+            this.cbPlan.DisplayMember = "desc_plan";
+            this.cbPlan.SelectedItem = null;
+            this.cbPlan.Text = "[Plan]";
+
+
+            this.cbPlan.Enabled = true;
+        }
+
         public override void MapearDeDatos() 
         {
             this.txtID.Text = this.comisionActual.id_comision.ToString();
             this.txtDesc.Text = this.comisionActual.desc_comision;
             this.txtAñoEsp.Text = this.comisionActual.anio_especialidad.ToString();
+
+            //this.cbPlan.SelectedValue = this.comisionActual.id_plan;
+            PlanLogic planLogic = new PlanLogic();
+            plane p = planLogic.GetOne(this.comisionActual.id_plan);
+            this.cbEspecialidad.SelectedValue = p.id_especialidad;
+
+            this.CargarComboBoxPlan(p.id_especialidad);
             this.cbPlan.SelectedValue = this.comisionActual.id_plan;
 
 
@@ -54,6 +88,7 @@ namespace UI.Desktop
                     this.txtID.Enabled = false;
                     this.txtDesc.Enabled = false;
                     this.txtAñoEsp.Enabled = false;
+                    this.cbEspecialidad.Enabled = false;
                     this.cbPlan.Enabled = false;
                     break;
                 case ModoForm.Modificacion:
@@ -61,14 +96,6 @@ namespace UI.Desktop
                     this.txtID.Enabled = false;
                     break;
             }
-        }
-
-        private void CargarComboBox()
-        {
-            PlanLogic planLogic = new PlanLogic();
-            this.cbPlan.DataSource = planLogic.GetAll();
-            this.cbPlan.ValueMember = "id_plan";
-            this.cbPlan.DisplayMember = "desc_plan";
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -101,6 +128,18 @@ namespace UI.Desktop
                 return false;
             }
 
+            if (this.cbEspecialidad.SelectedValue == null)
+            {
+                this.Notificar("Campos Invalido", "Debe seleccionar una Especialidad.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            if (this.cbPlan.SelectedValue == null)
+            {
+                this.Notificar("Campos Invalido", "Debe seleccionar un Plan.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
             return true;
         }
 
@@ -128,5 +167,12 @@ namespace UI.Desktop
         {
             this.Close();
         }
+
+        private void cbEspecialidad_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.CargarComboBoxPlan((int)this.cbEspecialidad.SelectedValue);
+        }
+
+
     }//end class
 }

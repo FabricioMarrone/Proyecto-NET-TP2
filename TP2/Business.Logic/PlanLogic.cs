@@ -54,6 +54,10 @@ namespace Business.Logic
             this.PlanData.Delete(id);
         }
 
+        public List<plane> GetPlanesDeEspecialidad(int idEspecialidad){
+            return this.PlanData.GetPlanesDeEspecialidad(idEspecialidad);
+        }
+
         public static PlanExtended getPlanExtended(plane plan)
         {
             return new PlanExtended(plan);

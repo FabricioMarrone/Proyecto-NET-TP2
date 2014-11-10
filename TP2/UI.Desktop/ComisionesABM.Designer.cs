@@ -38,12 +38,14 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbPlan = new System.Windows.Forms.ComboBox();
+            this.cbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 29);
+            this.label1.Location = new System.Drawing.Point(79, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 19;
@@ -51,7 +53,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(109, 26);
+            this.txtID.Location = new System.Drawing.Point(106, 6);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -60,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 62);
+            this.label2.Location = new System.Drawing.Point(34, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 20;
@@ -68,7 +70,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(109, 59);
+            this.txtDesc.Location = new System.Drawing.Point(106, 39);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(100, 20);
             this.txtDesc.TabIndex = 1;
@@ -76,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(225, 26);
+            this.label3.Location = new System.Drawing.Point(9, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 21;
@@ -84,7 +86,7 @@
             // 
             // txtAñoEsp
             // 
-            this.txtAñoEsp.Location = new System.Drawing.Point(322, 23);
+            this.txtAñoEsp.Location = new System.Drawing.Point(106, 67);
             this.txtAñoEsp.Name = "txtAñoEsp";
             this.txtAñoEsp.Size = new System.Drawing.Size(100, 20);
             this.txtAñoEsp.TabIndex = 2;
@@ -92,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(272, 62);
+            this.label4.Location = new System.Drawing.Point(269, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 22;
@@ -100,7 +102,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(228, 95);
+            this.btnAceptar.Location = new System.Drawing.Point(225, 103);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 4;
@@ -110,7 +112,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(322, 95);
+            this.btnCancelar.Location = new System.Drawing.Point(319, 103);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -121,17 +123,37 @@
             // cbPlan
             // 
             this.cbPlan.FormattingEnabled = true;
-            this.cbPlan.Location = new System.Drawing.Point(322, 62);
+            this.cbPlan.Location = new System.Drawing.Point(319, 70);
             this.cbPlan.Name = "cbPlan";
             this.cbPlan.Size = new System.Drawing.Size(100, 21);
             this.cbPlan.TabIndex = 3;
+            // 
+            // cbEspecialidad
+            // 
+            this.cbEspecialidad.FormattingEnabled = true;
+            this.cbEspecialidad.Location = new System.Drawing.Point(319, 39);
+            this.cbEspecialidad.Name = "cbEspecialidad";
+            this.cbEspecialidad.Size = new System.Drawing.Size(100, 21);
+            this.cbEspecialidad.TabIndex = 26;
+            this.cbEspecialidad.SelectionChangeCommitted += new System.EventHandler(this.cbEspecialidad_SelectionChangeCommitted);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(243, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Especialidad:";
             // 
             // ComisionesABM
             // 
             this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 130);
+            this.ClientSize = new System.Drawing.Size(433, 132);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbEspecialidad);
             this.Controls.Add(this.cbPlan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -161,5 +183,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbPlan;
+        private System.Windows.Forms.ComboBox cbEspecialidad;
+        private System.Windows.Forms.Label label5;
     }
 }
