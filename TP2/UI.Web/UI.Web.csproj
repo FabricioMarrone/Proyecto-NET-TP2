@@ -68,6 +68,7 @@
     <Content Include="InscribirseAcurso.aspx" />
     <Content Include="InscripcionAmateria.aspx" />
     <Content Include="ModificarDatos.aspx" />
+    <Content Include="UserControls\LabelText.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="VisorRepEstadoAcad.aspx" />
     <Content Include="VisorRepRegularidadesCurso.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LabelText.ascx.cs">
+      <DependentUpon>LabelText.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LabelText.ascx.designer.cs">
+      <DependentUpon>LabelText.ascx</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
