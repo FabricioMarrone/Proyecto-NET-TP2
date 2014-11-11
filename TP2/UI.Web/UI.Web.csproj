@@ -61,7 +61,7 @@
     <Content Include="CargarNotas.aspx" />
     <Content Include="ElegirComision.aspx" />
     <Content Include="EstadoAcademico.aspx" />
-    <Content Include="Estilos\Master.css" />
+    <Content Include="App_Themes\Css\Master.css" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="InscribirseAcurso.aspx" />
@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
+    <Content Include="App_Themes\MasterSkin\MasterSkin.skin" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

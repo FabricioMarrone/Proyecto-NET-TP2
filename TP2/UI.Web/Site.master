@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Academia</title>
-    <link rel="Stylesheet" href="~/Estilos/Master.css" />
+    <!-- <link rel="Stylesheet" href="~/App_Themes/Css/Master.css" /> -->
 </head>
 <body>
 
