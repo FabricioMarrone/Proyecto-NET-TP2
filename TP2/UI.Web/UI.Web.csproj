@@ -67,6 +67,7 @@
     <Content Include="Home.aspx" />
     <Content Include="InscribirseAcurso.aspx" />
     <Content Include="InscripcionAmateria.aspx" />
+    <Content Include="ListarABMBase.aspx" />
     <Content Include="ModificarDatos.aspx" />
     <Content Include="UserControls\LabelText.ascx" />
     <Content Include="Usuarios.aspx" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="InscripcionAmateria.aspx.designer.cs">
       <DependentUpon>InscripcionAmateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarABMBase.aspx.cs">
+      <DependentUpon>ListarABMBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarABMBase.aspx.designer.cs">
+      <DependentUpon>ListarABMBase.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarDatos.aspx.cs">
       <DependentUpon>ModificarDatos.aspx</DependentUpon>
