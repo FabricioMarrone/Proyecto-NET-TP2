@@ -94,11 +94,11 @@ namespace UI.Web
 
         private void GuardarCambios()
         {
-            this.ViewState[""];
+            //this.ViewState[""];
 
             especialidade esp = this.MapearADatos();
             EspecialidadLogic espLogic = new EspecialidadLogic();
-            espLogic.Save(esp, );
+            espLogic.Save(esp, ((FormModes)this.ViewState["FormMode"]).ToString());
         }
 
         protected void lbAceptar_Click(object sender, EventArgs e)
