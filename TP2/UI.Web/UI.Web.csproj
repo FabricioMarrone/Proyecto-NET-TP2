@@ -69,6 +69,7 @@
     <Content Include="InscripcionAmateria.aspx" />
     <Content Include="ListarABMBase.aspx" />
     <Content Include="ModificarDatos.aspx" />
+    <Content Include="Planes.aspx" />
     <Content Include="UserControls\LabelText.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="VisorRepEstadoAcad.aspx" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="ModificarDatos.aspx.designer.cs">
       <DependentUpon>ModificarDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Planes.aspx.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Planes.aspx.designer.cs">
+      <DependentUpon>Planes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
