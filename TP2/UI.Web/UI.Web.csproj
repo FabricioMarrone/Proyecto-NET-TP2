@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CargarNotas.aspx" />
+    <Content Include="Comisiones.aspx" />
     <Content Include="ElegirComision.aspx" />
     <Content Include="Especialidades.aspx" />
     <Content Include="EstadoAcademico.aspx" />
@@ -84,6 +85,13 @@
     </Compile>
     <Compile Include="CargarNotas.aspx.designer.cs">
       <DependentUpon>CargarNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comisiones.aspx.cs">
+      <DependentUpon>Comisiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comisiones.aspx.designer.cs">
+      <DependentUpon>Comisiones.aspx</DependentUpon>
     </Compile>
     <Compile Include="ElegirComision.aspx.cs">
       <DependentUpon>ElegirComision.aspx</DependentUpon>
