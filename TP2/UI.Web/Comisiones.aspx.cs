@@ -61,7 +61,7 @@ namespace UI.Web
         protected override void mapearDeDatos(int id)
         {
             comisione com = this.ComLogic.GetOne(id);
-            this.IdCursoTextBox.Text = com.id_comision.ToString();
+            this.IdComisionTextBox.Text = com.id_comision.ToString();
             this.mtvComision.Text = com.desc_comision;
             this.mtvAnioEspecialidad.Text = com.anio_especialidad.ToString();
 
@@ -116,7 +116,7 @@ namespace UI.Web
 
         protected override void ClearForm()
         {
-            this.IdCursoTextBox.Text = string.Empty;
+            this.IdComisionTextBox.Text = string.Empty;
             this.mtvComision.Text = string.Empty;
             this.mtvAnioEspecialidad.Text = string.Empty;
             this.ddlEspecialidad.ClearSelection();
@@ -125,7 +125,7 @@ namespace UI.Web
 
         protected override void EnableForm(bool enable)
         {
-            this.IdCursoTextBox.Enabled = enable;
+            this.IdComisionTextBox.Enabled = enable;
             this.mtvComision.Enabled = enable;
             this.mtvAnioEspecialidad.Enabled = enable;
             this.ddlEspecialidad.Enabled = enable;

@@ -10,7 +10,7 @@
 namespace UI.Web {
     
     
-    public partial class Comisiones {
+    public partial class Cursos {
         
         /// <summary>
         /// Control lblTitle.
@@ -94,13 +94,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control IdComisionTextBox.
+        /// Control IdCursoTextBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdComisionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox IdCursoTextBox;
         
         /// <summary>
         /// Control Label2.
@@ -112,31 +112,13 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control mtvComision.
+        /// Control ddlMateria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::UI.Web.UserControls.MyTextBoxValidate mtvComision;
-        
-        /// <summary>
-        /// Control Label5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// Control mtvAnioEspecialidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::UI.Web.UserControls.MyTextBoxValidate mtvAnioEspecialidad;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMateria;
         
         /// <summary>
         /// Control Label3.
@@ -148,31 +130,49 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control ddlEspecialidad.
+        /// Control ddlComision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComision;
         
         /// <summary>
-        /// Control Label4.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control ddlPlan.
+        /// Control mtvAnioCalendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPlan;
+        protected global::UI.Web.UserControls.MyTextBoxValidate mtvAnioCalendario;
+        
+        /// <summary>
+        /// Control Label6.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+        
+        /// <summary>
+        /// Control mtvCupo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::UI.Web.UserControls.MyTextBoxValidate mtvCupo;
         
         /// <summary>
         /// Control formActionsPanel.

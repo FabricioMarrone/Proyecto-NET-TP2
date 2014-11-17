@@ -1,18 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comisiones.aspx.cs" Inherits="UI.Web.Comisiones" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="UI.Web.Cursos" %>
 <%@ Register Src="~/UserControls/MyTextBoxValidate.ascx" TagPrefix="uc1" TagName="MyTextBoxValidate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <h1>
-        <asp:Label ID="lblTitle" runat="server" Text="Comisiones"></asp:Label>
+        <asp:Label ID="lblTitle" runat="server" Text="Cursos"></asp:Label>
     </h1>
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="gvListar" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gvListar_SelectedIndexChanged" DataKeyNames="Id_comision" >
+        <asp:GridView ID="gvListar" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gvListar_SelectedIndexChanged" DataKeyNames="ID_CURSO" >
             <Columns>
-                <asp:BoundField HeaderText ="ID" DataField="Id_comision" />
-                <asp:BoundField HeaderText ="Comision" DataField="Desc_comision" />
-                <asp:BoundField HeaderText ="Año Especialidad" DataField="Anio_especialidad" />
-                <asp:BoundField HeaderText ="Plan" DataField="Plan" />
+                <asp:BoundField HeaderText ="ID" DataField="ID_CURSO" />
+                <asp:BoundField HeaderText ="Materia" DataField="Materia" />
+                <asp:BoundField HeaderText ="Comision" DataField="Comision" />
+                <asp:BoundField HeaderText ="Año Calendario" DataField="Anio_calendario" />
+                <asp:BoundField HeaderText ="Cupo" DataField="Cupo" />
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
             </Columns>
         </asp:GridView>
@@ -29,45 +29,43 @@
                     <asp:Label ID="Label1" runat="server" Text="Id:"></asp:Label>
                 </td>
                 <td style="height: 26px">
-                    <asp:TextBox ID="IdComisionTextBox" runat="server" ReadOnly="True"></asp:TextBox>
+                    <asp:TextBox ID="IdCursoTextBox" runat="server" ReadOnly="True"></asp:TextBox>
                 </td>
                 <td style="height: 26px">
                 </td>
             </tr>
             <tr>
                 <td style="height: 26px; width: 136px;">
-                    <asp:Label ID="Label2" runat="server" Text="Comision:"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Materia:"></asp:Label>
                 </td>
                 <td colspan="2">
-                    <uc1:MyTextBoxValidate runat="server" id="mtvComision" ErrorMessage="El campo Comison es invalido." />
+                    <asp:DropDownList ID="ddlMateria" runat="server"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td style="height: 26px; width: 136px;">
-                    <asp:Label ID="Label5" runat="server" Text="Año Especialidad:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Comision:"></asp:Label>
+                </td>
+                <td style="height: 26px">
+                    <asp:DropDownList ID="ddlComision" runat="server" ></asp:DropDownList>
+                </td>
+                <td style="height: 26px">
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 26px; width: 136px;">
+                    <asp:Label ID="Label5" runat="server" Text="Año Calendario:"></asp:Label>
                 </td>
                 <td colspan="2">
-                    <uc1:MyTextBoxValidate runat="server" id="mtvAnioEspecialidad" ErrorMessage="El campo Año Especialidad es invalido." />
+                    <uc1:MyTextBoxValidate runat="server" id="mtvAnioCalendario" ErrorMessage="El campo Año Calendario es invalido." />
                 </td>
             </tr>
             <tr>
                 <td style="height: 26px; width: 136px;">
-                    <asp:Label ID="Label3" runat="server" Text="Especialidad"></asp:Label>
+                    <asp:Label ID="Label6" runat="server" Text="Cupo:"></asp:Label>
                 </td>
-                <td style="height: 26px">
-                    <asp:DropDownList ID="ddlEspecialidad" runat="server" OnSelectedIndexChanged="ddlEspecialidad_SelectedIndexChanged" AutoPostBack="True" ></asp:DropDownList>
-                </td>
-                <td style="height: 26px">
-                </td>
-            </tr>
-            <tr>
-                <td style="height: 26px; width: 136px;">
-                    <asp:Label ID="Label4" runat="server" Text="Plan"></asp:Label>
-                </td>
-                <td style="height: 26px">
-                    <asp:DropDownList ID="ddlPlan" runat="server"></asp:DropDownList>
-                </td>
-                <td style="height: 26px">
+                <td colspan="2">
+                    <uc1:MyTextBoxValidate runat="server" ID="mtvCupo" ErrorMessage="El campo Cupo es invalido." />
                 </td>
             </tr>
             <tr>
@@ -82,4 +80,5 @@
     </asp:Panel>
     <asp:Label ID="messageArea" runat="server" Text=""></asp:Label>
 </asp:Content>
+
 
