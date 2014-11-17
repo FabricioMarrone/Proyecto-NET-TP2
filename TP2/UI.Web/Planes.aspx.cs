@@ -31,8 +31,11 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e) 
         {
-            base.Page_Load(sender, e);
-            this.LoadDropDownList();
+            if (!IsPostBack)
+            {
+                base.Page_Load(sender, e);
+                this.LoadDropDownList();
+            }
         }
 
         #region metodos para Implementar en clase derivada

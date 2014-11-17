@@ -58,6 +58,11 @@ namespace Business.Logic
             }
         }
 
+        public void Delete(int id_materia)
+        {
+            this.MateriaData.Delete(id_materia);
+        }
+
         public static MateriaExtended getMateriaExtended(materia mat)
         {
             return new MateriaExtended(mat);
@@ -121,5 +126,6 @@ namespace Business.Logic
                 this.Plan = logic.GetOne(mat.id_plan).desc_plan;
             }
         }//end sub class
+
     }//end class
 }

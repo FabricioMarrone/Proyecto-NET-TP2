@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
     <h1>
-        <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblTitle" runat="server" Text="Planes"></asp:Label>
     </h1>
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gvListar" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gvListar_SelectedIndexChanged" DataKeyNames="Id_plan" >
