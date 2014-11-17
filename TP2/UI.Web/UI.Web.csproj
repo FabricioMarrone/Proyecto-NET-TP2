@@ -73,6 +73,7 @@
     <Content Include="ModificarDatos.aspx" />
     <Content Include="Planes.aspx" />
     <Content Include="UserControls\LabelText.ascx" />
+    <Content Include="UserControls\MyTextBoxValidate.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="VisorRepEstadoAcad.aspx" />
     <Content Include="VisorRepRegularidadesCurso.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="UserControls\LabelText.ascx.designer.cs">
       <DependentUpon>LabelText.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MyTextBoxValidate.ascx.cs">
+      <DependentUpon>MyTextBoxValidate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MyTextBoxValidate.ascx.designer.cs">
+      <DependentUpon>MyTextBoxValidate.ascx</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>

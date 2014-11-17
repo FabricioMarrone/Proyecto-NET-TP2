@@ -53,7 +53,7 @@ namespace UI.Web
                 this.gridPanel.Visible = false;
 
                 this.messageArea.ForeColor = System.Drawing.Color.Red;
-                this.messageArea.Text = "No existen Especialidades para mostrar. " + ex.Message;
+                this.messageArea.Text = "No existen Materias para mostrar. " + ex.Message;
             }
         }
 
