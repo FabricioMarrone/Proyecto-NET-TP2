@@ -40,6 +40,24 @@
                             <li>
                                 <asp:LinkButton ID="linkMenuOption3" runat="server" Visible="False" OnClick="linkMenuOption3_Click">LinkButton</asp:LinkButton>
                             </li>
+                            <li>
+                                <asp:LinkButton ID="PersonasLB" runat="server" Visible="false" OnClick="PersonasLB_Click">Personas</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="EspecialidadesLB" runat="server" Visible="false" OnClick="EspecialidadesLB_Click">Especialidades</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="PlanesLB" runat="server" Visible="false" OnClick="PlanesLB_Click">Planes</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="MateriasLB" runat="server" Visible="false" OnClick="MateriasLB_Click">Materias</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="ComisionesLB" runat="server" Visible="false" OnClick="ComisionesLB_Click">Comisiones</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="CursosLB" runat="server" Visible="false" OnClick="CursosLB_Click">Cursos</asp:LinkButton>
+                            </li>
                         </ul>
                     </div>
 
