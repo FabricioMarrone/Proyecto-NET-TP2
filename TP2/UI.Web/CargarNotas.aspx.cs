@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Web
 {
@@ -23,6 +24,7 @@ namespace UI.Web
         protected void loadCursos(persona docente) 
         {
             DocenteCursoLogic logic = new DocenteCursoLogic();
+
             this.ddlCursos.DataSource = CursoLogic.getCursosExtended(logic.getCursosDelDocente(docente));
             this.ddlCursos.DataValueField = "id_curso";
             this.ddlCursos.DataTextField = "desc";

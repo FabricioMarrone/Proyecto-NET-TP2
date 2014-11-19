@@ -72,6 +72,10 @@
       <Project>{8B7C7DC9-CD23-4A84-BC58-0FAC77AFFD77}</Project>
       <Name>Data.DataBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9fad9328-b004-43e1-9e29-403976c02cc7}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RepEstadoAcademico.rdlc" />

@@ -67,7 +67,8 @@ namespace Business.Logic
         public static List<CursoExtended> getCursosExtended(List<curso> cursos)
         {
             List<CursoExtended> list = new List<CursoExtended>();
-            foreach (curso cur in cursos) {
+            foreach (curso cur in cursos)
+            {
                 list.Add(getCursoExtended(cur));
             }
             return list;
