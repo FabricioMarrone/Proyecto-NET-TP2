@@ -3,9 +3,7 @@
 <%@ Register Src="~/UserControls/MyTextBoxValidate.ascx" TagPrefix="uc1" TagName="MyTextBoxValidate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <h1>
-        <asp:Label ID="lblTitle" runat="server" Text="Comisiones"></asp:Label>
-    </h1>
+    <h1 id="titulo">Comisiones</h1>
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gvListar" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gvListar_SelectedIndexChanged" DataKeyNames="Id_comision" >
             <Columns>
@@ -74,7 +72,7 @@
                 <td colspan="3">
                     <asp:Panel ID="formActionsPanel" runat="server">
                         <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click">Cancerlar</asp:LinkButton>
+                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" CausesValidation="False">Cancerlar</asp:LinkButton>
                     </asp:Panel>
                 </td>
             </tr>

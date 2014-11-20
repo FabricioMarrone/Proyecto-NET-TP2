@@ -65,5 +65,10 @@ namespace UI.Web
             inscLogic.Save(inscripcion, "Alta");
             Response.Redirect("inscripcionAmateria.aspx?msg=yes");
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("~/InscripcionAmateria.aspx");
+        }
     }//end class
 }

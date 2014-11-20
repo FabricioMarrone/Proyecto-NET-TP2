@@ -75,6 +75,7 @@ namespace UI.Web
         private void loadGrid() {
             this.gridView.DataSource = this.logic.GetAll();
             this.gridView.DataBind();
+            this.gridView.SelectedIndex = -1;
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,6 +207,7 @@ namespace UI.Web
         {
             this.formPanel.Visible = false;
             this.loadGrid();
+            this.SelectedID = 0;
         }
     }//end class
 }

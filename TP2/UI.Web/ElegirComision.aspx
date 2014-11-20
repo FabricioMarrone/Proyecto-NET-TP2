@@ -7,4 +7,5 @@
     <asp:RadioButtonList ID="rblComisiones" runat="server" Width="125px"></asp:RadioButtonList>
     <br />
     <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
+    <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
 </asp:Content>

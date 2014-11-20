@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InscripcionAmateria.aspx.cs" Inherits="UI.Web.InscripcionAmateria" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+    <h1 id="titulo">Inscripcion a Materia</h1>
     <asp:Label ID="lblMsg" runat="server" Text="Seleccione la materia en la que se desea inscribir:"></asp:Label>
     <br />
     <asp:GridView ID="grdMateriass" runat="server" AutoGenerateColumns="False" OnRowCommand="grdMateriass_RowCommand">

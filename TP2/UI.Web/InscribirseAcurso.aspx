@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InscribirseAcurso.aspx.cs" Inherits="UI.Web.InscribirseAcurso" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+    <h1 id="titulo">Inscripcion a Curso</h1>
     <asp:Label ID="lblMsg" runat="server" Text="Seleccione el curso en el que se desea inscribir:"></asp:Label>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Materia:"></asp:Label>

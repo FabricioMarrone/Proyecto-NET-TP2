@@ -13,15 +13,6 @@ namespace UI.Web {
     public partial class EstadoAcademico {
         
         /// <summary>
-        /// Control lblEstadoAcademico.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoAcademico;
-        
-        /// <summary>
         /// Control grdEstadoAcademico.
         /// </summary>
         /// <remarks>

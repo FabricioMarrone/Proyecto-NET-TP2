@@ -4,9 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
 
-    <h1>
-        <asp:Label ID="lblTitle" runat="server" Text="Personas"></asp:Label>
-    </h1>
+    <h1 id="titulo">Personas</h1>
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="gvListar" runat="server" AutoGenerateColumns="False" SelectedRowStyle-BackColor="Black" SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gvListar_SelectedIndexChanged" DataKeyNames="Id_persona" >
             <Columns>
@@ -17,7 +15,7 @@
                 <asp:BoundField HeaderText ="Direccion" DataField="Direccion" />
                 <asp:BoundField HeaderText ="E-mail" DataField="Email" />
                 <asp:BoundField HeaderText ="Telefono" DataField="Telefono" />
-                <asp:BoundField HeaderText ="Fecha Nacimiento" DataField="Fecha_nac" DataFormatString="DataTime" />
+                <asp:BoundField HeaderText ="Fecha Nacimiento" DataField="Fecha_nac" DataFormatString="{0:d}" />
                 <asp:BoundField HeaderText ="Plan" DataField="Plan" />
                 <asp:BoundField HeaderText ="Persona Tipo" DataField="Tipo_persona" />
 
@@ -121,7 +119,7 @@
                 <td colspan="3">
                     <asp:Panel ID="formActionsPanel" runat="server">
                         <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="AceptarLinkButton_Click">Aceptar</asp:LinkButton>
-                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click">Cancerlar</asp:LinkButton>
+                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="CancelarLinkButton_Click" CausesValidation="False">Cancerlar</asp:LinkButton>
                     </asp:Panel>
                 </td>
             </tr>

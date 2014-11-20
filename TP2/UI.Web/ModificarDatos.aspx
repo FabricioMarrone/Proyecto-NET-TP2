@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ModificarDatos.aspx.cs" Inherits="UI.Web.ModificarDatos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+
+    <h1 id="titulo">Modificar Datos Personales</h1>
     <table>
         <tr>
             <td style="height: 26px">
@@ -9,7 +11,7 @@
                 <asp:TextBox ID="txtLegajo" runat="server"></asp:TextBox>
             </td>
             <td style="height: 26px">
-                <asp:RegularExpressionValidator ID="revLegajo" runat="server" ErrorMessage="El campo Legajo es Invalido" ControlToValidate="txtLegajo" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revLegajo" runat="server" ErrorMessage="El campo Legajo es Invalido" ControlToValidate="txtLegajo" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -20,7 +22,7 @@
                 <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revNombre" runat="server" ErrorMessage="El campo Nombre es Invalido" ControlToValidate="txtNombre" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revNombre" runat="server" ErrorMessage="El campo Nombre es Invalido" ControlToValidate="txtNombre" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -31,7 +33,7 @@
                 <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revApellido" runat="server" ErrorMessage="El campo Apellido es Invalido" ControlToValidate="txtApellido" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revApellido" runat="server" ErrorMessage="El campo Apellido es Invalido" ControlToValidate="txtApellido" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -42,7 +44,7 @@
                 <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ErrorMessage="El campo Direccion es Invalido" ControlToValidate="txtDireccion" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ErrorMessage="El campo Direccion es Invalido" ControlToValidate="txtDireccion" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -53,7 +55,7 @@
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="El campo Email es Invalido" ControlToValidate="txtEmail" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="El campo Email es Invalido" ControlToValidate="txtEmail" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -64,7 +66,7 @@
                 <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revTelefono" runat="server" ErrorMessage="El campo Telefono es Invalido" ControlToValidate="txtTelefono" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revTelefono" runat="server" ErrorMessage="El campo Telefono es Invalido" ControlToValidate="txtTelefono" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -75,18 +77,18 @@
                 <asp:TextBox ID="txtFechaNac" runat="server"></asp:TextBox>
             </td>
             <td>
-                <asp:RegularExpressionValidator ID="revFechaNac" runat="server" ErrorMessage="El campo Fecha de Nacimiento es Invalido" ControlToValidate="txtFechaNac" ></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revFechaNac" runat="server" ErrorMessage="El campo Fecha de Nacimiento es Invalido" ControlToValidate="txtFechaNac" Font-Bold="True" ForeColor="#CC0000" ></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="height: 26px">
                 <asp:Label ID="Label8" runat="server" Text="Tipo:"></asp:Label>
             </td>
-            <td>
+            <td style="height: 26px">
                 <asp:DropDownList ID="ddlTipo" runat="server"></asp:DropDownList>
             </td>
-            <td>
-                &nbsp;</td>
+            <td style="height: 26px">
+                </td>
         </tr>
         <tr>
             <td>

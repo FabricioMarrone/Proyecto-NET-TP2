@@ -45,13 +45,19 @@ namespace UI.Web
                 //Verificamos contraseña
                 if (usr.clave == this.txtContraseña.Text)
                 {
+
+                    //Aca tengo que capa de Negocio debe disparar una Exception de Usuario inhabilitado.
+
+
                     //Loggin exitoso
                     PersonaLogic perLogic = new PersonaLogic();
                     persona per = perLogic.GetOne(usr.id_persona);
 
                     if (per == null)
                     {
-                        Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('El usuario no posee un registro persona.')</SCRIPT>");
+                        this.messageLoginPanel.Visible = true;
+                        this.messageLogin.Text = "El usuario no posee un registro persona.";
+                        //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('El usuario no posee un registro persona.')</SCRIPT>");
                         return;
                     }
 
@@ -62,6 +68,7 @@ namespace UI.Web
                     master.showMenu(per.tipo_persona);
 
                     this.occultLogin();
+
                 }
                 else
                 {

@@ -45,7 +45,7 @@
                 <td colspan="3">
                     <asp:Panel ID="formActionsPanel" runat="server">
                         <asp:LinkButton ID="AceptarLinkButton" runat="server" OnClick="lbAceptar_Click">Aceptar</asp:LinkButton>
-                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="lbCancelar_Click">Cancerlar</asp:LinkButton>
+                        <asp:LinkButton ID="CancelarLinkButton" runat="server" OnClick="lbCancelar_Click" CausesValidation="False">Cancerlar</asp:LinkButton>
                     </asp:Panel>
                 </td>
             </tr>
