@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util;
 
 namespace UI.Desktop
 {
@@ -56,9 +57,22 @@ namespace UI.Desktop
 
         private void Listar()
         {
-            InscripcionAlumnoLogic aiLogic = new InscripcionAlumnoLogic();
-            this.dgvAlumnosDelCurso.DataSource = InscripcionAlumnoLogic.getAlumnosInscripcionesExtended(
-                aiLogic.GetAlumnosDeCurso(IdCurso));
+            try
+            {
+                InscripcionAlumnoLogic aiLogic = new InscripcionAlumnoLogic();
+                this.dgvAlumnosDelCurso.DataSource = InscripcionAlumnoLogic.getAlumnosInscripcionesExtended(
+                    aiLogic.GetAlumnosDeCurso(IdCurso));
+            }
+            catch (ListaEmptyException lee)
+            {
+                this.Notificar(lee.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception)
+            {
+                this.Notificar("Se ha producido un error durante la cargar.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void GuardarCambios() 
@@ -99,6 +113,7 @@ namespace UI.Desktop
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             this.GuardarCambios();
+            this.Notificar("Notas registradas con exito.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -140,6 +155,11 @@ namespace UI.Desktop
 
             VisorRepRegularidadesCur vrRegularidades = new VisorRepRegularidadesCur(this.docenteActual, oCurso, oPlan, this.GetDatosDeGrilla());
             vrRegularidades.ShowDialog();
+        }
+
+        public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+        {
+            MessageBox.Show(mensaje,this.Text, botones, icono);
         }
     }//end class
 }

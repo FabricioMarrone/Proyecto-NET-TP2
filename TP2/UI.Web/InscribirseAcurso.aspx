@@ -17,4 +17,6 @@
     <br />
     <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
     <br />
+    <asp:Label ID="messageArea" runat="server" Text="" ForeColor="Red" Font-Bold="True"></asp:Label>
+
 </asp:Content>

@@ -28,7 +28,6 @@ namespace UI.Desktop
             // Cambiar el label de inscripcion a materia tal por NombreMateria.
             this.inscripcionActual = new alumnos_inscripciones();
             this.inscripcionActual.id_alumno = id_persona;
-//-----------> Faltaria establecer una enumeracion para las condiciones del alumno.
             this.inscripcionActual.condicion = alumnos_inscripciones.tipoCondicion.Inscripto.ToString();
 
             this.oMateria = oMateria;
@@ -83,7 +82,7 @@ namespace UI.Desktop
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en el metodo btnAceptar_Click de Clase InscripcionComision");
+                MessageBox.Show("Se produjo un error durante su inscripcion.");
             }        
         }
 
@@ -104,6 +103,7 @@ namespace UI.Desktop
                 if ((control as RadioButton).Checked) 
                 {
                     this.CompletarIncripcion(int.Parse(control.Name));
+                    MessageBox.Show("Inscripción exitosa!");
                     this.Close();
                 }
                 // ?????????

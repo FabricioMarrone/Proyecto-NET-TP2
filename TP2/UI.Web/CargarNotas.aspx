@@ -5,10 +5,8 @@
     &nbsp;<asp:DropDownList ID="ddlCursos" runat="server" AutoPostBack="True" Height="16px" OnSelectedIndexChanged="ddlCursos_SelectedIndexChanged" Width="276px">
         </asp:DropDownList>
         <br />
-        <br />
-        <asp:Label ID="lblMsg2" runat="server" Text="Ingrese notas y condiciones:"></asp:Label>
-        <br />
         <asp:Panel ID="GridPanel" runat="server">
+            <asp:Label ID="lblMsg2" runat="server" Text="Ingrese notas y condiciones:"></asp:Label>
             <asp:GridView ID="grdAlumnos" runat="server" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="Id_inscripcion" HeaderText="ID Inscripcion" ReadOnly="True" Visible="true" />

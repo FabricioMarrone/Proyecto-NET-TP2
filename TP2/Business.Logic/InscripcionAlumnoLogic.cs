@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Business.Entities;
 using Data.DataBase;
+using Util;
 
 namespace Business.Logic
 {
@@ -64,7 +65,12 @@ namespace Business.Logic
 
         public List<alumnos_inscripciones> GetAlumnosDeCurso(int IDCurso)
         {
-            return this._inscripcionAlumnoAdapter.GetAlumnosDeCurso(IDCurso);
+            List<alumnos_inscripciones> alumnosInsc = this._inscripcionAlumnoAdapter.GetAlumnosDeCurso(IDCurso);
+            if (alumnosInsc.Count == 0)
+            {
+                throw new ListaEmptyException("No existen alumnos inscriptos en este curso.");
+            }
+            return alumnosInsc;
         }
 
         public static InscripcionAlumnoExtendent getAlumnoInscripcionExtended(alumnos_inscripciones ai)

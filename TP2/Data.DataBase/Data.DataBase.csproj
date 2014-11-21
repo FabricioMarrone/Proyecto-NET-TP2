@@ -100,6 +100,10 @@
       <Project>{95DC809F-1AC5-4368-8B2F-B2281224705F}</Project>
       <Name>Business.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{9fad9328-b004-43e1-9e29-403976c02cc7}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Util
 {
-    class ExceptionUsuarioInhabilitado : Exception
+    public class ListaEmptyException : Exception
     {
         private string mensaje;
 
@@ -14,7 +14,7 @@ namespace Util
             get { return mensaje; }
         }
 
-        public ExceptionUsuarioInhabilitado(string mensaje) : base()
+        public ListaEmptyException(string mensaje)
         {
             this.mensaje = mensaje;
         }

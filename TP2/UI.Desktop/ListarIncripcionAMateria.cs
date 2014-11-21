@@ -77,7 +77,6 @@ namespace UI.Desktop
                 materia oMateria = (materia)this.dgvMaterias.SelectedRows[0].DataBoundItem;
                 InscripcionComision formInscComision = new InscripcionComision(oMateria, personaActual.id_persona);
                 formInscComision.ShowDialog();
-                MessageBox.Show("Inscripción exitosa!");
                 this.Listar();
             }
             catch (Exception)

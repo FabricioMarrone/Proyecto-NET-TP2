@@ -36,43 +36,63 @@ namespace UI.Web
                 this.ddlMaterias.DataTextField = "desc_materia";
                 this.ddlMaterias.DataBind();
 
-                //this.ddlCursos.Enabled = false;
-
                 this.ddlCargos.DataSource = Enum.GetValues(typeof(persona.cargo));
                 this.ddlCargos.DataBind();
 
                 this.ddlMaterias_SelectedIndexChanged(null, null);
+
+                this.ddlCursos.Enabled = false;
             }
             else 
             {
-                this.lblMsg.Text = "No hay materias disponibles para inscripción.";
-                this.Label2.Visible = false;
-                this.Label3.Visible = false;
-                this.Label4.Visible = false;
-                this.ddlCargos.Visible = false;
-                this.ddlMaterias.Visible = false;
-                this.ddlCursos.Visible = false;
+                this.messageArea.Text = "No hay materias disponibles para inscripción.";
+                this.HiddenForm();
                 return;
             }
             
         }
 
+        private void HiddenForm()
+        {
+            this.lblMsg.Visible = false;
+            this.Label2.Visible = false;
+            this.Label3.Visible = false;
+            this.Label4.Visible = false;
+            this.ddlCargos.Visible = false;
+            this.ddlMaterias.Visible = false;
+            this.ddlCursos.Visible = false;
+            this.btnAceptar.Visible = false;
+        }
+
         protected void ddlMaterias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Index change.')</SCRIPT>");
             int id_materia = Int32.Parse(this.ddlMaterias.SelectedValue);
 
-            CursoLogic curLogic = new CursoLogic();
-            this.ddlCursos.DataSource = CursoLogic.getCursosExtended(curLogic.GetCursosParaDictado(id_materia));
+            this.LoadDropDownListCurso(id_materia);
+        }
 
-            this.ddlCursos.DataValueField = "id_curso";
-            this.ddlCursos.DataTextField = "desc";
-            this.ddlCursos.Enabled = true;
+        private void LoadDropDownListCurso(int id_materia)
+        {
+            this.ddlCursos.Items.Clear();
+            this.ddlCursos.Enabled = false;
+
+            CursoLogic curLogic = new CursoLogic();
+            List<curso> cursos = curLogic.GetCursosParaDictado(id_materia);
+            if (cursos.Count > 0 )
+            {
+                this.ddlCursos.DataSource = CursoLogic.getCursosExtended(cursos);
+                this.ddlCursos.DataValueField = "id_curso";
+                this.ddlCursos.DataTextField = "desc";
+                this.ddlCursos.Enabled = true;                
+            }
             this.ddlCursos.DataBind();
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            this.messageArea.Text = string.Empty;
+            this.messageArea.ForeColor = System.Drawing.Color.Red;
+
             if (this.Validar()) 
             {
                 persona docente = (persona)this.Session[Global.PERSONA_ACTUAL];
@@ -84,14 +104,21 @@ namespace UI.Web
                 inscripcion.id_curso = id_curso;
                 inscripcion.cargo = this.ddlCargos.SelectedIndex;
                 logic.save(inscripcion, "Alta");
-                Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Inscripcion completada con exito.')</SCRIPT>");
+
+                this.HiddenForm();
+                this.messageArea.Text = "Inscripcion completada con exito.";
             }
         }
 
         private bool Validar() 
         {
-            Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('NO SE ESTA VALIDANDO NADA')</SCRIPT>");
-            return true;
+            if ( (this.ddlMaterias.SelectedItem != null) && (this.ddlCursos.SelectedItem != null) )
+            {
+                return false;
+            }
+            this.messageArea.Text = "Por favor Seleccion una Materia y un Curso";
+            this.messageArea.ForeColor = System.Drawing.Color.Green;
+            return false;
         }
     }//end class
 }
