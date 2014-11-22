@@ -112,13 +112,13 @@ namespace UI.Web
 
         private bool Validar() 
         {
-            if ( (this.ddlMaterias.SelectedItem != null) && (this.ddlCursos.SelectedItem != null) )
+            if ( (this.ddlMaterias.SelectedItem == null) && (this.ddlCursos.SelectedItem == null) )
             {
                 return false;
             }
             this.messageArea.Text = "Por favor Seleccion una Materia y un Curso";
             this.messageArea.ForeColor = System.Drawing.Color.Green;
-            return false;
+            return true;
         }
     }//end class
 }

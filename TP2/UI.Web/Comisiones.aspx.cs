@@ -84,7 +84,8 @@ namespace UI.Web
                 this.ddlEspecialidad.DataTextField = "desc_especialidad";
                 this.ddlEspecialidad.DataBind();
             }
-            this.ddlPlan.Enabled = false;
+            //this.ddlPlan.Enabled = false;
+            CargarDropDownListPlan(Int32.Parse(this.ddlEspecialidad.SelectedValue));
         }
 
         private void CargarDropDownListPlan(int idEspecialidad)

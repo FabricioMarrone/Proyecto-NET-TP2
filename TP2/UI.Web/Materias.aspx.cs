@@ -34,7 +34,7 @@ namespace UI.Web
             if (!this.IsPostBack)
             {
                 base.Page_Load(sender, e);
-                this.CargarDropDownListEspecialidad();   
+                this.CargarDropDownListEspecialidad();
             }
         }
 
@@ -87,7 +87,8 @@ namespace UI.Web
 
                 
             }
-            this.ddlPlan.Enabled = false;
+            //this.ddlPlan.Enabled = false;
+            CargarDropDownListPlan(Int32.Parse(this.ddlEspecialidad.SelectedValue));
         }
 
         private void CargarDropDownListPlan(int idEspecialidad)

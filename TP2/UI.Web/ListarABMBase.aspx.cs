@@ -58,7 +58,7 @@ namespace UI.Web
         protected void LoadForm(int id)
         {// Misma Funcionalidad de Mapear a Datos
             this.ClearForm();
-
+            
             this.mapearDeDatos(id);
 
             switch (this.FormMode)
