@@ -99,6 +99,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(214, 225);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -154,8 +155,10 @@
             // 
             // DocenteCursoABM
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(314, 282);
             this.Controls.Add(this.cbMateria);
             this.Controls.Add(this.label5);
@@ -169,7 +172,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbProfesores);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DocenteCursoABM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InscripcionProfesorCurso";
             this.Load += new System.EventHandler(this.DocenteCursoABM_Load);
             this.ResumeLayout(false);

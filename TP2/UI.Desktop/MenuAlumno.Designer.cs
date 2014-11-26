@@ -130,7 +130,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(57, 238);
+            this.btnSalir.Location = new System.Drawing.Point(199, 238);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 273);
+            this.ClientSize = new System.Drawing.Size(286, 273);
             this.Controls.Add(this.btnEstado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInscribirse);
@@ -164,7 +164,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuAlumno";
             this.ResumeLayout(false);
             this.PerformLayout();

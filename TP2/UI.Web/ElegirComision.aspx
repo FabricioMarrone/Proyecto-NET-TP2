@@ -5,7 +5,9 @@
     <asp:Label ID="lblMsg" runat="server" Text="Seleccione una comisión:"></asp:Label>
     <br />
     <asp:RadioButtonList ID="rblComisiones" runat="server" Width="125px"></asp:RadioButtonList>
-    <br />
-    <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
-    <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
+    <asp:Label ID="messageArea" runat="server" Text="" ForeColor="Red" Font-Bold ="true"></asp:Label>
+    <asp:Panel ID="ActionPanel" runat="server">
+        <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
+        <asp:Button ID="btnCancelar" runat="server" OnClick="btnCancelar_Click" Text="Cancelar" />
+    </asp:Panel>
 </asp:Content>

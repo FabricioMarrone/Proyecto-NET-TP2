@@ -13,6 +13,7 @@ namespace UI.Desktop
         public ListarMaterias() : base()
         {
             this.Text = "Listado de Materias";
+            this.Size = new System.Drawing.Size(650, 500);
         }
 
         public override void GenerarColumnas()

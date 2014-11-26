@@ -12,6 +12,5 @@
         </Columns>
     </asp:GridView>
     <br />
-    <br />
-    <br />
+    <asp:Label ID="messageArea" runat="server" ForeColor="Green" Visible="False" Font-Bold="True"></asp:Label>
 </asp:Content>

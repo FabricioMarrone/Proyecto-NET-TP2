@@ -71,6 +71,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCerrar.Location = new System.Drawing.Point(457, 239);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -83,9 +84,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCerrar;
             this.ClientSize = new System.Drawing.Size(535, 265);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListarIncripcionAMateria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incripcion a Materias";
             this.Load += new System.EventHandler(this.ListarIncripcionAMateria_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

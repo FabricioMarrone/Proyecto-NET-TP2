@@ -109,7 +109,11 @@
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(341, 210);
             this.Controls.Add(this.tblPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InscripcionComision";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comisiones disponibles";
             this.Load += new System.EventHandler(this.InscripcionComision_Load);
             this.tblPanel.ResumeLayout(false);

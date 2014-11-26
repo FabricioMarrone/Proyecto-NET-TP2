@@ -107,17 +107,18 @@ namespace UI.Web
 
                 this.HiddenForm();
                 this.messageArea.Text = "Inscripcion completada con exito.";
+                this.messageArea.ForeColor = System.Drawing.Color.Green;
             }
         }
 
         private bool Validar() 
         {
-            if ( (this.ddlMaterias.SelectedItem == null) && (this.ddlCursos.SelectedItem == null) )
+            if ( (this.ddlMaterias.SelectedItem == null) || (this.ddlCursos.SelectedItem == null) )
             {
+                this.messageArea.Text = "Por favor Seleccion una Materia y un Curso";
+                this.messageArea.ForeColor = System.Drawing.Color.Red;
                 return false;
             }
-            this.messageArea.Text = "Por favor Seleccion una Materia y un Curso";
-            this.messageArea.ForeColor = System.Drawing.Color.Green;
             return true;
         }
     }//end class

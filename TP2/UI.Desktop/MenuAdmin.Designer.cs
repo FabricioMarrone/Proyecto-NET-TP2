@@ -102,7 +102,7 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(248, 126);
+            this.btnUsuarios.Location = new System.Drawing.Point(220, 125);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(156, 23);
             this.btnUsuarios.TabIndex = 6;
@@ -112,7 +112,7 @@
             // 
             // btnPersonas
             // 
-            this.btnPersonas.Location = new System.Drawing.Point(248, 97);
+            this.btnPersonas.Location = new System.Drawing.Point(220, 96);
             this.btnPersonas.Name = "btnPersonas";
             this.btnPersonas.Size = new System.Drawing.Size(156, 23);
             this.btnPersonas.TabIndex = 7;
@@ -142,7 +142,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(329, 262);
+            this.btnSalir.Location = new System.Drawing.Point(301, 262);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 10;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 297);
+            this.ClientSize = new System.Drawing.Size(393, 297);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCursos);
             this.Controls.Add(this.btnComisiones);
@@ -166,7 +166,11 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuAdmin";
             this.ResumeLayout(false);
             this.PerformLayout();

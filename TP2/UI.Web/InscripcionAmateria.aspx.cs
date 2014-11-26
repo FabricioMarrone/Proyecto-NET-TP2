@@ -23,13 +23,17 @@ namespace UI.Web
             string msg = this.Request.QueryString["msg"];
             if (msg != null && msg == "yes")
             {
-                Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Inscripcion registrada correctamente.')</SCRIPT>");
+                this.messageArea.Text = "Inscripcion registrada correctamente.";
+                this.messageArea.Visible = true;
+                //Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert('Inscripcion registrada correctamente.')</SCRIPT>");
             }
-            
         }
 
         private void loadMaterias() 
         {
+            this.messageArea.Text = string.Empty;
+            this.messageArea.Visible = false;
+
             persona personaActual = (persona)this.Session[Global.PERSONA_ACTUAL];
             MateriaLogic materiaLogic = new MateriaLogic();
             IList mats = materiaLogic.GetMateriasParaInscripcion(personaActual);

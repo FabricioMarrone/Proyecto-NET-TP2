@@ -129,7 +129,7 @@
             this.tsbEliminar});
             this.tsListar.Location = new System.Drawing.Point(3, 0);
             this.tsListar.Name = "tsListar";
-            this.tsListar.Size = new System.Drawing.Size(112, 25);
+            this.tsListar.Size = new System.Drawing.Size(81, 25);
             this.tsListar.TabIndex = 0;
             // 
             // tsbNuevo
@@ -171,7 +171,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 265);
             this.Controls.Add(this.tcListar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListarBase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listar";
             this.Load += new System.EventHandler(this.ListarBase_Load);
             this.tcListar.ContentPanel.ResumeLayout(false);

@@ -19,6 +19,7 @@ namespace UI.Desktop
         {
             this.Text = "Listado de Personas";
             this.Width = this.Width + 300;
+            this.Height = this.Height + 200;
 
             this.AgregarBuscadorDePersona();
         }

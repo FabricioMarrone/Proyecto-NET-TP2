@@ -14,6 +14,7 @@ namespace UI.Desktop
             : base()
         {
             this.Text = "Listado de Comisiones";
+            this.Size = new System.Drawing.Size(650, 450);
         }
 
         public override void GenerarColumnas()

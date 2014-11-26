@@ -110,9 +110,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(479, 330);
             this.Controls.Add(this.tblEstadoAcademico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AlumnoEstadoAcademico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estado Academico";
             this.Load += new System.EventHandler(this.AlumnoEstadoAcademico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripciones)).EndInit();

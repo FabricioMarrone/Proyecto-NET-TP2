@@ -155,7 +155,11 @@
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(540, 296);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CargarNotasCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionar Notas";
             this.Load += new System.EventHandler(this.CargarNotasCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnosDelCurso)).EndInit();

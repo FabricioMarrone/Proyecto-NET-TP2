@@ -57,7 +57,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 395);
             this.Controls.Add(this.rvEstadoAcademico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VisorRepEstadoAcad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VisorRepEstadoAcad";
             this.Load += new System.EventHandler(this.VisorRepEstadoAcad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionAlumnoExtendentBindingSource)).EndInit();

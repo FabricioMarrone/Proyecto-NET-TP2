@@ -63,7 +63,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 473);
             this.Controls.Add(this.rvReportesAcademia);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "VisorRepRegularidadesCur";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Regularidades";
             this.Load += new System.EventHandler(this.VisorRepRegularidadesCur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionAlumnoExtendentBindingSource)).EndInit();

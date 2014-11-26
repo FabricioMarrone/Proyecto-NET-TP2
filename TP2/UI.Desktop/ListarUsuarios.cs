@@ -17,6 +17,7 @@ namespace UI.Desktop
             : base()
         {
             this.Text = "Listar Usuarios";
+            this.Size = new System.Drawing.Size(650, 450);
             AgregarBuscadorDeUsuario();
         }
 

@@ -48,10 +48,23 @@ namespace UI.Web
             }
         }
 
+        protected bool Validar() 
+        {
+            if (this.rblComisiones.SelectedItem == null)
+            {
+                this.messageArea.Text = "Por favor seleccione una Comision.";
+                return false;
+            }
+            return true;
+        }
+
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(this.rblComisiones.SelectedValue);
-            registrarInscripcion(id);
+            if (this.Validar())
+            {
+                int id = Int32.Parse(this.rblComisiones.SelectedValue);
+                registrarInscripcion(id);
+            }
         }
 
         protected void registrarInscripcion(int id_curso) 
